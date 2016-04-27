@@ -10,7 +10,7 @@
 
   	<link rel="stylesheet" href="//cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
 
-  	
+  	<link rel="stylesheet" href="/css/code_connection.css">
 
 	<script src="//cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
 
