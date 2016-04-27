@@ -65,18 +65,7 @@
 
 					<li><a class="nav-text" href="{{{ action('UserController@logOut') }}}" >Logout</a></li>
 
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Projects <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="{{{action('HomeController@showWeatherMap')}}}">Weather Map: Lat/Long Search</a></li>
-
-							<li><a href="{{{action('HomeController@showWeatherMap2')}}}">Weather Map: Address Search</a></li>
-
-							<li><a href="{{{action('HomeController@showWhackAMole')}}}">Whack-a-mole Game</a></li>
-
-							<li><a href="{{{action('HomeController@showSimpleSimon')}}}">Simple Simon</a></li>
-						</ul>
-			        </li>
+					
 			</ul>
 		 			  
 			 		{{Form::open(['action' => 'PostsController@index', 'method'=>'GET', 'class'=>'form-horizontal'])}}
