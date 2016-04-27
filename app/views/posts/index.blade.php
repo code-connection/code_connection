@@ -24,7 +24,7 @@
 	      </div>
 	    </div>
 	    <div class="item">
-	      <img src="" alt="...">
+	      <img src="/img/Acadia.jpg" alt="...">
 	      <div class="carousel-caption">
 	        ...
 	      </div>
@@ -58,9 +58,9 @@
 
 	     <div class="row">
             <div class="col-sm-4 programmers">
-                <img class="img-circle img-responsive img-center" src="/img/Acadia.jpg" alt="">
+                <img class="img-circle img-responsive img-center" src="/img/don.jpg" alt="">
                 <h2>Donald Moore</h2>
-                <p></p>
+                <p>Medal of Honor</p>
             </div>
             <div class="col-sm-4 programmers">
                 <img class="img-circle img-responsive img-center" src="/img/Acadia.jpg" alt="">
