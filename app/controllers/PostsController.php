@@ -13,10 +13,11 @@ class PostsController extends \BaseController {
 
 	public function __construct(){
 		//index - method name
-		$this->beforeFilter('auth', array('except' => array('index', 'show')));
+		$this->beforeFilter('auth', array('except' => array('index','show')));
 		$this->beforeFilter('edit', array('only' => array('edit')));
 
 	}
+	
 
 
 	public function index(){

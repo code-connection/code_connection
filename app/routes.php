@@ -16,13 +16,10 @@ Route::get('/comments/create/{id}','CommentsController@showCreate');
 Route::get('/users/account','UserController@avatarUpload');
 
 
-Route::put('/posts','PostsController@index');
-
-Route::put('/posts/userposts/{id}','PostsController@update');
-
-Route::delete('/posts/userposts/{id}','PostsController@destroy');
 
 Route::get('/posts/userposts/{id}','PostsController@showUserPosts');
+
+Route::get('/','PostsController@index');
 
 
 Route::get('/users/account/{id}','UserController@showUserAccount');
@@ -48,14 +45,6 @@ Route::get('/users/index', 'UserController@showIndex');
 Route::get('/', 'PostsController@index');
 
 
-
-// Route::get('/posts','PostsController@index');
-// Route::get('/posts/create', 'PostsController@create');
-// Route::post('/posts','PostsController@store');
-// Route::get('/posts/{posts}','PostsController@show');
-// Route::get('/posts/{posts}/edit','PostsController@edit');
-// Route::put('/posts/{posts}','PostsController@update');
-// Route::delete('/posts/{posts}','PostsController@destroy');
 
 Route::resource('posts','PostsController');
 
