@@ -47,7 +47,7 @@
 	      </div>
 	    </div>
 	    <div class="item">
-	      <img src="..." alt="...">
+	      <img src="" alt="...">
 	      <div class="carousel-caption">
 	        ...
 	      </div>
@@ -71,13 +71,29 @@
 	   <div class="row">
             <div class="col-sm-8">
                 <h2>What We Do</h2>
-                <p></p>
-                <p>.</p>
+                <p>Bringing developers together</p>
+                <p>to understand their current and potential environments.</p>
                 <p>
                     
                 </p>
             </div>
 	</div>
+
+	     <div class="row">
+            <div class="col-sm-4 programmers">
+                <img class="img-circle img-responsive img-center" src="/img/Acadia.jpg" alt="">
+                <h2>Donald Moore</h2>
+                <p></p>
+            </div>
+            <div class="col-sm-4 programmers">
+                <img class="img-circle img-responsive img-center" src="/img/Acadia.jpg" alt="">
+                <h2>Richard De Los Santos</h2>
+                <p></p>
+            </div>
+            <div class="col-sm-4 programmers">
+                <img class="img-circle img-responsive img-center" src="/img/Acadia.jpg" alt="">
+                <h2>Trey Sowers</h2>
+                <p>Trey sowers may be last in the list. But he's first in our hearts.</p>
 
 
 <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
