@@ -1,0 +1,62 @@
+
+
+.navbar-default {
+	background-color: #506378;
+	border: 0px ;
+	padding: 10px;
+	margin: 0;
+
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+	border: 0px ;
+	margin-bottom: 1px;
+}
+
+.navbar-default .navbar-nav>li>a {
+	color:#F1F1F1;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+		text-decoration: none;
+
+		padding:10, 25;
+		color:#405060;
+		-webkit-transition: all 500ms ease;
+		-moz-transition: all 500ms ease;
+		-ms-transition: all 500ms ease;
+		-o-transition: all 500ms ease;
+		transition: all 500ms ease;
+}
+
+	
+	
+.nav-text {
+	color:white;
+	font-size: 1.2em;
+}
+
+.about {
+	background-color: grey;
+
+}
+
+#carousel-example-generic {
+	position:relative;
+}
+
+.carousel-inner {
+	position:relative;
+   	height: 30em;
+}
+
+.left {
+	
+}
+
+.right {
+	
+}
+	
+
+	
