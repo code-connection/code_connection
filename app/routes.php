@@ -42,6 +42,8 @@ Route::get('/users/account','UserController@showUserAccount');
 
 Route::get('/users/index', 'UserController@showIndex');
 
+Route::get('/', 'PostsController@index');
+
 
 
 Route::resource('posts','PostsController');

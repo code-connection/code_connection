@@ -3,7 +3,7 @@
 
     @section('top-script')
 
-         <title>My Posts Details Page</title>
+        
 
     @stop
 

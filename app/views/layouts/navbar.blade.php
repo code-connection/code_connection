@@ -57,8 +57,6 @@
 			        </li>
 					
 
-					<li><a class="nav-text" href="http://www.linkedin.com/profile/view?id=123881xx971&trk=tab_pro" >LinkedIn Profile</a></li>
-
 					<li><a class="nav-text" href="{{{ action('PostsController@create')}}}" >Create Post</a></li>
 
 					<li><a class="nav-text" href="{{{ action('PostsController@index')}}}" >All Posts</a></li>
