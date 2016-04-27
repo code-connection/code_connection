@@ -24,7 +24,7 @@ class UserController extends BaseController {
 
 	public function __construct(){
 
-		$this->beforeFilter('auth',array('except' => array('showUserCreate','doLogin','showLogin','edit','logout','create','store','update')));
+		$this->beforeFilter('auth',array('except' => array('index','showUserCreate','doLogin','showLogin','edit','logout','create','store','update')));
 		$this->beforeFilter('admin',array('except' => array('doLogin','showLogin','edit','logout','create','store','update')));
 		$this->beforeFilter('edit_user',array('except' => array('doLogin','showLogin','edit','logout','create','store','update')));
 	}
