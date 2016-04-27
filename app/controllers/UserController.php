@@ -1,86 +1,241 @@
 <?php
 
-class UserController extends \BaseController {
+class UserController extends BaseController {
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		//
+	public function avatarUpload(){
+
+		if (Input::hasFile('image'))
+		{
+			//object, not string or number like 'get'
+			$image = Input::file('image');
+			//temp folder to file system on server where app is running
+            $image->move(public_path('/img'),$image->getClientOriginalName());
+            $user->image = "/img/{$image->getClientOriginalName()}";
+            $user->save();
+            return Redirect::action('PostsController@index');
+    	}
 	}
 
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
+	private function userNotFound(){
+
+		return App::abort(404);
+	}
+
+	public function __construct(){
+
+		$this->beforeFilter('auth',array('except' => array('showUserCreate','doLogin','showLogin','edit','logout','create','store','update')));
+		$this->beforeFilter('admin',array('except' => array('doLogin','showLogin','edit','logout','create','store','update')));
+		$this->beforeFilter('edit_user',array('except' => array('doLogin','showLogin','edit','logout','create','store','update')));
+	}
+
+	public function doLogin(){
+
+	   	$validator = Validator::make(Input::all(), User::$rules);
+
+	   	if ($validator->fails()){
+
+			return Redirect::back()->withInput()->withErrors($validator);
+
+	   	}
+
+
+	  	 if(Auth::attempt(array('email' => Input::get('email'), 'password' => Input::get('password')))){
+	  	 	//to index
+	   		return Redirect::intended('/posts');
+
+	  	}
+
+
+	  	else{
+
+	   		Session::flash('errorMessage', 'Your email or password was not correct');
+
+	   		return Redirect::back()->withInput();
+	  	}
+
+	}
+
+	public function logOut(){
+
+	    Auth::logout();
+
+	    return Redirect::action('posts.index');
+	}
+	
+	public function showUserCreate(){
+
+	     return View::make('users.userscreate');
 	}
 
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
+	public function validateAndSaveNewUser (){
+		
+	    $validator = Validator::make(Input::all(), User::$newUserRules);
+
+	    if ($validator->fails()) {
+
+	       Session::flash('errorMessage','All fields must be filled in.');	
+
+	       return Redirect::back()->withInput()->withErrors($validator);
+
+	    } else {
+	      
+	      	$user = new User();
+
+			$user->first_name = Input::get('first_name');
+
+			$user->last_name = Input::get('last_name');
+
+			$user->email = Input::get('email');
+
+			//hashing where?
+			$password1 = Input::get('password');
+
+			$password2 = Input::get('confirmPassword');
+			
+
+			if($password1 == $password2){
+
+				$user->password = $password1;
+
+				$user->save();
+
+				Session::flash('successMessage','Account creation successful. Thank you.');
+
+				return Redirect::action('UserController@showUserAccount', $user->id);
+
+
+			} else{
+
+
+				Session::flash('errorMessage','Account creation was unsuccessful.');
+
+				return Redirect::action('UserController@showUserCreate');
+
+			}
+			
+			
+	    }
+
 	}
 
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
+	public function showUserAccount(){
+
+		$user = Auth::user();
+
+	     return View::make('users.account')->with('user', $user);
 	}
 
 
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
+	public function validateEditAndSaveUserAccount($user){
+
+		
+	    $validator = Validator::make(Input::all(), User::$editUserRules);
+
+	   
+	    if ($validator->fails()) {
+
+	       Session::flash('errorMessage','All fields must be filled in.');	
+
+	       return Redirect::back()->withInput()->withErrors($validator);
+
+	    } else {
+	      
+	      	$user->first_name = Input::get('first_name');
+
+	      	$user->last_name = Input::get('last_name');
+
+	      	$user->email = Input::get('email');
+
+	      	$user->save();
+
+	      	return Redirect::action('PostsController@index');
+			
+	    }
+
+	}
+	  
+
+	public function editUserAccount($id){
+
+		$user = User::find($id);
+
+		if(is_null($user)){
+
+			return $this->userNotFound();
+		}
+
+		return $this->validateEditAndSaveUserAccount($user);
+	}	 
+
+	private function validateAndSavePassword ($user){
+
+		// create the validator
+	    $validator = Validator::make(Input::all(), User::$changePasswordRules);
+
+	    // attempt validation
+	    if ($validator->fails()) {
+
+	       Session::flash('errorMessage','Password change has failed.');	
+
+	       return Redirect::back()->withInput()->withErrors($validator);
+
+	    } else {
+	      
+			$password1 = Input::get('password');
+
+			$password2 = Input::get('confirmPassword');
+			
+
+			if($password1 == $password2){
+
+
+				$user->password = $password1;
+
+				$user->save();
+
+				Session::flash('successMessage','Password was changed successfully.');
+
+				return Redirect::action('UserController@showUserAccount', $user->id);
+
+
+			} else{
+
+
+				Session::flash('errorMessage','Passwords do not match. Try again, please.');
+
+				return Redirect::action('UserController@showChangePassword');
+
+			}
+			
+			
+	    }
+
 	}
 
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
+
+	public function showChangePassword($id){
+
+		$user = User::find($id);
+
+		return View::make('users.changePassword')->with('user', $user);
+		// return View::make('users.changePassword')->with([ "user" => $user]);
+	   
 	}
 
+	public function doChangePassword($id){
 
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
+		$user = User::find($id);
 
+		if(is_null($user)){
+
+			return $this->userNotFound();
+		}
+
+		return $this->validateAndSavePassword($user);
+	}	   
 
 }
