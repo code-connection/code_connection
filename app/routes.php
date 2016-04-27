@@ -15,7 +15,7 @@ Route::get('/comments/create/{id}','CommentsController@showCreate');
 
 Route::get('/users/account','UserController@avatarUpload');
 
-
+Route::get('/posts/allposts', 'PostsController@showAllPosts');
 
 Route::get('/posts/userposts/{id}','PostsController@showUserPosts');
 
