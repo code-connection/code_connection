@@ -19,8 +19,14 @@
     		    <textarea type="text" class="form-control form1"  name="last_name"  aria-describedby="basic-addon1"></textarea>
     		    <h3 class="sign-placeholders">Email</h3>
     		    <textarea type="text" class="form-control form1"  name="email"  aria-describedby="basic-addon1"></textarea>
+                 <h3 class="sign-placeholders">City</h3>
+                <textarea type="text" class="form-control form1"  name="city"  aria-describedby="basic-addon1"></textarea>
+                 <h3 class="sign-placeholders">State</h3>
+                <textarea type="text" class="form-control form1"  name="state"  aria-describedby="basic-addon1"></textarea>
+
     		    <h3 class="sign-placeholders">Password</h3>
-    		    <textarea type="password" class="form-control form1"  name="password"  aria-describedby="basic-addon1"></textarea>
+    		    <textarea type="password" class="form-control form1"  name="
+                password"  aria-describedby="basic-addon1"></textarea>
     		     <h3 class="sign-placeholders">Confirm Password</h3>
     		    <textarea type="password" class="form-control form1" name="confirmPassword" aria-describedby="basic-addon1"></textarea>
     		    <button  id="profile-create" type="submit" class="btn btn-default">sign up</button>

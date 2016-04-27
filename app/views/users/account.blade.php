@@ -78,6 +78,11 @@
 
 		    <h3 class="sign-placeholders">Email</h3>
 		    <textarea type="text" class="form-control form1"  name="email" aria-describedby="basic-addon1">{{$user->email}}</textarea>
+		    <h3 class="sign-placeholders">City</h3>
+            <textarea type="text" class="form-control form1"  name="city"  aria-describedby="basic-addon1"></textarea>
+            <h3 class="sign-placeholders">State</h3>
+            <textarea type="text" class="form-control form1"  name="state"  aria-describedby="basic-addon1"></textarea>
+
 		    <br>
 		    <button  id="edit-btn" type="submit" class="btn btn-default">Submit</button>
 		{{Form::close()}}
