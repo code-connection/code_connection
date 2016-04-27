@@ -89,6 +89,10 @@ class UserController extends BaseController {
 
 			$user->email = Input::get('email');
 
+			$user->city = Input::get('city');
+
+			$user->state = Input::get('state');
+
 			//hashing where?
 			$password1 = Input::get('password');
 
@@ -148,6 +152,10 @@ class UserController extends BaseController {
 	      	$user->last_name = Input::get('last_name');
 
 	      	$user->email = Input::get('email');
+
+	      	$user->city = Input::get('city');
+
+			$user->state = Input::get('state');
 
 	      	$user->save();
 
