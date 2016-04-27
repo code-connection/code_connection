@@ -1,0 +1,98 @@
+
+
+.navbar-default {
+	background-color: #506378;
+	border: 0px ;
+	padding: 10px;
+	margin: 0;
+
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+	border: 0px ;
+	margin-bottom: 1px;
+}
+
+.navbar-default .navbar-nav>li>a {
+	color:#F1F1F1;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+		text-decoration: none;
+
+		padding:10, 25;
+		color:#405060;
+		-webkit-transition: all 500ms ease;
+		-moz-transition: all 500ms ease;
+		-ms-transition: all 500ms ease;
+		-o-transition: all 500ms ease;
+		transition: all 500ms ease;
+}
+
+	
+	
+.nav-text {
+	color:white;
+	font-size: 1.2em;
+}
+
+.about {
+	background-color: grey;
+
+}
+
+#carousel-example-generic {
+	position:relative;
+}
+
+.carousel-inner {
+	position:relative;
+   	height: 30em;
+}
+
+.carousel-control.left {
+    background-image: -webkit-linear-gradient(left,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);
+    background-image: -o-linear-gradient(left,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);
+    background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.5)),to(rgba(0,0,0,.0001)));
+    background-image: linear-gradient(to right,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+    background-repeat: repeat-x;
+    height: 15em;
+    margin-top: 3.6em;
+    width:1.5em;
+   
+}
+
+.carousel-control.right {
+    background-image: -webkit-linear-gradient(left,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);
+    background-image: -o-linear-gradient(left,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);
+    background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.5)),to(rgba(0,0,0,.0001)));
+    background-image: linear-gradient(to right,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+    background-repeat: repeat-x;
+    height: 15em;
+    margin-top: 3.6em;
+    width:1.5em;
+}
+
+ .modal-content{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+
+}
+
+#sign-in-btn {
+    text-align: center;
+    margin: auto;
+    position: relative;
+   
+}
+
+.modal.fade.bs-example-modal-sm, .modal-content{
+	text-align: center;
+}
+	
+
+	
