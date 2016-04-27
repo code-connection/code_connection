@@ -236,6 +236,11 @@ class UserController extends BaseController {
 		}
 
 		return $this->validateAndSavePassword($user);
+	}
+
+	public function showIndex()
+	{
+		return View::make('users.index');
 	}	   
 
 }
