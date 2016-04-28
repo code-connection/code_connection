@@ -24,7 +24,7 @@ class UserController extends BaseController {
 
 	public function __construct(){
 
-		$this->beforeFilter('auth',array('except' => array('index','showUserCreate','doLogin','showLogin','edit','logout','create','store','update')));
+		$this->beforeFilter('auth',array('except' => array('index','showUserCreate','doLogin','showLogin','edit','logout','create','store','update', 'validateAndSaveNewUser')));
 		$this->beforeFilter('admin',array('except' => array('doLogin','showLogin','edit','logout','create','store','update')));
 		$this->beforeFilter('edit_user',array('except' => array('doLogin','showLogin','edit','logout','create','store','update')));
 	}
@@ -99,30 +99,29 @@ class UserController extends BaseController {
 			$password2 = Input::get('confirmPassword');
 			
 
-			if($password1 == $password2){
+	
 
 				$user->password = $password1;
 
-				$user->save();
+				$result = $user->save();
 
-				Session::flash('successMessage','Account creation successful. Thank you.');
+				if($result) {
+					$loggedIn = Auth::attempt([
+						'email' => Input::get('email'),
+						'password' => Input::get('password')]);
+					}
+					if($loggedIn) {
+						Session::flash('successMessage','Account creation successful. Thank you.');
+						return Redirect::action('PostsController@showAllPosts', $user->id);
+					}
+				
 
-				return Redirect::action('UserController@showUserAccount', $user->id);
-
-
-			} else{
-
-
-				Session::flash('errorMessage','Account creation was unsuccessful.');
-
-				return Redirect::action('UserController@showUserCreate');
-
-			}
+			} 
 			
 			
 	    }
 
-	}
+
 
 
 	public function showUserAccount(){
