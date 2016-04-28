@@ -93,6 +93,51 @@
 .modal.fade.bs-example-modal-sm, .modal-content{
 	text-align: center;
 }
-	
+
+.fa {
+	color: #F1F1F1;
+}
+
+.fa:hover {
+	color: #89b2ae;
+	-webkit-transition: all 500ms ease;
+	-moz-transition: all 500ms ease;
+	-ms-transition: all 500ms ease;
+	-o-transition: all 500ms ease;
+	transition: all 500ms ease;
+}
+
+.programmers {
+	border: 1px solid;
+    border-color: transparent;
+    border-radius: 10px;
+
+}
+
+.thumbnail {
+	 background-color: #6c8096;
+    border: 1px solid transparent;
+    border-radius: 10px;
+   
+	 
+}
+
+.thumbnail .caption {
+	color:#F1F1F1;
+}
+
+.panel-primary>.panel-heading {
+    color: #fff;
+    border-color: #337ab7;
+    background-color: #6c8096;
+    padding: 10px 15px;
+}
+
+.basic-info {
+	background-color: #F1F1F1;
+    height: 5em;
+    color: #4f4e4e;
+
+}
 
 	
