@@ -25,6 +25,18 @@ class UserTableSeeder extends Seeder{
 
 
 
+		$user3 = new User();
+		$user3->first_name = 'Trey';
+		$user3->last_name = 'Sowers';
+		$user3->email = 'treygvs1@hotmail.com';
+		$user3->password = 'Connection531$';
+		$user3->city = 'San Antonio';
+		$user3->state = 'TX';
+		$user3->save();
+
+
+
+
 	}
 
 }
