@@ -7,10 +7,6 @@
         background-color: #f2f2f2;
     }
 
-    textarea:focus {
-        
-    }
-
     </style>
     <title>Create New User</title>
 

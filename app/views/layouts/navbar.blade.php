@@ -8,11 +8,10 @@
 				<div class="sign-in">
 					<h2 class="sign-txt"><b>Log in below: </b></h2>
 						
-						<input  class="logmodal" id="email" type="text" placeholder="Enter your e-mail" name="email">
+						{{ Form::email('email',null,['class'=> 'form-control',
+						'placeholder'=>"Enter email"]) }}
 						<br>
-						<br>
-						<input class="logmodal" id="password" type="password" placeholder="Enter your password" name="password" >
-						<br>
+						{{ Form::password('password',['class'=> 'form-control', 'placeholder'=>"Enter password"]) }}
 						<br>
 						{{ Form::submit('Log In Here', ['id' => "sign-in-btn" ,'type'=> "submit" ,'name' =>'log-in' ,'value' => 'true', 'class' => "btn btn-default"]) }}
 						{{ Form::close() }}
