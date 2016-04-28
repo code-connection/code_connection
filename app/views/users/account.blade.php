@@ -70,22 +70,51 @@
 
 		{{ Form::open(array('action' => array('UserController@editUserAccount', $user->id), 'method' => 'POST', 'class' => 'form-horizontal')) }} 
 		 		 
-			<h3 class="sign-placeholders">First Name</h3>
-		    <textarea type="text" class="form-control form1"  name="first_name" aria-describedby="basic-addon1">{{$user->first_name}}</textarea>
+			{{ Form::label('first name', 'First name') }}
+		{{ Form::text('first_name', null,['class'=> 'form-control']) }}
+		@if ($errors->has('first_name'))
+		<p>{{$errors->first('first_name')}}</p>
+		@endif
 
-		    <h3 class="sign-placeholders">Last Name</h3>
-		    <textarea type="text" class="form-control form1"  name="last_name" aria-describedby="basic-addon1">{{$user->last_name}}</textarea>
+		{{ Form::label('last_name', 'Last Name') }}
+		{{ Form::text('last_name', null,['class'=> 'form-control', 'placeholder'=>"put what you like"]) }}
+		@if ($errors->has('last_name'))
+		<p>{{{$errors->first('last_name')}}}</p>
+		@endif
 
-		    <h3 class="sign-placeholders">Email</h3>
-		    <textarea type="text" class="form-control form1"  name="email" aria-describedby="basic-addon1">{{$user->email}}</textarea>
-		    <h3 class="sign-placeholders">City</h3>
-            <textarea type="text" class="form-control form1"  name="city"  aria-describedby="basic-addon1">{{$user->city}}</textarea>
-            <h3 class="sign-placeholders">State</h3>
-            <textarea type="text" class="form-control form1"  name="state"  aria-describedby="basic-addon1">{{$user->state}}</textarea>
+		{{ Form::label('email', 'Email') }}
+		{{ Form::text('email', null,['class'=> 'form-control', 'placeholder'=>"put what you like"]) }}
+		@if ($errors->has('email'))
+		<p>{{{$errors->first('email')}}}</p>
+		@endif
+	
+		{{ Form::label('city', 'City') }}
+		{{ Form::text('city', null,['class'=> 'form-control', 'placeholder'=>"put what you like"]) }}
+		@if ($errors->has('city'))
+		<p>{{{$errors->first('city')}}}</p>
+		@endif
 
-		    <br>
-		    <button  id="edit-btn" type="submit" class="btn btn-default">Submit</button>
+		{{ Form::label('state', 'State') }}
+		{{ Form::text('state', null,['class'=> 'form-control', 'placeholder'=>"put what you like"]) }}
+		@if ($errors->has('state'))
+		<p>{{{$errors->first('state')}}}</p>
+		@endif
+		
+		<br>
+		<a href="{{{action('UserController@showChangePassword')}}}">Change Password</a>
+		<br>
+		<br>
+		<div class = "form-group">
+			{{ Form::label('image', 'Image') }}
+			{{ Form::file('image') }}
+		</div>
+		@if ($errors->has('image'))
+		<p>{{$errors->first('image')}}</p>
+		@endif
+		<button type="submit" class="btn btn-default" name="save" value="save">update</button>
 		{{Form::close()}}
+
+		
 
 		</div>  <!-- end col-md-8 -->
 

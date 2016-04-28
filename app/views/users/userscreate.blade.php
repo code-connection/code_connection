@@ -23,6 +23,7 @@
             transition: all 500ms ease;
         }
     </style>
+    <link rel='stylesheet' href='/js/chosen.css'>
 
 @stop
 
@@ -89,7 +90,7 @@
             <div class="form-group ">
               <label for="state" class="control-label col-sm-3">State</label>
               <div class="col-sm-6">
-                <input class="form-control" name="state" type="text" id="state">           
+                  <select class="form-control state" name="state" id="state"></select>
               </div>
             </div>
                  @if ($errors->has('state'))
@@ -109,10 +110,14 @@
             <div class="form-group ">
               <label for="password_confirmation" class="col-sm-3 control-label">Confirm Password</label>
               <div class="col-sm-6">
-                <input class="form-control" name="password_confirm" type="password" value="" id="confirmPassword">
+                <input class="form-control password_confirm" name="password_confirmation" type="password" value="" id="confirmPassword">
               </div>
             </div>
+
               <button  id="profile-create" type="submit" class="btn btn-default">sign up</button>
+             
+
+
      {{Form::close()}}
 </div>
   </div>
@@ -124,6 +129,14 @@
 @stop
 
 @section('bottom-script')
+<script src="/js/countries.js"></script>
+<script src="/js/chosen.jquery.min.js"></script>
+<script language="javascript">
+
+populateStates("state");
+$(".state").chosen(); 
+
+</script>
 
 @stop
 	

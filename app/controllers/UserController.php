@@ -96,7 +96,7 @@ class UserController extends BaseController {
 			//hashing where?
 			$password1 = Input::get('password');
 
-			$password2 = Input::get('confirmPassword');
+			$password2 = Input::get('password_confirm');
 			
 
 	
