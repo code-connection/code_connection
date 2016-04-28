@@ -17,6 +17,8 @@
 
         <p class="show-page-paragraph">Written by: {{{ $post->user->first_name . " " . $post->user->last_name }}}</p>
 
+        <p class="show-page-paragraph">Location: {{{$post->user->city .','. $post->user->state}}}</p>
+
         <p class="show-page-paragraph">Created on: {{{ $post->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i:s A')}}} </p>
 
         @foreach($post->comments as $value)

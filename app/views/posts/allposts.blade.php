@@ -24,7 +24,9 @@
 
 	    	<p class="main"><a  href="{{{ action('PostsController@show', $post->id) }}}">Post Title: {{{$post->title}}}</a></p><br>
 
-	    	<p class="main index author">author: {{{$post->user->last_name}}}</p>
+	    	<p class="main index author">Author: {{{$post->user->last_name}}}</p>
+
+	    	<p class="main index author">Location: {{{$post->user->city .','. $post->user->state}}}</p>
 
 	    @endforeach
 

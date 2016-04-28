@@ -54,20 +54,21 @@
 	
 	<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<script src="/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
-	<script>
-		var simplemde = new SimpleMDE({ element: document.getElementById("body") });
-	</script>
 
 	<script>
-		var simplemde = new SimpleMDE({ element: document.getElementById("comment") });
-	</script>
+		if ($("#body").length != 0) {
+			var simplemde = new SimpleMDE({ element: $("#body").get(0) });
+		}
 
-	<script>
+		if ($("#comment").length != 0) {
+		 	var simplemde = new SimpleMDE({ element: $("#comment").get(0) });
+		}
 
 		setTimeout(function(){
 			$(".alert").slideUp(1000);
 		},1000)
+
+		
 
 	</script>
 
