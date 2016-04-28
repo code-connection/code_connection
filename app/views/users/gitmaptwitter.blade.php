@@ -453,8 +453,8 @@ function getGitHubData(language,address){
                     console.log(typeof(language));
                     console.log(address+"for twitter below");
 
-                $.get('/ajax/returnTweets',{lat: lat, long: long, language: language}),function(d){
-                    
+                $.get("https://api.twitter.com/1.1/search/tweets.json?geocode="+lat+","+long+",60mi&count=100&q="+language),function(d){
+
 
                     alert("twitter get call completed successfully!");
                     console.log("Data returned from server:");
