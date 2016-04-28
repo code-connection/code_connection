@@ -2,6 +2,13 @@
 
 class UserController extends BaseController {
 
+
+	public function showGitMapTwitter(){
+
+		return View::make('users.gitmaptwitter');
+
+	}
+
 	public function avatarUpload(){
 
 		if (Input::hasFile('image'))

@@ -21,6 +21,11 @@ Route::get('/posts/userposts/{id}','PostsController@showUserPosts');
 
 Route::get('/','PostsController@index');
 
+Route::get('/ajax/returntweets','TwitterController@returnTweets');
+
+
+Route::get('/users/gitmaptwitter','UserController@showGitMapTwitter');
+
 
 Route::get('/users/account/{id}','UserController@showUserAccount');
 

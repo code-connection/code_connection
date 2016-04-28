@@ -58,6 +58,8 @@
 
 					<li><a class="nav-text" href="{{{ action('PostsController@create')}}}" >Create Post</a></li>
 
+					<li><a class="nav-text" href="{{{ action('UserController@showGitMapTwitter')}}}" >Map</a></li>
+
 					<li><a class="nav-text" href="{{{ action('PostsController@showAllPosts')}}}" >All Posts</a></li>
 
 					<li><a class="nav-text" href="{{{ action('PostsController@index')}}}" >Home</a></li>
