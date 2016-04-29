@@ -22,6 +22,10 @@
             -o-transition: all 500ms ease;
             transition: all 500ms ease;
         }
+
+        .fa-user {
+            color:#4F4E4E;
+        }
     </style>
     <link rel='stylesheet' href='/js/chosen.css'>
 
@@ -43,7 +47,8 @@
 
       {{ Form::open(['action' => 'UserController@validateAndSaveNewUser', 'method'=>'POST', 'class'=>'form-horizontal']) }}
 
-            <h4 class='basic-info'>Basic Info</h4>
+            <h4 class='basic-info'> <i class="fa fa-user fa-1x" aria-hidden="true"></i> Basic Info </h4>
+            
 
             <div class="form-group ">
               <label for="first_name" class="control-label col-sm-3">First Name</label>
