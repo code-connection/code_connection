@@ -447,13 +447,9 @@ function getGitHubData(language,address){
                     alert("Geocoding was not successful - STATUS: " + status);
 
                 }
+                    
 
-                
-                    console.log(language);
-                    console.log(typeof(language));
-                    console.log(address+"for twitter below");
-
-                $.get("https://api.twitter.com/1.1/search/tweets.json?geocode="+lat+","+long+",60mi&count=100&q="+language),function(d){
+                $.get('/ajax/returntweets',{language: language, count: "100", geocode: lat+long+60mi}).done(function(d){
 
 
                     alert("twitter get call completed successfully!");
