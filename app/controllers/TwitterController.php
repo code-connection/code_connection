@@ -9,6 +9,9 @@ class TwitterController extends BaseController {
 	public function returnTweets(){
 
 		$input = Input::all();
+		$geocode = Input::get('geocode');
+		$count = Input::get('count');
+		$language = Input::get('language');
 
 
 		//validator for both count and language
@@ -20,9 +23,9 @@ class TwitterController extends BaseController {
 		
 
 		//GET "https://api.twitter.com/1.1/search/tweets.json?geocode="+lat+","+long+",60mi&count=100&q="+language"
-		$d = $connection->get("search/tweets", ["count" => 100, "q" => $input['language'], "geocode" => $input['lat'],$input['long'],60mi ]);
+		$statuses = $connection->get("search/tweets", ["geocode" => $geocode, "count" => $count, "q" => $language]);
 
-		return Response::json($d->statuses);
+		return Response::json($statuses);
 	}
 
 }
