@@ -503,26 +503,26 @@ function getGitHubData(language,address){
              $.get('/ajax/returnmeetups',{
                     city: address,
                     text: language
-                }).done(function(e){
+                }).done(function(events){
+                    console.log(events);
 
 
                     alert("Meetups get call completed successfully!");
                     console.log("Meetup data from server below:");
-                   
-                   
-                
                     
-                //     e.events.forEach(function (element, index, array) {
+                    events.forEach(function (element, index, array) {
                     
-                //     var meetupResults = ""
-                //     meetupResults += "<div>"
-                //     meetupResults += "<p>"+"Event Name"+element.name+"<p>"
+                    var meetupResults = ""
+                    meetupResults += "<div>"
+                    meetupResults += "<p>"+"Event Name"+element.name+"<p>"
+                    meetupResults += "<a>"+element.event_url+"</a>"
+                    meetupResults += "</div>"
                     
 
-                //     $("#meetupResults").append(meetupResults);
+                    $("#meetupResults").append(meetupResults);
                  
 
-                // }); //end foreach
+                }); //end foreach
                 
             }).fail(function() {
                 alert("There was an error!");
