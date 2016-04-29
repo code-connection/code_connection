@@ -7,18 +7,58 @@
     <title>User Comments </title>
     
      <style>
-    .btn {
+        .container {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
 
-        margin: 0px 0px 20px 0px;
+        .panel-default .panel-heading {
+            background-color: #6C8096;
+            border-color: #506378;
+            color: #F1F1F1;
+        }
 
-    }
+        .panel-body {
+            border: 1.5px solid;
+            border-color: #506378;
+        }
 
-    #buttons{
+        .account-txt {
+            padding-bottom: 30px;
+        }
 
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
+        textarea {
+            resize: none;
+        }
+
+        .btn-default {
+            background-color: #F67366;
+            color:white;
+        }
+
+        .btn-default:hover {
+            background-color: #F67366;
+            color:white;
+            -webkit-transition: all 500ms ease;
+            -moz-transition: all 500ms ease;
+            -ms-transition: all 500ms ease;
+            -o-transition: all 500ms ease;
+            transition: all 500ms ease;
+        }
+
+   
+        .btn {
+
+            margin: 0px 0px 20px 0px;
+
+        }
+
+        #buttons{
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
 
     </style>
 
@@ -26,35 +66,39 @@
 
 
 @section('content')
-    <div class="sign-up-form container">    
-        <div class="col-md-4 sign-up-txt"><h1 id="sign-up-direction">{{$user->first_name}}'s Comments</h1></div>
-        <div class="col-md-8"> 
-        
-            <h3 class="sign-placeholders"></h3>
-                
-                @foreach($user->comments as $comment)
 
-                    {{ Form::model($comment, array('action'=> array('CommentsController@update',$comment->id), 'method'=>'PUT', 'class' => 'form-horizontal')) }}
+<div class="container"> 
+    <div class="panel panel-default">
+            <div class="panel-heading"><h1 id="sign-up-direction">{{$user->first_name}}'s Comments</h1></div> 
+            <div class="panel-body">
+                <div class="col-md-12 account-txt">
+                    <h3 class="sign-placeholders"></h3>
+                        
+                        @foreach($user->comments as $comment)
 
-                        <textarea type="text" class="form-control form1" name="comment"  aria-describedby="basic-addon1">{{{$comment->comment}}}</textarea>
+                            {{ Form::model($comment, array('action'=> array('CommentsController@update',$comment->id), 'method'=>'PUT', 'class' => 'form-horizontal')) }}
 
-                       
-                        <div id="buttons">
-                            <button name="update-comment" value="update" type="submit" class="btn btn-default">Edit Comment</button>
+                                <textarea type="text" class="form-control form1" name="comment"  aria-describedby="basic-addon1">{{{$comment->comment}}}</textarea>
 
-                    {{Form::close()}}
+                               
+                                <div id="buttons">
+                                    <button name="update-comment" value="update" type="submit" class="btn btn-default">Edit Comment</button>
 
-                    {{ Form::model($comment, array('action'=> array('CommentsController@destroy',$comment->id), 'method'=>'DELETE', 'class' => 'form-horizontal')) }}
-                            
-                            <button  name="delete-comment" value="delete" type="submit" class="btn btn-default">Delete Comment</button>
-                        </div>
+                            {{Form::close()}}
 
-                    {{Form::close()}}
+                            {{ Form::model($comment, array('action'=> array('CommentsController@destroy',$comment->id), 'method'=>'DELETE', 'class' => 'form-horizontal')) }}
+                                    
+                                    <button  name="delete-comment" value="delete" type="submit" class="btn btn-default">Delete Comment</button>
+                                </div>
 
-                 @endforeach
-           
-        </div>
+                            {{Form::close()}}
+
+                         @endforeach
+                </div>
+            </div>     
     </div>
+</div>
+
 @stop
 
 @section('bottom-script')
