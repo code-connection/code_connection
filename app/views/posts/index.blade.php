@@ -19,17 +19,13 @@
 	  <div class="carousel-inner" role="listbox">
 	    <div class="item active">
 	      <img src="/img/Acadia.jpg" alt="...">
-	      <div class="carousel-caption">
-	        ...
-	      </div>
+	      
 	    </div>
 	    <div class="item">
 	      <img src="/img/Acadia.jpg" alt="...">
-	      <div class="carousel-caption">
-	        ...
-	      </div>
+	      
 	    </div>
-	    ...
+	  
 	  </div>
  </div>	  
 </div>
@@ -45,8 +41,8 @@
 
 
 	<div class='container mission-statement'>
-	   <div class="row">
-            <div class="col-sm-8">
+	   <div class="row gray-box">
+            <div class="col-sm-8 ">
                 <h2>What We Do</h2>
                 <p>Bringing developers together</p>
                 <p>to understand their current and potential environments.</p>
