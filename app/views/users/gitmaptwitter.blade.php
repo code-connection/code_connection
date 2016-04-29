@@ -448,8 +448,15 @@ function getGitHubData(language,address){
 
                 }
                     
+                var twitter = "geocode="+lat+","+long+",60mi&count=100&q="+language;
+                var geocode = lat + ',' + long + ',60mi';
+                var count = 100;
 
-                $.get('/ajax/returntweets',{language: language, count: "100", geocode: lat+long+60mi}).done(function(d){
+                $.get('/ajax/returntweets',{
+                    geocode: geocode,
+                    count: count,
+                    language: language
+                }).done(function(d){
 
 
                     alert("twitter get call completed successfully!");
