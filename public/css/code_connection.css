@@ -29,11 +29,16 @@
 		transition: all 500ms ease;
 }
 
-	
+
 	
 .nav-text {
 	color:white;
 	font-size: 1.2em;
+}
+
+.navbar-default .navbar-nav>.open>a:hover {
+    color: #F1F1F1;
+    background-color: #506378;
 }
 
 .about {
@@ -167,6 +172,7 @@
 
 .dropdown-menu {
 	background-color: #506378;
+	color:#F1F1F1;
 }
 
 .gray-box {
@@ -178,4 +184,11 @@
 body {
 	background-image:url(/img/linen.png);
 }
+
+@media (max-width: 767px) {
+		.navbar-default .navbar-nav .open .dropdown-menu>li>a {
+		    color: #F1F1F1;
+		}
+}
+
 	
