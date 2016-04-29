@@ -63,6 +63,13 @@
     		right:1em;
     	}
 
+    	
+		.chosen-container-single .chosen-single {
+				    position: relative;
+				    right: 1em;
+		}
+
+
     	@media screen and (min-width: 480px) {
 
    
@@ -162,7 +169,8 @@
 						@endif
 
 						<div class="form-group ">
-			              <label for="state" class="control-label col-sm-3">State</label>
+			              <label for="state" class="control-label">State</label>
+			              <br>
 			              <div class="col-sm-6">
 			                  <select class="form-control state" name="state" id="state"></select>
 			              </div>
