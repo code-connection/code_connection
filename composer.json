@@ -6,7 +6,8 @@
 	"type": "project",
 	"require": {
 		"laravel/framework": "4.2.*",
-		"abraham/twitteroauth": "^0.6.4"
+		"abraham/twitteroauth": "^0.6.4",
+		"blobaugh/meetup-api-client": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
