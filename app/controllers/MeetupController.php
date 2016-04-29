@@ -16,7 +16,7 @@ class MeetupController extends BaseController {
 		$text = Input::get('text');
 
 		$api_key = $_ENV['MEETUP_API_KEY'];
-		var_dump($api_key);
+		
 
 		$connection = new MeetupKeyAuthConnection($api_key);
 
@@ -24,12 +24,12 @@ class MeetupController extends BaseController {
 
 		$events = $m->getOpenEvents( array( 'text' => $text, 'city' => $city));
 
-		foreach($events as $e) {
+		// foreach($events as $e) {
     
-    		echo $e['name'] . " at " . date(DATE_W3C, $e['time']/1000) . "<br>";
-		}
+  //   		echo $e['name'] . " at " . date(DATE_W3C, $e['time']/1000) . "<br>";
+		// }
 
-		// return Response::json($events->$e);
+		return Response::json($events);
 		
 	}
 
