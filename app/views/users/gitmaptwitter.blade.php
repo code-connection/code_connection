@@ -195,7 +195,10 @@ header{
        
 
         </div>
-
+        <br>
+        <br>
+        <div id="meetupResults">
+        </div>
 
      <!--html here-->
 
@@ -448,7 +451,7 @@ function getGitHubData(language,address){
 
                 }
                     
-                var twitter = "geocode="+lat+","+long+",60mi&count=100&q="+language;
+               
                 var geocode = lat + ',' + long + ',60mi';
                 var count = 100;
 
@@ -490,6 +493,42 @@ function getGitHubData(language,address){
             }).always(function() {
                 alert("And we're finished!");
             }); //end ajax twittter
+
+
+
+
+            console.log(address);
+            console.log(language);
+
+             $.get('/ajax/returnmeetups',{
+                    city: address,
+                    text: language
+                }).done(function(e){
+
+
+                    alert("Meetups get call completed successfully!");
+                    console.log("Meetup data from server below:");
+                   
+                   
+                
+                    
+                //     e.events.forEach(function (element, index, array) {
+                    
+                //     var meetupResults = ""
+                //     meetupResults += "<div>"
+                //     meetupResults += "<p>"+"Event Name"+element.name+"<p>"
+                    
+
+                //     $("#meetupResults").append(meetupResults);
+                 
+
+                // }); //end foreach
+                
+            }).fail(function() {
+                alert("There was an error!");
+            }).always(function() {
+                alert("And we're finished!");
+            }); //end ajax meetup
 
         }); //end geocoder
 
