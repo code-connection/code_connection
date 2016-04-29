@@ -5,7 +5,7 @@ class PostsController extends \BaseController {
 
 	public function showUserPosts($id){
 
-		$user = User::find($id);
+		$user = User::find($id)->paginate(4);
 
 		return View::make('posts.userposts',['user' => $user]);
 	}
