@@ -99,7 +99,7 @@
 }
 
 .fa:hover {
-	color: #96D1D0;
+	color: #96b7a3;
 	-webkit-transition: all 500ms ease;
 	-moz-transition: all 500ms ease;
 	-ms-transition: all 500ms ease;
@@ -108,9 +108,11 @@
 }
 
 .programmers {
-	border: 1px solid;
-    border-color: transparent;
+	 border: 5px solid;
+    border-color: #F1F1F1;
     border-radius: 10px;
+    margin-top: 2em;
+
 
 }
 
@@ -118,7 +120,7 @@
 	 background-color: #6c8096;
     border: 1px solid transparent;
     border-radius: 10px;
-   
+
 	 
 }
 
@@ -137,7 +139,43 @@
 	background-color: #F1F1F1;
     height: 5em;
     color: #4f4e4e;
+    padding-top: 1.8em;
+    padding-left: 1.2em;
 
 }
 
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    color:#485869;
+    background-color: #506378;
+}
+
+.dropdown-menu>li>a {
+	background-color: #506378;
+    color: #F1F1F1;
+    margin-top: 0px;
+}
+
+.dropdown-menu>li>a:hover {
+	background-color: #506378;
+    color: #485869;
+    -webkit-transition: all 500ms ease;
+	-moz-transition: all 500ms ease;
+	-ms-transition: all 500ms ease;
+	-o-transition: all 500ms ease;
+	transition: all 500ms ease;
+}
+
+.dropdown-menu {
+	background-color: #506378;
+}
+
+.gray-box {
+	background-color: #F1F1F1;
+	color: #4f4e4e;
+	margin:20px 0px 20px 0px;
+}
+
+body {
+	background-image:url(/img/linen.png);
+}
 	
