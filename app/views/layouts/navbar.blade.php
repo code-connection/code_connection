@@ -66,7 +66,7 @@
 
 					<li><a class="nav-text" href="{{{ action('UserController@logOut') }}}" >Logout</a></li>
 
-					
+
 			</ul>
 		 			  
 			 		{{Form::open(['action' => 'PostsController@index', 'method'=>'GET', 'class'=>'form-horizontal'])}}
