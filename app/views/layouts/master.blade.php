@@ -16,10 +16,9 @@
 
 	<script src="//cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
 
-  
-
-
   	
+
+
     
     @yield('top-script')
 </head>

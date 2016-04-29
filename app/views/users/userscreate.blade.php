@@ -2,7 +2,12 @@
 
 
 @section('top-script')
+    <style>
+    body {
+        background-color: #f2f2f2;
+    }
 
+    </style>
     <title>Create New User</title>
 
     <style>
