@@ -4,95 +4,194 @@
 	 <title>Accounts Page</title>
 
     @section('top-script')
+
+    <style>
+
+		.container {
+			margin-top: 20px;
+			margin-bottom: 50px;
+		}
+
+    	.panel-default .panel-heading {
+			background-color: #6C8096;
+			border-color: #506378;
+			color: #F1F1F1;
+    	}
+
+    	h3 {
+			margin-top: 6px;
+    	}
+
+    	.account-box {
+    		background-color: #F1F1F1;
+    		color: #777777;
+    		padding: 15px;
+
+    		margin-bottom: 20px;
+    	}
+
+    	.account-info {
+    		padding-top: 15px;
+    		padding-bottom: 30px;
+    	}
+
+    	.btn-default {
+			background-color: #F67366;
+			color:white;
+    	}
+
+    	.btn-default:hover {
+			background-color: #F67366;
+			color:white;
+			-webkit-transition: all 500ms ease;
+			-moz-transition: all 500ms ease;
+			-ms-transition: all 500ms ease;
+			-o-transition: all 500ms ease;
+			transition: all 500ms ease;
+    	}
+
+    	.account-txt {
+    		padding-bottom: 30px;
+    	}
+
+    	.panel-body {
+    		border: 1.5px solid;
+    		border-color: #506378;
+    	}
+
+    	.state {
+    		right:1em;
+    	}
+
+    	@media screen and (min-width: 480px) {
+
+   
+		}	
+
+    </style>
+    	  <link rel='stylesheet' href='/js/chosen.css'>
    
     @stop
 
   	@section('content')
 
-	<div class="account-form container">
+<div class="container">
 
-		<div class="col-md-4 account-txt">
-			
-			<div class = "form-group">
-	                        
-				<div id="account-pic">
+	<div class="panel panel-default">
+  		<div class="panel-heading"><h3>Account</h3></div>
+  			<div class="panel-body">
 
-
-				{{ Form::model(Auth::user(), array('action' => array('UserController@avatarUpload', Auth::id()),'files' =>true, 'method' => 'PUT')) }}
-
-				@if (Auth::user()->image)
-
-                        <img class='image' src="{{{ Auth::user()->image}}}" heigth='160' width='160'>
-
-                @else
-
-                		<img class='image' src="{{ '/img/mole1.jpg' }}" heigth='160' width='160'>
-
-                @endif
-
-
-					{{ Form::label('image', 'Select an Avatar.') }}
+				<div class="col-md-12 account-txt">
 					
-	                {{ Form::file('image') }}
-	            </div>
-	            <br>
-	            <br>
+					<div class = "form-group">
 
-                @if ($errors->has('image'))
-                	<p>{{$errors->first('image')}}</p>
-                @endif
-			</div>
-			
-			<h1 id="account-direction">Account</h1>
-			
-			<h4 class="account-info">Made a mistake putting in your information?
-				No Worries! We've got you covered.</h4>
-		    <div class='line'></div>
-	      	<h4 class="account-info"> Step 1. On your right, you will see your original information. To 
-	 			make a change, just type in the fields you wish to correct.
-	 		</h4>
+						<h4 class="account-info"> 
+						Made a mistake putting in your information?
+						No Worries! We've got you covered.
+						<br>
+						<br>
+			      		Step 1. On your right, you will see your original information. To 
+			 			make a change, just type in the fields you wish to correct.
+						<br>
+						<br>
+			 			Step 2. Review Your changes. Are they correct?
+						<br>
+						<br>
+			 			Step 3. Just click on the submit button. You have
+			 			now officially edited your information.
+			 			</h4>
 
-	 	    <div class='line'></div>	
+						<div class="account-box"><h4>Select an avatar</h4></div>
+			                        
+						<div id="account-pic">
 
-	 		<h4 class="account-info"> Step 2. Review Your changes. Are they correct?</h4>
-			<div class='line'></div>
-	 		<h4 class="account-info"> Step 3. Just click on the submit button. You have
-	 			now officially edited your information.</h4>
-	 		</div>
-	 	    <div class='line'></div>
 
-	 	<br>  
-	 	<br>
-	 	<br> 
-	 	<br> 
+						{{ Form::model(Auth::user(), array('action' => array('UserController@avatarUpload', Auth::id()),'files' =>true, 'method' => 'PUT')) }}
 
-		<div class="col-md-8">
+						@if (Auth::user()->image)
 
-		{{ Form::open(array('action' => array('UserController@editUserAccount', $user->id), 'method' => 'POST', 'class' => 'form-horizontal')) }} 
-		 		 
-			<h3 class="sign-placeholders">First Name</h3>
-		    <textarea type="text" class="form-control form1"  name="first_name" aria-describedby="basic-addon1">{{$user->first_name}}</textarea>
+		                        <img class='image' src="{{{ Auth::user()->image}}}" heigth='160' width='160'>
 
-		    <h3 class="sign-placeholders">Last Name</h3>
-		    <textarea type="text" class="form-control form1"  name="last_name" aria-describedby="basic-addon1">{{$user->last_name}}</textarea>
+		                @else
 
-		    <h3 class="sign-placeholders">Email</h3>
-		    <textarea type="text" class="form-control form1"  name="email" aria-describedby="basic-addon1">{{$user->email}}</textarea>
-		    <h3 class="sign-placeholders">City</h3>
-            <textarea type="text" class="form-control form1"  name="city"  aria-describedby="basic-addon1"></textarea>
-            <h3 class="sign-placeholders">State</h3>
-            <textarea type="text" class="form-control form1"  name="state"  aria-describedby="basic-addon1"></textarea>
+		                		<img class='image' src="{{ '/img/ricardo.png' }}" heigth='160' width='160'>
 
-		    <br>
-		    <button  id="edit-btn" type="submit" class="btn btn-default">Submit</button>
-		{{Form::close()}}
+		                @endif
 
-		</div>  <!-- end col-md-8 -->
 
-	</div>  <!-- end container -->
+							{{ Form::label('image') }}
+							
+			                {{ Form::file('image') }}
+			            </div>
+			            <br>
+			            <br>
+
+		                @if ($errors->has('image'))
+		                	<p>{{$errors->first('image')}}</p>
+		                @endif
+					</div>
+					
+				<div class="account-box"><h4>Basic Info</h4></div>
+				<div class="col-md-2"></div>
+					<div class="col-md-8">
+
+						{{ Form::open(array('action' => array('UserController@editUserAccount', $user->id), 'method' => 'POST', 'class' => 'form-horizontal')) }} 
+						 		 
+							{{ Form::label('first name', 'First name') }}
+						{{ Form::text('first_name', null,['class'=> 'form-control']) }}
+						@if ($errors->has('first_name'))
+						<p>{{$errors->first('first_name')}}</p>
+						@endif
+
+						{{ Form::label('last_name', 'Last Name') }}
+						{{ Form::text('last_name', null,['class'=> 'form-control', 'placeholder'=>"put what you like"]) }}
+						@if ($errors->has('last_name'))
+						<p>{{{$errors->first('last_name')}}}</p>
+						@endif
+
+						{{ Form::label('email', 'Email') }}
+						{{ Form::text('email', null,['class'=> 'form-control', 'placeholder'=>"put what you like"]) }}
+						@if ($errors->has('email'))
+						<p>{{{$errors->first('email')}}}</p>
+						@endif
+					
+						{{ Form::label('city', 'City') }}
+						{{ Form::text('city', null,['class'=> 'form-control', 'placeholder'=>"put what you like"]) }}
+						@if ($errors->has('city'))
+						<p>{{{$errors->first('city')}}}</p>
+						@endif
+
+						<div class="form-group ">
+			              <label for="state" class="control-label col-sm-3">State</label>
+			              <div class="col-sm-6">
+			                  <select class="form-control state" name="state" id="state"></select>
+			              </div>
+			            </div>
+						
+						<br>
+						<a href="{{{action('UserController@showChangePassword')}}}">Change Password</a>
+						<br>
+						<br>
+						<button type="submit" class="btn btn-default" name="save" value="save">update</button>
+						{{Form::close()}}
+
+					</div>
+			</div> 
+		</div>
+
+	</div>  <!-- end panel -->
+</div>
 	
  	@stop
 
  	@section('bottom-script')
+ 	<script src="/js/countries.js"></script>
+	<script src="/js/chosen.jquery.min.js"></script>
+	<script language="javascript">
+
+populateStates("state");
+$(".state").chosen(); 
+
+	</script
 	 	
     @stop

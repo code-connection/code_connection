@@ -5,7 +5,8 @@
 	"license": "MIT",
 	"type": "project",
 	"require": {
-		"laravel/framework": "4.2.*"
+		"laravel/framework": "4.2.*",
+		"abraham/twitteroauth": "^0.6.4"
 	},
 	"autoload": {
 		"classmap": [

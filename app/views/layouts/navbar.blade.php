@@ -42,7 +42,7 @@
 
 					<li><a class="welcome-user">Welcome,{{Auth::user()->first_name}}!</a></li>
 
-					<li class="dropdown">
+					<li class="dropdown dropdown-account">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage Account <span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a class="nav-text" href="{{{ action('UserController@showUserAccount', Auth::id())}}}" >Your Account</a></li>
@@ -58,13 +58,15 @@
 
 					<li><a class="nav-text" href="{{{ action('PostsController@create')}}}" >Create Post</a></li>
 
+					<li><a class="nav-text" href="{{{ action('UserController@showGitMapTwitter')}}}" >Map</a></li>
+
 					<li><a class="nav-text" href="{{{ action('PostsController@showAllPosts')}}}" >All Posts</a></li>
 
 					<li><a class="nav-text" href="{{{ action('PostsController@index')}}}" >Home</a></li>
 
 					<li><a class="nav-text" href="{{{ action('UserController@logOut') }}}" >Logout</a></li>
 
-					
+
 			</ul>
 		 			  
 			 		{{Form::open(['action' => 'PostsController@index', 'method'=>'GET', 'class'=>'form-horizontal'])}}

@@ -19,17 +19,13 @@
 	  <div class="carousel-inner" role="listbox">
 	    <div class="item active">
 	      <img src="/img/Acadia.jpg" alt="...">
-	      <div class="carousel-caption">
-	        ...
-	      </div>
+	      
 	    </div>
 	    <div class="item">
 	      <img src="/img/Acadia.jpg" alt="...">
-	      <div class="carousel-caption">
-	        ...
-	      </div>
+	      
 	    </div>
-	    ...
+	  
 	  </div>
  </div>	  
 </div>
@@ -45,8 +41,8 @@
 
 
 	<div class='container mission-statement'>
-	   <div class="row">
-            <div class="col-sm-8">
+	   <div class="row gray-box">
+            <div class="col-sm-8 ">
                 <h2>What We Do</h2>
                 <p>Bringing developers together</p>
                 <p>to understand their current and potential environments.</p>
@@ -55,24 +51,56 @@
                 </p>
             </div>
 	</div>
-
-	     <div class="row">
-            <div class="col-sm-4 programmers">
-                <img class="img-circle img-responsive img-center" src="/img/don.jpg" alt="">
-                <h2>Donald Moore</h2>
-                <p>Medal of Honor</p>
-            </div>
-            <div class="col-sm-4 programmers">
-                <img class="img-circle img-responsive img-center" src="/img/Acadia.jpg" alt="">
-                <h2>Richard De Los Santos</h2>
-                <p></p>
-            </div>
-            <div class="col-sm-4 programmers">
-                <img class="img-circle img-responsive img-center" src="/img/trey.jpg" alt="">
-                <h2>Trey Sowers</h2>
-                <p>Trey sowers may be last in the list. But he's first in our hearts.</p>
 		
-
+		
+	     <div class="row">
+		  <div class="col-sm-6 col-md-4">
+		    <div class="thumbnail">
+		      <img class='programmers' src="/img/don.jpg" alt="marine hero">
+		      <div class="caption">
+		        <h3>Donald Moore</h3>
+		        <p>A real American Hero</p>
+		        <div id='footer-icons1' class="icon-txt">
+				<a href=""><i  class="fa fa-twitter fa-2x twitter-icon" target="_blank"></i></a>
+				<a href=""><i class="fa fa-facebook-official fa-2x facebook-icon"></i></a>
+				<a href=""><i class="fa fa-linkedin-square fa-2x linked-icon"></i></a>
+				<a href=""><i class="fa fa fa-envelope-o fa-2x mail-icon"></i></a>
+				</div>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="col-sm-6 col-md-4">
+		    <div class="thumbnail">
+		      <img class='programmers' src="/img/ricardo.png" alt="...">
+		      <div class="caption">
+		        <h3>Richard De Los Santos</h3>
+		        <p>Looking for the perfect burger</p>
+		        <div id='footer-icons1' class="icon-txt">
+				<a href=""><i  class="fa fa-twitter fa-2x twitter-icon" target="_blank"></i></a>
+				<a href=""><i class="fa fa-facebook-official fa-2x facebook-icon"></i></a>
+				<a href=""><i class="fa fa-linkedin-square fa-2x linked-icon"></i></a>
+				<a href=""><i class="fa fa fa-envelope-o fa-2x mail-icon"></i></a>
+				</div>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="col-sm-6 col-md-4">
+		    <div class="thumbnail">
+		      <img class='programmers' src="/img/trey.jpg" alt="...">
+		      <div class="caption">
+		        <h3>Trey Sowers</h3>
+		        <p>A man with the plan</p>
+		        <div id='footer-icons1' class="icon-txt">
+				<a href=""><i  class="fa fa-twitter fa-2x twitter-icon" target="_blank"></i></a>
+				<a href=""><i class="fa fa-facebook-official fa-2x facebook-icon"></i></a>
+				<a href=""><i class="fa fa-linkedin-square fa-2x linked-icon"></i></a>
+				<a href=""><i class="fa fa fa-envelope-o fa-2x mail-icon"></i></a>
+				</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	  </div>
     @stop
 
     @section('bottom-script')
