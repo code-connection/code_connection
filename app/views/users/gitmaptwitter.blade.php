@@ -285,6 +285,69 @@ function getGitHubData(language,address){
                 strokeColor: '#FF0000',
                 fillColor: '#FF0000'
 
+                 },{
+                language: "ruby on rails",
+                description: address,
+                image: "<img src=\"/img/langicons/ruby.png\" alt=\"rubyonrails\">",
+                iconUrl: "/img/langicons/rubyonrails.jpeg",
+                strokeColor: '#FF0000',
+                fillColor: '#FF0000'
+
+
+                 },{
+                language: "c",
+                description: address,
+                image: "<img src=\"/img/langicons/c.png\" alt=\"c\">",
+                iconUrl: "/img/langicons/c.png",
+                strokeColor: '#5A4DE8',
+                fillColor: '#5A4DE8'
+
+
+                },{
+                language: "c++",
+                description: address,
+                image: "<img src=\"/img/langicons/c++.jpeg\" alt=\"c++\">",
+                iconUrl: "/img/langicons/c++.jpeg",
+                strokeColor: '#5A4DE8',
+                fillColor: '#5A4DE8'
+
+
+                },{
+                language: "c#",
+                description: address,
+                image: "<img src=\"/img/langicons/csharp.jpeg\" alt=\"c#\">",
+                iconUrl: "/img/langicons/csharp.jpeg",
+                strokeColor: '#5A4DE8',
+                fillColor: '#5A4DE8'
+
+
+                },{
+                language: "c sharp",
+                description: address,
+                image: "<img src=\"/img/langicons/csharp.jpeg\" alt=\"c#\">",
+                iconUrl: "/img/langicons/csharp.jpeg",
+                strokeColor: '#5A4DE8',
+                fillColor: '#5A4DE8'
+
+
+
+                },{
+                language: "lisp",
+                description: address,
+                image: "<img src=\"/img/langicons/lisp.jpeg\" alt=\"lisp\">",
+                iconUrl: "/img/langicons/lisp.jpeg",
+                strokeColor: '#4DE8A7',
+                fillColor: '#4DE8A7'
+
+
+                },{
+                language: "lisp",
+                description: address,
+                image: "<img src=\"/img/langicons/lisp.jpeg\" alt=\"lisp\">",
+                iconUrl: "/img/langicons/lisp.jpeg",
+                strokeColor: '#4DE8A7',
+                fillColor: '#4DE8A7'
+
             }];
 
             switch(language){
@@ -344,6 +407,15 @@ function getGitHubData(language,address){
 
 
                 case "c#":
+                console.log('c# icon here');
+                languageObj.image = "<img src=\"/img/langicons/csharp.jpeg\" alt=\"c#\">";
+                languageObj.iconUrl = "/img/langicons/csharp.jpeg";
+                languageObj.strokeColor = '#FFB3B3',
+                languageObj.fillColor = '#FFB3B3'
+                break;
+
+
+                case "c sharp":
                 console.log('c# icon here');
                 languageObj.image = "<img src=\"/img/langicons/csharp.jpeg\" alt=\"c#\">";
                 languageObj.iconUrl = "/img/langicons/csharp.jpeg";
