@@ -472,16 +472,20 @@ function getGitHubData(language,address){
                     d.statuses.forEach(function (element, index, array) {
                     
                     var twitterResults = ""
-                    twitterResults += "<div>"
-                    twitterResults += "<p>"+"Created : "+element.created_at+"<p>"
-                    twitterResults += "<p>"+"Name : "+element.user.name+"<p>"
-                    twitterResults += "<p>"+"Location : "+element.user.location+"<p>"
-                    twitterResults += "<p>"+"Screen Name : "+element.user.screen_name+"<p>"
-                    twitterResults += "<p>"+"Location: "+element.user.location+"<p>"
-                    twitterResults += "<p>"+"LANGUAGE: "+language+"</p>"
-                    twitterResults += "<p>"+"Tweet : "+element.text+"<p>"
-                    twitterResults += "<p>"+"Description : "+element.user.description+"</p>"
-                    twitterResults += "</div><br><br>"
+
+
+                    twitterResults += "<div class=\"input-group input-group-sm\">"+"<span class=\"input-group-addon\" id=\"sizing-addon3\">"+"<img src=\"/img/bird.jpg\">"+"</span>"+"<input value="+element.user.name+element.user.text+element.user.screen_name+" type=\"text\" class=\"form-control\"  aria-describedby=\"sizing-addon3\" ></div>"+"<br>"
+
+                    // twitterResults += "<div>"
+                    // twitterResults += "<p>"+"Created : "+element.created_at+"<p>"
+                    // twitterResults += "<p>"+"Name : "+element.user.name+"<p>"
+                    // twitterResults += "<p>"+"Location : "+element.user.location+"<p>"
+                    // twitterResults += "<p>"+"Screen Name : "+element.user.screen_name+"<p>"
+                    // twitterResults += "<p>"+"Location: "+element.user.location+"<p>"
+                    // twitterResults += "<p>"+"LANGUAGE: "+language+"</p>"
+                    // twitterResults += "<p>"+"Tweet : "+element.text+"<p>"
+                    // twitterResults += "<p>"+"Description : "+element.user.description+"</p>"
+                    // twitterResults += "</div><br><br>"
 
                     $("#tweetResults").append(twitterResults);
                  
@@ -504,7 +508,7 @@ function getGitHubData(language,address){
                     city: address,
                     text: language
                 }).done(function(events){
-                    console.log(events);
+                    console.log(events)
 
 
                     alert("Meetups get call completed successfully!");
@@ -513,14 +517,11 @@ function getGitHubData(language,address){
                     events.forEach(function (element, index, array) {
                     
                     var meetupResults = ""
-                    meetupResults += "<div>"
-                    meetupResults += "<p>"+"Event Name"+element.name+"<p>"
-                    meetupResults += "<a>"+element.event_url+"</a>"
-                    meetupResults += "</div>"
-                    
-
+                    meetupResults += 
+                    meetupResults += "<div class=\"input-group input-group-sm\">"+"<span class=\"input-group-addon\" id=\"sizing-addon3\">"+"<img src=\"/img/meetup.png\">"+"</span>"+"<input value="+element.event_url+" type=\"text\" class=\"form-control\"  aria-describedby=\"sizing-addon3\" ></div>"+"<br><br>"
                     $("#meetupResults").append(meetupResults);
-                 
+
+
 
                 }); //end foreach
                 
