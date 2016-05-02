@@ -65,40 +65,38 @@
 
 
 @section('content')
+
  <div class="container">
-    <div class="panel panel-default">
-        <div class="sign-up-form container">    
-            <div class="panel-heading"><h1 id="sign-up-direction">{{Auth::User()->first_name}}'s Posts</h1></div>
-            <div class="panel-body">
+    <div class="panel panel-default">    
+        <div class="panel-heading"><h1 id="sign-up-direction">{{Auth::User()->first_name}}'s Posts</h1></div>
+        <div class="panel-body">
+            <div class="col-md-12 account-txt">
+                <h3 class="sign-placeholders"></h3>
+                    
+                    @foreach(Auth::User()->posts as $post)
 
-                <div class="col-md-8 page-note">  
-                    <h3 class="sign-placeholders"></h3>
-                        
-                        @foreach(Auth::User()->posts as $post)
-
-                            {{ Form::model($post, array('action'=> array('PostsController@update',$post->id), 'method'=>'PUT', 'class' => 'form-horizontal')) }}
-                                <h2 class='Title'>Title</h2>
-                                <textarea type="text" class="form-control form1" name="title"  aria-describedby="basic-addon1">{{{$post->title}}}</textarea>
-                              
-                                <h1 class='Content'>Content</h1>
-                                 <textarea type="text" class="form-control form1" name="body"  aria-describedby="basic-addon1">{{{$post->body}}}</textarea>
-                                
-                                <br>
+                        {{ Form::model($post, array('action'=> array('PostsController@update',$post->id), 'method'=>'PUT', 'class' => 'form-horizontal')) }}
+                            <h2 class='Title'>Title</h2>
+                            <textarea type="text" class="form-control form1" name="title"  aria-describedby="basic-addon1">{{{$post->title}}}</textarea>
                           
-                                <div id="buttons">
-                                    <button  value="update" name="update-post" type="submit" class="btn btn-default">Edit Post</button>
+                            <h1 class='Content'>Content</h1>
+                             <textarea type="text" class="form-control form1" name="body"  aria-describedby="basic-addon1">{{{$post->body}}}</textarea>
                             
-                            {{Form::close()}}   
+                            <br>
+                      
+                            <div id="buttons">
+                                <button  value="update" name="update-post" type="submit" class="btn btn-default">Edit Post</button>
+                        
+                        {{Form::close()}}   
 
-                            {{ Form::model($post, array('action'=> array('PostsController@destroy',$post->id), 'method'=>'DELETE', 'class' => 'form-horizontal')) }}
-                                
-                                <button  value="delete" name="delete-post" type="submit" class="btn btn-default">Delete Post</button>
-                                </div>
+                        {{ Form::model($post, array('action'=> array('PostsController@destroy',$post->id), 'method'=>'DELETE', 'class' => 'form-horizontal')) }}
+                            
+                            <button  value="delete" name="delete-post" type="submit" class="btn btn-default">Delete Post</button>
+                            </div>
 
-                            {{Form::close()}}
+                        {{Form::close()}}
 
-                        @endforeach  
-                </div>
+                    @endforeach  
             </div>
         </div>
     </div>
