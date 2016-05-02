@@ -11,7 +11,7 @@
   	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'> 
 
   	<link rel="stylesheet" href="//cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
-  	<link rel="stylesheet" href="css/stroll.css">
+  	
 
   	<link rel="stylesheet" href="/css/code_connection.css">
 
