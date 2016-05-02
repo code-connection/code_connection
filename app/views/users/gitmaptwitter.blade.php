@@ -10,6 +10,8 @@
   
   <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 
+  <link src="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+
   <link rel="stylesheet" href="/css/stroll.css">
 
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'> 
@@ -100,6 +102,23 @@ header{
     width: 100%;
 }
 
+tr {
+width: 100%;
+display: inline-table;
+table-layout: fixed;
+}
+
+table{
+ height:300px;              /*Select the height of the table*/
+ display: -moz-groupbox;    /*Firefox Bad Effect*/
+}
+
+tbody{
+  overflow-y: scroll;      
+  height: 200px;             /*Select the height of the body*/
+  width: 100%;
+  position: absolute;
+}
 
    </style>  
 </head>
@@ -146,18 +165,43 @@ header{
                     <th id="user_login">User_login</th>
                     <th id="repos_url">Repos url</th>
                     <th id="followers_url">Followers url</th>
-
-
                 </tr>
-
             </thead>
-
             <tbody id="insert_profiles">
             </tbody>
         </table>
 
 
-        
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lrg-10">
+            <div class="table-responsive">
+                    <div class="panel panel-default">
+                      <!-- Default panel contents -->
+                    <div class="panel-heading">Panel heading</div>
+
+                      <!-- Table -->
+                      
+                        <table id="example" class="display" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th id="rank">Rank</th>
+                                    <th id="location">Location</th>
+                                    <th id="language">Language</th>
+                                    <th id="user_login">User_login</th>
+                                    <th id="repos_url">Repos url</th>
+                                </tr>
+                            </thead>
+                            <tbody id="insert_profiles2">
+                            </tbody>
+                        </table>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
 
           <!-- Wrapper for slides -->
           <div class="carousel-inner" role="listbox">
@@ -179,8 +223,10 @@ header{
      <!--html here-->
 
     </div> <!-- end wrapper   --> 
-
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<link src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js">
 <script src="/js/stroll.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous">
     </script>
@@ -224,10 +270,17 @@ function getGitHubData(language,address){
 
             data.items.forEach(function (items, index, array) {
 
-                $("#insert_profiles").append("<tr><td>"+(index+1)+"</td><td>"+address+"</td><td>"+language+"</td><td>"+items.login+"</td><td>"+items.repos_url+"</td><td>"+items.followers_url+"</td></tr>");
+                $("#insert_profiles").append("<tr><td>"+(index+1)+"</td><td>"+address+"</td><td>"+language+"</td><td>"+items.login+"</td><td>"+items.repos_url+"</td></tr>");
+
+                 $("#insert_profiles2").append("<tr><td>"+(index+1)+"</td><td>"+address+"</td><td>"+language+"</td><td>"+items.login+"</td><td>"+items.repos_url+"</td></tr>");
              
 
+
             }); //end foreach
+
+
+           
+
 
             // var profileString = ""
             //     profileString += "<td class=\"list_results\">"

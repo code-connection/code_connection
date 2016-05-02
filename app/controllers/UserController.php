@@ -200,7 +200,7 @@ class UserController extends BaseController {
 	      
 			$password1 = Input::get('password');
 
-			$password2 = Input::get('confirmPassword');
+			$password2 = Input::get('password_confirmation');
 			
 
 			if($password1 == $password2){

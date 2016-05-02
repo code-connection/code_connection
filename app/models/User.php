@@ -17,7 +17,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	public static $changePasswordRules = array(
 
-	    'password'      => 'required|confirmed',
+	    'password'  => 'required',
+	    'password_confirmation'  => 'required'
 	    
 
 	);
