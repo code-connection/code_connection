@@ -11,6 +11,7 @@
   	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'> 
 
   	<link rel="stylesheet" href="//cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+  	<link rel="stylesheet" href="css/stroll.css">
 
   	<link rel="stylesheet" href="/css/code_connection.css">
 
@@ -51,7 +52,7 @@
 
 
 	@yield('content')
-	
+	<script src="js/stroll.min.js"></script>
 	<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
@@ -67,6 +68,10 @@
 		setTimeout(function(){
 			$(".alert").slideUp(1000);
 		},1000)
+
+
+		stroll.bind( '#main ul' );
+		
 
 		
 
