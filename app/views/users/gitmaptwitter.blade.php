@@ -525,7 +525,7 @@ function getGitHubData(language,address){
                 }
                     
                
-                var geocode = lat + ',' + long + ',60mi';
+                var geocode = lat + ',' + long + ',100mi';
                 var count = 100;
 
                 $.get('/ajax/returntweets',{
@@ -579,12 +579,15 @@ function getGitHubData(language,address){
 
              $.get('/ajax/returnmeetups',{
                     city: address,
-                    text: language
+                    text: language,
+                    lat: lat,
+                    lon: long
                 }).done(function(events){
                     console.log(events)
 
 
                     alert("Meetups get call completed successfully!");
+
                     console.log("Meetup data from server below:");
                     
                     events.forEach(function (element, index, array) {
