@@ -13,7 +13,7 @@ Route::post('/comments/create/{id}','CommentsController@store');
 
 Route::get('/comments/create/{id}','CommentsController@showCreate');
 
-Route::get('/users/account','UserController@avatarUpload');
+
 
 Route::get('/posts/allposts', 'PostsController@showAllPosts');
 
@@ -30,14 +30,22 @@ Route::get('/ajax/returnmeetups','MeetupController@returnMeetups');
 
 Route::get('/users/gitmaptwitter','UserController@showGitMapTwitter');
 
-Route::put('/editPassword/{user}', array('uses' => 'UserController@updatePassword'));
 
 
-Route::get('/users/account',array('uses' => 'UserController@showUserAccount'));
 
-Route::put('/users/account/{id}', ' UserController@editUserAccount');
+Route::get('/users/account','UserController@avatarUpload');
+
+
+
+
+
+
+
 
 Route::get('/users/account/{id}','UserController@editUserAccount');
+
+
+Route::put('/users/account/{id}','UserController@editUserAccount');
 
 
 Route::get('/users/change-password/{id}','UserController@showChangePassword');
