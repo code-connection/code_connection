@@ -137,13 +137,24 @@ header{
 
 
 
-        <div id="main">
-          <ul class="flip">
-            <li class="list_results">
-           
-            </li>
-          </ul>
-        </div>
+        <table style="width:100%">
+            <thead>
+                <tr>
+                    <th id="rank">Rank</th>
+                    <th id="location">Location</th>
+                    <th id="language">Language</th>
+                    <th id="user_login">User_login</th>
+                    <th id="repos_url">Repos url</th>
+                    <th id="followers_url">Followers url</th>
+
+
+                </tr>
+
+            </thead>
+
+            <tbody id="insert_profiles">
+            </tbody>
+        </table>
 
 
         
@@ -213,20 +224,20 @@ function getGitHubData(language,address){
 
             data.items.forEach(function (items, index, array) {
 
-                var profileString = ""
-                profileString += "<li class=\"list_results\">"
-                profileString += "<p>"+"rank by followers: "+(index+1)+"<p>"
-                profileString += "<p>"+"LOCATION: "+address+"</p>"
-                profileString += "<p>"+"LANGUAGE: "+language+"</p>"
-                profileString += "<p>"+"user_login: "+items.login+"<p>"
-                profileString += "<p>"+"repos_url: "+items.repos_url+"</p>"
-                profileString += "<p>"+"followers_url: "+items.followers_url+"</p>"
-                profileString += "</li>"
-
-                $("ul.flip").append(profileString);
+                $("#insert_profiles").append("<tr><td>"+(index+1)+"</td><td>"+address+"</td><td>"+language+"</td><td>"+items.login+"</td><td>"+items.repos_url+"</td><td>"+items.followers_url+"</td></tr>");
              
 
             }); //end foreach
+
+            // var profileString = ""
+            //     profileString += "<td class=\"list_results\">"
+            //     profileString += "<p>"+"rank by followers: "+(index+1)+"<p>"
+            //     profileString += "<p>"+"LOCATION: "+address+"</p>"
+            //     profileString += "<p>"+"LANGUAGE: "+language+"</p>"
+            //     profileString += "<p>"+"user_login: "+items.login+"<p>"
+            //     profileString += "<p>"+"repos_url: "+items.repos_url+"</p>"
+            //     profileString += "<p>"+"followers_url: "+items.followers_url+"</p>"
+            //     profileString += "</td>"
 
 
 
