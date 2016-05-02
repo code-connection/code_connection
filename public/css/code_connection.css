@@ -21,7 +21,7 @@
 		text-decoration: none;
 
 		padding:10, 25;
-		color: #F67366;
+		color: #F1F1F1;
 		-webkit-transition: all 500ms ease;
 		-moz-transition: all 500ms ease;
 		-ms-transition: all 500ms ease;
@@ -38,7 +38,7 @@
 
 .navbar-default .navbar-nav>.open>a:hover {
     color: #F1F1F1;
-    background-color: #506378;
+    background-color: #F1F1F1;
 }
 
 .about {
@@ -162,7 +162,7 @@
 
 .dropdown-menu>li>a:hover {
 	background-color: #506378;
-    color: #F67366;
+    color: #F1F1F1;
     -webkit-transition: all 500ms ease;
 	-moz-transition: all 500ms ease;
 	-ms-transition: all 500ms ease;
@@ -189,6 +189,10 @@ body {
 		.navbar-default .navbar-nav .open .dropdown-menu>li>a {
 		    color: #F1F1F1;
 		}
+}
+
+.modal-content {
+	background-color: red;
 }
 
 	

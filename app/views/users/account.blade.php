@@ -142,7 +142,7 @@
 				<div class="col-md-2"></div>
 					<div class="col-md-8">
 
-						{{ Form::open(array('action' => array('UserController@editUserAccount', $user->id), 'method' => 'POST', 'class' => 'form-horizontal')) }} 
+						{{ Form::model(Auth::user(), array('action' => array('UserController@editUserAccount', Auth::id()),'files' =>true, 'method' => 'PUT')) }}
 						 		 
 							{{ Form::label('first name', 'First name') }}
 						{{ Form::text('first_name', null,['class'=> 'form-control']) }}

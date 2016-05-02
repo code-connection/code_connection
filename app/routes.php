@@ -30,10 +30,15 @@ Route::get('/ajax/returnmeetups','MeetupController@returnMeetups');
 
 Route::get('/users/gitmaptwitter','UserController@showGitMapTwitter');
 
+Route::put('/editPassword/{user}', array('uses' => 'UserController@updatePassword'));
 
-Route::get('/users/account/{id}','UserController@showUserAccount');
 
-Route::post('/users/account/{id}','UserController@editUserAccount');
+Route::get('/users/account',array('uses' => 'UserController@showUserAccount'));
+
+Route::put('/users/account/{id}', ' UserController@editUserAccount');
+
+Route::get('/users/account/{id}','UserController@editUserAccount');
+
 
 Route::get('/users/change-password/{id}','UserController@showChangePassword');
 
@@ -47,7 +52,7 @@ Route::get('/users/logout','UserController@logOut');
 
 Route::post('/users/login','UserController@doLogin');
 
-Route::get('/users/account','UserController@showUserAccount');
+
 
 Route::get('/users/index', 'UserController@showIndex');
 
