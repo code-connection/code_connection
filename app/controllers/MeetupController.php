@@ -29,7 +29,8 @@ class MeetupController extends BaseController {
 
 		$m = new MeetupEvents($connection);
 
-		$events = $m->getOpenEvents( array( 'text' => $text, 'lat' => $lat, 'lon' => $lon, 'status' => $status, 'radius' => $radius));
+		 $events = $m->getOpenEvents( array( 'text' => $text, 'lat' => $lat, 'lon' => $lon ));
+
 
 		return Response::json($events);
 		

@@ -7,9 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Template</title>
   <!-- order matters, my own stylesheet must go unederneath -->
-    <link rel="stylesheet" href="css/stroll.css">
   
   <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/css/stroll.css">
 
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'> 
   <!---external personalized stylesheet-->
@@ -134,42 +135,18 @@ header{
         <br>
         <br>
 
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-          <!-- Indicators -->
-          <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
-            <li data-target="#myCarousel" data-slide-to="4"></li>
-            <li data-target="#myCarousel" data-slide-to="5"></li>
-            <li data-target="#myCarousel" data-slide-to="6"></li>
-            <li data-target="#myCarousel" data-slide-to="7"></li>
-            <li data-target="#myCarousel" data-slide-to="8"></li>
-            <li data-target="#myCarousel" data-slide-to="9"></li>
-            <li data-target="#myCarousel" data-slide-to="10"></li>
-            <li data-target="#myCarousel" data-slide-to="11"></li>
-            <li data-target="#myCarousel" data-slide-to="12"></li>
-            <li data-target="#myCarousel" data-slide-to="13"></li>
-            <li data-target="#myCarousel" data-slide-to="14"></li>
-            <li data-target="#myCarousel" data-slide-to="15"></li>
-            <li data-target="#myCarousel" data-slide-to="16"></li>
-            <li data-target="#myCarousel" data-slide-to="17"></li>
-            <li data-target="#myCarousel" data-slide-to="18"></li>
-            <li data-target="#myCarousel" data-slide-to="19"></li>
-            <li data-target="#myCarousel" data-slide-to="20"></li>
-            <li data-target="#myCarousel" data-slide-to="21"></li>
-            <li data-target="#myCarousel" data-slide-to="22"></li>
-            <li data-target="#myCarousel" data-slide-to="23"></li>
-            <li data-target="#myCarousel" data-slide-to="24"></li>
-            <li data-target="#myCarousel" data-slide-to="25"></li>
-            <li data-target="#myCarousel" data-slide-to="26"></li>
-            <li data-target="#myCarousel" data-slide-to="27"></li>
-            <li data-target="#myCarousel" data-slide-to="28"></li>
-            <li data-target="#myCarousel" data-slide-to="29"></li>
-            <li data-target="#myCarousel" data-slide-to="30"></li>
 
-          </ol>
+
+        <div id="main">
+          <ul class="flip">
+            <li class="list_results">
+           
+            </li>
+          </ul>
+        </div>
+
+
+        
 
           <!-- Wrapper for slides -->
           <div class="carousel-inner" role="listbox">
@@ -178,19 +155,6 @@ header{
                   <img src="http://placehold.it/350x150?text=Search for a location and a language above the map!">
                 </div>
 
-          </div> <!-- end carousel inner -->
-
-          <!-- Left and right controls -->
-          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-
-        </div> <!-- myCarousel -->
         <br>
         <div id="tweetResults">
        
@@ -204,8 +168,9 @@ header{
      <!--html here-->
 
     </div> <!-- end wrapper   --> 
-<script src="js/stroll.min.js"></script>
+
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="/js/stroll.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous">
     </script>
 <script type="text/javascript">
@@ -213,6 +178,10 @@ header{
 "use strict;"
 var address;
 var language;
+
+
+stroll.bind( '#main ul' );
+
 
 
 $(document).ready(function() {
@@ -245,16 +214,16 @@ function getGitHubData(language,address){
             data.items.forEach(function (items, index, array) {
 
                 var profileString = ""
-                profileString += "<div class=\"item\">"
+                profileString += "<li class=\"list_results\">"
                 profileString += "<p>"+"rank by followers: "+(index+1)+"<p>"
                 profileString += "<p>"+"LOCATION: "+address+"</p>"
                 profileString += "<p>"+"LANGUAGE: "+language+"</p>"
                 profileString += "<p>"+"user_login: "+items.login+"<p>"
                 profileString += "<p>"+"repos_url: "+items.repos_url+"</p>"
                 profileString += "<p>"+"followers_url: "+items.followers_url+"</p>"
-                profileString += "</div>"
+                profileString += "</li>"
 
-                $(".carousel-inner").append(profileString);
+                $("ul.flip").append(profileString);
              
 
             }); //end foreach
@@ -525,7 +494,7 @@ function getGitHubData(language,address){
                 }
                     
                
-                var geocode = lat + ',' + long + ',100mi';
+                var geocode = lat + ',' + long + ',60mi';
                 var count = 100;
 
                 $.get('/ajax/returntweets',{
@@ -540,7 +509,6 @@ function getGitHubData(language,address){
                     console.log(d);
                     console.log(address);
                     console.log(language);
-
                     
                     d.statuses.forEach(function (element, index, array) {
                     
@@ -587,7 +555,6 @@ function getGitHubData(language,address){
 
 
                     alert("Meetups get call completed successfully!");
-
                     console.log("Meetup data from server below:");
                     
                     events.forEach(function (element, index, array) {
@@ -618,7 +585,7 @@ function getGitHubData(language,address){
 }//end getGitHubData
 
 $("#submit-address").click(function(e){
-    $(".carousel-inner").innerHTML = "";
+    $("#main").innerHTML = "";
     $("#tweetResults").innerHTML = "";
 
     address = $("#address").val();
