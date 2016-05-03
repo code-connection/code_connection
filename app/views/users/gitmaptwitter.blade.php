@@ -221,7 +221,7 @@ p {
 
 <div class="container">
     <div class="row">
-        <div class="col-lrg-10">
+       
             <div class="table-responsive">
                     <div class="panel panel-default">
                       <!-- Default panel contents -->
