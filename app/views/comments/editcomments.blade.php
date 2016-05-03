@@ -10,18 +10,21 @@
     
     @section('content')
     
+       
         <div id="wrapper" class="col-md-10">
 
-            <h1>Edit a Post</h1>
-
-            {{ Form::model([$post, ['action' => ['CommentsController@update', $post->id ], 'method'=>'PUT', 'class' =>'form-horizontal']]) }}
-               
-                {{Form::label('title')}}
-                {{Form::textarea('title',null,['placeholder'=> $post->title, 'rows' => '3' ])}}
+            <h1>Edit a comment</h1>
+            
+             <h1>Post: {{{$comment->post->title}}}</h1>
+            
+            {{ Form::model($comment,array('action' => array('CommentsController@edit', $comment->id),'method' =>'PUT'))}}
              
-                <br>
-                {{Form::label('body')}}
-                {{Form::textarea('body',null,['placeholder'=> $post->body ])}}
+             
+               
+                {{Form::label('comment')}}
+                {{Form::textarea('comment',null,[ 'rows' => '3' ])}}
+             
+                
                 <br>
                 {{Form::submit('Submit!', array('name' => 'Save'))}}
                    

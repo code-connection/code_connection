@@ -3,7 +3,7 @@
 
 
 
-Route::put('/comments/usercomments/{id}','CommentsController@update');
+Route::get('/comments/usercomment/{id}','CommentsController@edit');
 
 Route::delete('/comments/usercomments/{id}','CommentsController@destroy');
 
@@ -12,6 +12,8 @@ Route::get('/comments/usercomments/{id}','CommentsController@showUserComments');
 Route::post('/comments/create/{id}','CommentsController@store');
 
 Route::get('/comments/create/{id}','CommentsController@showCreate');
+
+Route::put('/editcomments/{id}', 'CommentsController@update');
 
 
 
@@ -34,6 +36,8 @@ Route::get('/users/gitmaptwitter','UserController@showGitMapTwitter');
 
 
 Route::get('/users/account','UserController@avatarUpload');
+
+Route::get('/users/account', 'UserController@showUserAccount');
 
 
 

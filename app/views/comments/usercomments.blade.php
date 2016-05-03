@@ -76,14 +76,11 @@
                         
                         @foreach($user->comments as $comment)
 
-                            {{ Form::model($comment, array('action'=> array('CommentsController@update',$comment->id), 'method'=>'PUT', 'class' => 'form-horizontal')) }}
 
-                                <textarea type="text" class="form-control form1" name="comment"  aria-describedby="basic-addon1">{{{$comment->comment}}}</textarea>
+                              <a href="{{action('CommentsController@edit', $comment->id)}}">{{{$comment->comment}}}
 
-                               
-                                <div id="buttons">
-                                    <button name="update-comment" value="update" type="submit" class="btn btn-default">Edit Comment</button>
 
+                            </a>
                             {{Form::close()}}
 
                             {{ Form::model($comment, array('action'=> array('CommentsController@destroy',$comment->id), 'method'=>'DELETE', 'class' => 'form-horizontal')) }}
