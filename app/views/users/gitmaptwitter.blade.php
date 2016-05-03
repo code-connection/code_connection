@@ -3,26 +3,25 @@
 
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Template</title>
-  <!-- order matters, my own stylesheet must go unederneath -->
-  
-  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Template</title>
+<!-- order matters, my own stylesheet must go unederneath -->
 
-  <link src="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 
-  <link rel="stylesheet" href="/css/stroll.css">
+<link src="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
 
-  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'> 
-  <!---external personalized stylesheet-->
-  <style type="text/css">
+<link rel="stylesheet" href="/css/stroll.css">
+
+<link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'> 
+<!---external personalized stylesheet-->
+<style type="text/css">
 
 body{
     background-color: lightblue;
     color : black;
     position: relative;
-
 }
 
 #tweetResults{
@@ -83,7 +82,6 @@ form {
     flex-direction: row;
     width: 350px;
     margin: 0 auto;
-    
 
 }
 
@@ -108,16 +106,31 @@ display: inline-table;
 table-layout: fixed;
 }
 
-table{
- height:300px;              /*Select the height of the table*/
- display: -moz-groupbox;    /*Firefox Bad Effect*/
+@media screen and (max-width: 640px) {
+    table {
+        overflow-x: auto;
+        display: block;
+
+    }
+
+
 }
+
+
 
 tbody{
   overflow-y: scroll;      
-  height: 200px;             /*Select the height of the body*/
+  height: 200px;            
   width: 100%;
   position: absolute;
+}
+
+
+
+
+td,th {
+    border-top: 1px solid #ddd;
+    padding: 4px 8px;
 }
 
    </style>  
@@ -145,46 +158,18 @@ tbody{
                
             </div>
 
-           
-
         </div>  <!--  end container -->
-         <div id="map-canvas"></div>
-
+        <div id="map-canvas"></div>
         <br>
         <br>
         <br>
-
-
-
-        <table style="width:100%">
-            <thead>
-                <tr>
-                    <th id="rank">Rank</th>
-                    <th id="location">Location</th>
-                    <th id="language">Language</th>
-                    <th id="user_login">User_login</th>
-                    <th id="repos_url">Repos url</th>
-                    <th id="followers_url">Followers url</th>
-                </tr>
-            </thead>
-            <tbody id="insert_profiles">
-            </tbody>
-        </table>
-
-
-
-
-<div class="container">
-    <div class="row">
-        <div class="col-lrg-10">
+        <div class="col-lrg-12">
             <div class="table-responsive">
                     <div class="panel panel-default">
                       <!-- Default panel contents -->
-                    <div class="panel-heading">Panel heading</div>
-
+                    <div class="panel-heading">GitHub Results</div>
                       <!-- Table -->
-                      
-                        <table id="example" class="display" cellspacing="0" width="100%">
+                        <table>
                             <thead>
                                 <tr>
                                     <th id="rank">Rank</th>
@@ -200,8 +185,6 @@ tbody{
                     </div>
             </div>
         </div>
-    </div>
-</div>
 
           <!-- Wrapper for slides -->
           <div class="carousel-inner" role="listbox">
@@ -222,11 +205,18 @@ tbody{
 
      <!--html here-->
 
+
+
+
     </div> <!-- end wrapper   --> 
+
+
 <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="/js/jquery-responsive-text-master/jquery.responsiveText.js"></script>
 
-<link src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js">
+
+<script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
 <script src="/js/stroll.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous">
     </script>
@@ -237,11 +227,14 @@ var address;
 var language;
 
 
-stroll.bind( '#main ul' );
+ 
 
 
 
 $(document).ready(function() {
+
+    $('.responsive').responsiveText();
+  
 
     var mapOptions = {
             
@@ -270,7 +263,7 @@ function getGitHubData(language,address){
 
             data.items.forEach(function (items, index, array) {
 
-                $("#insert_profiles").append("<tr><td>"+(index+1)+"</td><td>"+address+"</td><td>"+language+"</td><td>"+items.login+"</td><td>"+items.repos_url+"</td></tr>");
+                $("#insert_profiles").append("<tr class=\"responsive\"><td class=\"responsive\">"+(index+1)+"</td><td class=\"responsive\">"+address+"</td><td class=\"responsive\">"+language+"</td><td class=\"responsive\">"+items.login+"</td><td class=\"responsive\">"+items.repos_url+"</td></tr>");
 
                  $("#insert_profiles2").append("<tr><td>"+(index+1)+"</td><td>"+address+"</td><td>"+language+"</td><td>"+items.login+"</td><td>"+items.repos_url+"</td></tr>");
              
