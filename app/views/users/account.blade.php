@@ -104,7 +104,7 @@
 			 			Step 2. Review Your changes. Are they correct?
 						<br>
 						<br>
-			 			Step 3. Just click on the submit button. You have
+			 			Step 3. Just click on the update button. You have
 			 			now officially edited your information.
 			 			</h4>
 
