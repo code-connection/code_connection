@@ -120,6 +120,49 @@ tbody{
   position: absolute;
 }
 
+ul {
+  position: relative;
+  width: 800px;
+  height: 510px;
+  margin: 50px auto;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  list-style: none;
+}
+
+ul li {
+  position: relative;
+  height: 200px;
+  padding: 20px;
+  background: #eee;
+  color: #252525;
+  z-index: 2;
+  overflow: auto;
+}
+
+ul li:nth-child(odd) {
+  background: #fff;
+}
+
+h1 {
+  text-align: center;
+  color: rgba(0,0,0,0.8);
+  margin-top: 25px;
+  font: bold 80px Helvetica, Arila, sans-serif;
+  text-shadow: 1px 1px 1px rgba(255,255,255,0.1);
+}
+
+h2 {
+  margin-top: 25px;
+  font: bold 30px Helvetica, Arila, sans-serif;
+}
+
+p {
+  font: 13px/1.5 Georgia, Times, serif;
+  color: #757575;
+}
+
    </style>  
 </head>
 <body>
@@ -167,10 +210,12 @@ tbody{
                     <th id="followers_url">Followers url</th>
                 </tr>
             </thead>
-            <tbody id="insert_profiles">
+            <tbody id="insert__profiles">
             </tbody>
         </table>
 
+<div id="insert_profiles">
+            </div>
 
 
 
@@ -237,7 +282,7 @@ var address;
 var language;
 
 
-stroll.bind( '#main ul' );
+
 
 
 
@@ -268,18 +313,22 @@ function getGitHubData(language,address){
 
             console.log('This is the total users:'+data.total_count+' with '+language+' in '+address);
 
+            var html = '<ul class="wave">';
+
             data.items.forEach(function (items, index, array) {
 
-                $("#insert_profiles").append("<tr><td>"+(index+1)+"</td><td>"+address+"</td><td>"+language+"</td><td>"+items.login+"</td><td>"+items.repos_url+"</td></tr>");
+                html += "<li>Rank: "+(index+1)+" Address:"+address+" Language:"+language+" Username:"+items.login+" Repos:"+items.repos_url+"</li>"
+
+                
 
                  $("#insert_profiles2").append("<tr><td>"+(index+1)+"</td><td>"+address+"</td><td>"+language+"</td><td>"+items.login+"</td><td>"+items.repos_url+"</td></tr>");
              
 
 
             }); //end foreach
+            $("#insert_profiles").html(html);
 
-
-           
+            stroll.bind( '#insert_profiles ul' );           
 
 
             // var profileString = ""
