@@ -3,7 +3,7 @@
 
 
 
-Route::put('/comments/usercomments/{id}','CommentsController@update');
+Route::get('/comments/usercomment/{id}','CommentsController@edit');
 
 Route::delete('/comments/usercomments/{id}','CommentsController@destroy');
 
@@ -12,6 +12,8 @@ Route::get('/comments/usercomments/{id}','CommentsController@showUserComments');
 Route::post('/comments/create/{id}','CommentsController@store');
 
 Route::get('/comments/create/{id}','CommentsController@showCreate');
+
+Route::put('/editcomments/{id}', 'CommentsController@update');
 
 
 
@@ -30,11 +32,25 @@ Route::get('/ajax/returnmeetups','MeetupController@returnMeetups');
 
 Route::get('/users/gitmaptwitter','UserController@showGitMapTwitter');
 
+
+
+
 Route::get('/users/account','UserController@avatarUpload');
 
-Route::get('/users/account/{id}','UserController@showUserAccount');
+Route::get('/users/account', 'UserController@showUserAccount');
+
+
+
+
+
+
+
+
+Route::get('/users/account/{id}','UserController@editUserAccount');
+
 
 Route::put('/users/account/{id}','UserController@editUserAccount');
+
 
 Route::get('/users/change-password/{id}','UserController@showChangePassword');
 
@@ -48,7 +64,7 @@ Route::get('/users/logout','UserController@logOut');
 
 Route::post('/users/login','UserController@doLogin');
 
-Route::get('/users/account','UserController@showUserAccount');
+
 
 Route::get('/users/index', 'UserController@showIndex');
 

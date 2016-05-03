@@ -120,7 +120,7 @@ class CommentsController extends \BaseController {
 			return $this->commentNotFound();
 		}
 
-		return View::make('comments.edit',['comment' => $comment]);
+		return View::make('comments.editcomments',['comment' => $comment]);
 		
 	}
 

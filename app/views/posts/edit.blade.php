@@ -14,10 +14,10 @@
 
             <h1>Edit a Post</h1>
 
-            {{ Form::model([$post, ['action' => ['PostsController@update', $post->id ], 'method'=>'PUT', 'class' =>'form-horizontal']]) }}
+            {{ Form::model($post, array('action' => array('PostsController@update', $post->id) , 'method'=>'PUT', 'class' =>'form-horizontal')) }}
                
                 {{Form::label('title')}}
-                {{Form::textarea('title',null,['placeholder'=> $post->title, 'rows' => '3' ])}}
+                {{Form::textarea('title',null,['placeholder'=> $post->body, 'rows' => '3' ])}}
              
                 <br>
                 {{Form::label('body')}}
