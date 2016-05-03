@@ -71,7 +71,7 @@
                         @endif
 
                             <label for="body"> Content:</label>
-                            <textarea  type="text" class="form-control form1"  id="body" name="body" aria-describedby="basic-addon1">{{{ Input::old('body') }}}</textarea><br>
+                            <textarea  type="text" class="form-control form1"  id="body" name="body" aria-describedby="basic-addon1">{{{ Input::old('content') }}}</textarea><br>
                             <button type="submit" class="btn btn-default" name="save" value="save">Submit</button>
                 	{{ Form::close() }}
 
