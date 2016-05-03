@@ -207,9 +207,6 @@ p {
         <br>
         <br>
         <br>
-<<<<<<< HEAD
-        <div class="col-lrg-12">
-=======
 
 
 
@@ -236,7 +233,6 @@ p {
 <div class="container">
     <div class="row">
         <div class="col-lrg-10">
->>>>>>> b70595d3c6b066a80b530f9c3214aa960d72f270
             <div class="table-responsive">
                     <div class="panel panel-default">
                       <!-- Default panel contents -->
