@@ -63,7 +63,6 @@
     </style>
 @stop
 
-
 @section('content')
 
  <div class="container">
@@ -80,7 +79,6 @@
                         {{ Form::model($post, array('action'=> array('PostsController@destroy',$post->id), 'method'=>'DELETE', 'class' => 'form-horizontal')) }}
                             
                             <button  value="delete" name="delete-post" type="submit" class="btn btn-default">Delete Post</button>
-                            </div>
 
                         {{Form::close()}}
 
