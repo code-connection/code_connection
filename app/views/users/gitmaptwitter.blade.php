@@ -125,14 +125,7 @@ tbody{
   position: absolute;
 }
 
-<<<<<<< HEAD
 
-
-
-td,th {
-    border-top: 1px solid #ddd;
-    padding: 4px 8px;
-=======
 ul {
   position: relative;
   width: 800px;
