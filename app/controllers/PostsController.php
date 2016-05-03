@@ -187,7 +187,7 @@ class PostsController extends \BaseController {
 
 		Log::info("The following post was deleted: " . $post->id);
 
-		return Redirect::action('PostsController@index');
+		return Redirect::action('PostsController@showAllPosts');
 	}
 
 

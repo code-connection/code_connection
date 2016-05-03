@@ -75,19 +75,7 @@
                     
                     @foreach(Auth::User()->posts as $post)
 
-                        {{ Form::model($post, array('action'=> array('PostsController@update',$post->id), 'method'=>'PUT', 'class' => 'form-horizontal')) }}
-                            <h2 class='Title'>Title</h2>
-                            <textarea type="text" class="form-control form1" name="title"  aria-describedby="basic-addon1">{{{$post->title}}}</textarea>
-                          
-                            <h1 class='Content'>Content</h1>
-                             <textarea type="text" class="form-control form1" name="body"  aria-describedby="basic-addon1">{{{$post->body}}}</textarea>
-                            
-                            <br>
-                      
-                            <div id="buttons">
-                                <button  value="update" name="update-post" type="submit" class="btn btn-default">Edit Post</button>
-                        
-                        {{Form::close()}}   
+                       <a href="{{{action('PostsController@edit', $post->id)}}}">{{{$post->title}}}</a>  
 
                         {{ Form::model($post, array('action'=> array('PostsController@destroy',$post->id), 'method'=>'DELETE', 'class' => 'form-horizontal')) }}
                             
