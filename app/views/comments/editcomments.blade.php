@@ -16,9 +16,8 @@
             <h1>Edit a comment</h1>
             
              <h1>Post: {{{$comment->post->title}}}</h1>
-            
-            {{ Form::model($comment,array('action' => array('CommentsController@edit', $comment->id),'method' =>'PUT'))}}
-             
+            <?php $comment->id ?>
+            {{ Form::model($comment,array('action' => array('CommentsController@update', $comment->id),'method' =>'PUT'))}}
              
                
                 {{Form::label('comment')}}
