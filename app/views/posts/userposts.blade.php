@@ -82,6 +82,8 @@
 
                         {{Form::close()}}
 
+                       
+
                     @endforeach  
             </div>
         </div>
