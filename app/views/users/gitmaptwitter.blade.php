@@ -366,6 +366,11 @@ p {
             border-style: 1px orange;
         }
 
+        #insert_profiles {
+            position:relative;
+
+        }
+
     </style>  
 </head>
 <body>
@@ -467,7 +472,9 @@ function getGitHubData(language,address){
                 +" city: "+address+"</br>"
                 +" Language: "+language+"</br>"
                 +" Username: "+items.login+"</br>"
-                +" Repos: "+"<a href=\"items.repos_url\">"+items.repos_url+"</a></li>"
+                +" Repos: "+"<a href= \""+items.repos_url + "\">"+items.repos_url+"</a></li>"
+
+               
 
 
             }); //end foreach
@@ -819,7 +826,7 @@ function getGitHubData(language,address){
                     events.forEach(function (element, index, array) {
                    
 
-                    meetupResults += "<li class=\"data-lists\">"+"<img src=\"/img/meetup.png\">"+'URL:'+"<a href=\"element.event_url\">"+element.event_url+"</a></br>"
+                    meetupResults += "<li class=\"data-lists\">"+"<img src=\"/img/meetup.png\">"+'URL:'+"<a href=\"" + element.event_url + "\">"+element.event_url+"</a></br>"
                     +"Description :"+element.description+"<br>"
                     +"Name :"+element.name+"<br>"
                     +"RSVP maybe :"+element.maybe_rsvp_count+"<br>"
