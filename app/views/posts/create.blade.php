@@ -1,8 +1,10 @@
 @extends('layouts.master')
 
     @section('top-script')
+
         <title>Posts Form</title>
-        <style>
+
+    <style>
 
         .container {
             margin-top: 15px;
@@ -43,7 +45,7 @@
             transition: all 500ms ease;
         }
 
-        </style>    
+    </style>    
 
     @stop
     
@@ -72,6 +74,7 @@
                             <textarea  type="text" class="form-control form1"  id="body" name="body" aria-describedby="basic-addon1">{{{ Input::old('body') }}}</textarea><br>
                             <button type="submit" class="btn btn-default" name="save" value="save">Submit</button>
                 	{{ Form::close() }}
+
                 </div>
             </div>
         </div>
