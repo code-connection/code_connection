@@ -1,273 +1,208 @@
 
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Template</title>
-  <!-- order matters, my own stylesheet must go unederneath -->
-  
-  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 
-  <link src="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 
-  <link rel="stylesheet" href="/css/stroll.css">
+    <link src="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
 
-  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'> 
-  <!---external personalized stylesheet-->
-  <style type="text/css">
+    <link rel="stylesheet" href="/css/stroll.css">
 
-body{
-    background-color: lightblue;
-    color : black;
-    position: relative;
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'> 
+    <style type="text/css">
 
-}
+        body{
+            background-color: lightblue;
+            color : black;
+            position: relative;
+        }
 
-#tweetResults{
-    font-size: 25px;
-}
+        #tweetResults{
+            font-size: 25px;
+        }
 
-body p {
+        body p {
 
-   color :black;
-}
+           color :black;
+        }
 
-#profiles{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 770px;
-    border: 1px green;
-    background-color: yellow;
-    margin: 0 auto;
- }
+        #profiles{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 770px;
+            border: 1px green;
+            background-color: yellow;
+            margin: 0 auto;
+         }
 
 
-div#map-canvas {
+        div#map-canvas {
 
-    width: 100%;
-    height: 600px;
-    margin-left: 0px;
-    margin-right: 0px;
+            width: 100%;
+            height: 600px;
+            margin-left: 0px;
+            margin-right: 0px;
 
-}
+        }
 
-form {
-    width: 700px;
-    margin: 0 auto;
-    padding: 0px;
-}
+        form {
+            width: 700px;
+            margin: 0 auto;
+            padding: 0px;
+        }
 
-#container {
-    margin: 0 auto;
-    width: 100%;
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    
-    background-color: lightblue;
-    background-image: -webkit-linear-gradient(top, lightblue 0%, blue 100%);
+        #container {
+            margin: 0 auto;
+            width: 100%;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            
+            background-color: lightblue;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-#language{
 
-    width: 225px;
-}
 
-.carousel-inner{
-    display: flex;
-    flex-direction: row;
-    width: 350px;
-    margin: 0 auto;
-    
+        #language{
 
-}
+            width: 225px;
+        }
 
-#heat_form{
-    background-color: white;
-}
+        .carousel-inner{
+            display: flex;
+            flex-direction: row;
+            width: 350px;
+            margin: 0 auto;
 
-#flex_heat{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+        }
 
-}
+       
 
-header{
-    width: 100%;
-}
+        header{
+            width: 100%;
+        }
 
-tr {
-width: 100%;
-display: inline-table;
-table-layout: fixed;
-}
+        tr {
+            width: 100%;
+            display: inline-table;
+            table-layout: fixed;
+        }
 
-table{
- height:300px;              /*Select the height of the table*/
- display: -moz-groupbox;    /*Firefox Bad Effect*/
-}
+        table{
+            height:300px;              /*Select the height of the table*/
+            display: -moz-groupbox;    /*Firefox Bad Effect*/
+        }
 
-tbody{
-  overflow-y: scroll;      
-  height: 200px;             /*Select the height of the body*/
-  width: 100%;
-  position: absolute;
-}
+        tbody{
+            overflow-y: scroll;      
+            height: 200px;             /*Select the height of the body*/
+            width: 100%;
+            position: absolute;
+        }
 
-ul {
-  position: relative;
-  width: 800px;
-  height: 510px;
-  margin: 50px auto;
-  padding: 0;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  list-style: none;
-}
+            ul {
+            position: relative;
+            width: 800px;
+            height: 510px;
+            margin: 50px auto;
+            padding: 0;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            list-style: none;
+        }
 
-ul li {
-  position: relative;
-  height: 200px;
-  padding: 20px;
-  background: #eee;
-  color: #252525;
-  z-index: 2;
-  overflow: auto;
-}
+        ul li {
+            position: relative;
+            height: 200px;
+            padding: 20px;
+            background: #eee;
+            color: #252525;
+            z-index: 2;
+            overflow: auto;
+        }
 
-ul li:nth-child(odd) {
-  background: #fff;
-}
+        ul li:nth-child(odd) {
+            background: #fff;
+        }
 
-h1 {
-  text-align: center;
-  color: rgba(0,0,0,0.8);
-  margin-top: 25px;
-  font: bold 80px Helvetica, Arila, sans-serif;
-  text-shadow: 1px 1px 1px rgba(255,255,255,0.1);
-}
+        h1 {
+            text-align: center;
+            color: rgba(0,0,0,0.8);
+            margin-top: 25px;
+            font: bold 80px Helvetica, Arila, sans-serif;
+            text-shadow: 1px 1px 1px rgba(255,255,255,0.1);
+        }
 
-h2 {
-  margin-top: 25px;
-  font: bold 30px Helvetica, Arila, sans-serif;
-}
+        h2 {
+            margin-top: 25px;
+            font: bold 30px Helvetica, Arila, sans-serif;
+        }
 
-p {
-  font: 13px/1.5 Georgia, Times, serif;
-  color: #757575;
-}
+        p {
+            font: 13px/1.5 Georgia, Times, serif;
+            color: #757575;
+        }
 
-   </style>  
+        #coordinates{
+
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+
+        }
+
+        #data-lists{
+            color: green;
+        }
+
+        li{
+            border-style: 1px orange;
+        }
+
+    </style>  
 </head>
 <body>
     <div id="wrapper">
-
         <div id ="container">
-
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJMMD6k9NVgkv5xDAcIaENzanI8psOI44"></script>
 
-           
-                <h2>Code Connection</h2>
-                
+            <h2>Code Connection</h2>
        
             <br>
 
             <div id="coordinates">
                
-                    <label for="address">Enter City: </label>
-                        <input id="address" type="text">
-                    <label for="language">Enter Language: </label>
-                        <input id="language" type="text" placeholder="javascript or ruby or python">
-                    <button id="submit-address" type="submit">Submit</button>
+                <label for="address">Enter City: </label>
+                    <input id="address" type="text">
+                <label for="language">Enter Language: </label>
+                    <input id="language" type="text" placeholder="javascript or ruby or python">
+                <button id="submit-address" type="submit">Submit</button>
                
             </div>
 
-           
-
         </div>  <!--  end container -->
-         <div id="map-canvas"></div>
+
+        <div id="map-canvas"></div>
 
         <br>
         <br>
         <br>
 
+        <div id="insert_profiles"></div>
 
+        <div id="insert_twitter"></div>
 
-        <table style="width:100%">
-            <thead>
-                <tr>
-                    <th id="rank">Rank</th>
-                    <th id="location">Location</th>
-                    <th id="language">Language</th>
-                    <th id="user_login">User_login</th>
-                    <th id="repos_url">Repos url</th>
-                    <th id="followers_url">Followers url</th>
-                </tr>
-            </thead>
-            <tbody id="insert__profiles">
-            </tbody>
-        </table>
-
-<div id="insert_profiles">
-            </div>
-
-
-
-<div class="container">
-    <div class="row">
-        <div class="col-lrg-10">
-            <div class="table-responsive">
-                    <div class="panel panel-default">
-                      <!-- Default panel contents -->
-                    <div class="panel-heading">Panel heading</div>
-
-                      <!-- Table -->
-                      
-                        <table id="example" class="display" cellspacing="0" width="100%">
-                            <thead>
-                                <tr>
-                                    <th id="rank">Rank</th>
-                                    <th id="location">Location</th>
-                                    <th id="language">Language</th>
-                                    <th id="user_login">User_login</th>
-                                    <th id="repos_url">Repos url</th>
-                                </tr>
-                            </thead>
-                            <tbody id="insert_profiles2">
-                            </tbody>
-                        </table>
-                    </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner" role="listbox">
-
-                <div class="item active">
-                  <img src="http://placehold.it/350x150?text=Search for a location and a language above the map!">
-                </div>
-
-        <br>
-        <div id="tweetResults">
-       
-
-        </div>
-        <br>
-        <br>
-        <div id="meetupResults">
-        </div>
-
-     <!--html here-->
-
-    </div> <!-- end wrapper   --> 
+        <div id="insert_meetups"></div>
+         
 <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 
@@ -280,11 +215,6 @@ p {
 "use strict;"
 var address;
 var language;
-
-
-
-
-
 
 $(document).ready(function() {
 
@@ -317,13 +247,12 @@ function getGitHubData(language,address){
 
             data.items.forEach(function (items, index, array) {
 
-                html += "<li>Rank: "+(index+1)+" Address:"+address+" Language:"+language+" Username:"+items.login+" Repos:"+items.repos_url+"</li>"
-
-                
-
-                 $("#insert_profiles2").append("<tr><td>"+(index+1)+"</td><td>"+address+"</td><td>"+language+"</td><td>"+items.login+"</td><td>"+items.repos_url+"</td></tr>");
-             
-
+                html += "<li class=\"data-lists\">"+"<img src=\"/img/github.png\">"
+                +"Rank by followers: "+(index+1)+"</br>"
+                +" city: "+address+"</br>"
+                +" Language: "+language+"</br>"
+                +" Username: "+items.login+"</br>"
+                +" Repos: "+"<a href=\"items.repos_url\">"+items.repos_url+"</a></li>"
 
             }); //end foreach
             $("#insert_profiles").html(html);
@@ -340,9 +269,6 @@ function getGitHubData(language,address){
             //     profileString += "<p>"+"repos_url: "+items.repos_url+"</p>"
             //     profileString += "<p>"+"followers_url: "+items.followers_url+"</p>"
             //     profileString += "</td>"
-
-
-
             var languageObj = [{//element
 
                 language: "javascript",
@@ -549,7 +475,7 @@ function getGitHubData(language,address){
                         map: map,
                         strokeOpacity: 0.8,
                         strokeWeight: 1,
-                        draggable: true,
+                        // draggable: true,
                         geodesic: true,
                         strokeColor: languageObj.strokeColor,
                         fillColor: languageObj.fillColor,
@@ -558,7 +484,6 @@ function getGitHubData(language,address){
                         radius: Math.sqrt(data.total_count)*500,
 
                     }); 
-                    
 
                     marker.setMap(map);
 
@@ -579,15 +504,26 @@ function getGitHubData(language,address){
                         map: map,
                         icon: languageObj.iconUrl,
                         animation : google.maps.Animation.DROP,
-                        draggable: true
+                        // draggable: true
                    
                     }); 
+
+                    markerLanguage.addListener('click', toggleBounce);
+
+                    function toggleBounce() {
+
+                        if (markerLanguage.getAnimation() !== null) {
+                            markerLanguage.setAnimation(null);
+                        } else {
+                            markerLanguage.setAnimation(google.maps.Animation.BOUNCE);
+                        }
+                    }
 
                     map.panTo(results[0].geometry.location);
 
                     var infowindow = new google.maps.InfoWindow({
-                        content: "The number of self-identified "+language+" programmers in "+address+" is "+
-                        data.total_count,
+                        content: "<span style=\"color:blue\"><b>"+language+" programmers in "+address+" is "+
+                        data.total_count+"</b></span>",
                         position: latlng
                         
                     });
@@ -622,38 +558,32 @@ function getGitHubData(language,address){
                     console.log(d);
                     console.log(address);
                     console.log(language);
-                    
+
+                     var twitterHtml = '<ul class="wave">';
+
                     d.statuses.forEach(function (element, index, array) {
-                    
-                    var twitterResults = ""
+
+                    twitterHtml += "<li class=\"data-lists\">"+"<img src=\"/img/bird.jpg\">"
+                    +"Username: "+element.user.name+"</br>"
+                    +"Screen name: "+element.user.screen_name+"</br>"
+                    +"Location: "+element.user.location+"</br>"
+                    +"Language: "+language+"</br>"
+                    +"Text: "+element.text+"</br>"
+                    +"Created at: "+element.user.created_at+"</br>"
+                    +"Description: "+element.user.description+"</br>"
+                    +"</li>"
 
 
-                    twitterResults += "<div class=\"input-group input-group-sm\">"+"<span class=\"input-group-addon\" id=\"sizing-addon3\">"+"<img src=\"/img/bird.jpg\">"+"</span>"+"<input value="+element.user.name+element.user.text+element.user.screen_name+" type=\"text\" class=\"form-control\"  aria-describedby=\"sizing-addon3\" ></div>"+"<br>"
+            }); //end foreach
+             $("#insert_twitter").html(twitterHtml);
 
-                    // twitterResults += "<div>"
-                    // twitterResults += "<p>"+"Created : "+element.created_at+"<p>"
-                    // twitterResults += "<p>"+"Name : "+element.user.name+"<p>"
-                    // twitterResults += "<p>"+"Location : "+element.user.location+"<p>"
-                    // twitterResults += "<p>"+"Screen Name : "+element.user.screen_name+"<p>"
-                    // twitterResults += "<p>"+"Location: "+element.user.location+"<p>"
-                    // twitterResults += "<p>"+"LANGUAGE: "+language+"</p>"
-                    // twitterResults += "<p>"+"Tweet : "+element.text+"<p>"
-                    // twitterResults += "<p>"+"Description : "+element.user.description+"</p>"
-                    // twitterResults += "</div><br><br>"
-
-                    $("#tweetResults").append(twitterResults);
-                 
-
-                }); //end foreach
-                
+            stroll.bind( '#insert_twitter ul' ); 
+               
             }).fail(function() {
                 alert("There was an error!");
             }).always(function() {
                 alert("And we're finished!");
             }); //end ajax twittter
-
-
-
 
             console.log(address);
             console.log(language);
@@ -664,22 +594,27 @@ function getGitHubData(language,address){
                     lat: lat,
                     lon: long
                 }).done(function(events){
-                    console.log(events)
-
-
+                    console.log('my meetup events below:');
+                    console.log(events);
                     alert("Meetups get call completed successfully!");
                     console.log("Meetup data from server below:");
-                    
+                    var meetupResults = '<ul class="wave">';
+
                     events.forEach(function (element, index, array) {
-                    
-                    var meetupResults = ""
-                    meetupResults += 
-                    meetupResults += "<div class=\"input-group input-group-sm\">"+"<span class=\"input-group-addon\" id=\"sizing-addon3\">"+"<img src=\"/img/meetup.png\">"+"</span>"+"<input value="+element.event_url+" type=\"text\" class=\"form-control\"  aria-describedby=\"sizing-addon3\" ></div>"+"<br><br>"
-                    $("#meetupResults").append(meetupResults);
+                   
+
+                    meetupResults += "<li class=\"data-lists\">"+"<img src=\"/img/meetup.png\">"+'URL:'+"<a href=\"element.event_url\">"+element.event_url+"</a></br>"
+                    +"Description :"+element.description+"<br>"
+                    +"Name :"+element.name+"<br>"
+                    +"RSVP maybe :"+element.maybe_rsvp_count+"<br>"
+                    +"</li>"
 
 
+                }); 
+                    $("#insert_meetups").html(meetupResults);
+                    stroll.bind('#insert_meetups ul');
 
-                }); //end foreach
+               
                 
             }).fail(function() {
                 alert("There was an error!");
@@ -708,23 +643,7 @@ $("#submit-address").click(function(e){
    
 });
 
-$("#submit-heatmap").click(function(){
-    var selected_value = []; // initialize empty array 
-    
-    $(".source:checked").each(function(){
 
-        selected_value.push($(this).val());
-
-        console.log(selected_value);
-
-        selected_value.forEach(function (language, index, array) {
-
-        console.log(language+'make my density circle on the map');
-
-        });
-    });
-        
-});
    
     console.log('hi'); 
 
