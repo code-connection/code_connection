@@ -64,12 +64,11 @@
 
 @stop
 
-
 @section('content')
 
 <div class="container"> 
     <div class="panel panel-default">
-        <div class="panel-heading"><h1 id="sign-up-direction">{{$user->first_name}}'s Comments</h1></div> 
+        <div class="panel-heading"><h1 id="sign-up-direction">{{ $user->first_name }}'s Comments</h1></div> 
         <div class="panel-body">
             <div class="col-md-12 account-txt">
                 <h3 class="sign-placeholders"></h3>
@@ -77,16 +76,16 @@
                 @foreach($user->comments as $comment)
 
 
-                      <a href="{{action('CommentsController@edit', $comment->id)}}">{{{$comment->comment}}}
+                      <a href="{{action('CommentsController@edit', $comment->id)}}">{{{ $comment->comment }}}
 
                     </a>
-                    {{Form::close()}}
+                    {{ Form::close() }}
 
                     {{ Form::model($comment, array('action'=> array('CommentsController@destroy',$comment->id), 'method'=>'DELETE', 'class' => 'form-horizontal')) }}
                             
-                            <button  name="delete-comment" value="delete" type="submit" class="btn btn-default">Delete Comment</button>                    
+                    <button  name="delete-comment" value="delete" type="submit" class="btn btn-default">Delete Comment</button>                    
 
-                    {{Form::close()}}
+                    {{ Form::close() }}
 
                  @endforeach
             </div>

@@ -46,6 +46,19 @@
             transition: all 500ms ease;
         }
 
+        .btn {
+
+            margin: 0px 0px 20px 0px;
+
+        }
+
+        #buttons{
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
     </style>
 
     @stop
