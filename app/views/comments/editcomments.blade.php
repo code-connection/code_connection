@@ -65,28 +65,21 @@
     @stop
     
     @section('content')
-    
-
-       
-        <div id="wrapper" class="col-md-10">
-
-            <h1>Edit a comment</h1>
-            
-             <h1>Post: {{{$comment->post->title}}}</h1>
-            <?php $comment->id ?>
-            {{ Form::model($comment,array('action' => array('CommentsController@update', $comment->id),'method' =>'PUT'))}}
-             
-               
-                {{Form::label('comment')}}
-                {{Form::textarea('comment',null,[ 'rows' => '3' ])}}
-             
-             
-                    
-                    <br>
-                    {{ Form::submit('Submit!', array('name' => 'Save')) }}
+    <div class="container">  
+        <div class="panel panel-default">
+            <div class="panel-heading"><h1>Edit a Comment</h1></div>
+            <div class="panel-body">
+                <div class="col-md-12 account-txt">
+                    <h3>Post: {{{ $comment->post->title }}}</h3>
+                    <?php $comment->id ?>
+                    {{ Form::model($comment,array('action' => array('CommentsController@update', $comment->id),'method' =>'PUT'))}}
                        
-                {{ Form::close() }}
-                </div>
+                        {{ Form::label('comment') }}
+                        {{ Form::textarea('comment',null,[ 'rows' => '3' ]) }}              
+                            <br>
+                            <button type="submit" class="btn btn-default" name="save" value="save">Submit</button>                               
+                        {{ Form::close() }}
+                 </div>   
             </div>
         </div>
     </div> 
