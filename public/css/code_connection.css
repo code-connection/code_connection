@@ -192,9 +192,21 @@ body {
 }
 
 .modal-content {
-	background-color: 
+    position: relative;
+    background-color: #6C8096;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #506378;
+    border-radius: 6px;
+    outline: 0;
+    -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    color:#F1F1F1;
 }
 
+.sign-up-link {
+	color:#F1F1F1;
+}
 .icon-txt{
 
 	display: flex;
@@ -214,4 +226,33 @@ body {
 .fa{
 	margin:3px;
 }
-	
+
+#sign-up {
+	color:#F1F1F1;
+}
+
+#sign-in-btn {
+    text-align: center;
+    margin: auto;
+    position: relative;
+    background-color: #F1F1F1;
+}
+
+body > .container {
+  padding: 60px 15px 0;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+
+
