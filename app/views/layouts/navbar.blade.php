@@ -49,12 +49,13 @@
 
 							<li><a class="nav-text" href="{{{ action('UserController@showChangePassword', Auth::id())}}}" >Change Password</a></li>
 
-							<li><a href="{{{ action('PostsController@showUserPosts', Auth::id()) }}}">Manage POSTS</a></li>
+							<li><a class="nav-text" href="{{{ action('PostsController@showUserPosts', Auth::id()) }}}">Manage Posts</a></li>
 		    
-		    				<li><a href="{{{action('CommentsController@showUserComments', Auth::id()) }}}">Manage COMMENTS</a></li>
+		    				<li><a class="nav-text" href="{{{action('CommentsController@showUserComments', Auth::id()) }}}">Manage Comments</a></li>
 						</ul>
 			        </li>
 					
+					<li><a class="nav-text" href="{{{ action('PostsController@index')}}}" >Home</a></li>
 
 					<li><a class="nav-text" href="{{{ action('PostsController@create')}}}" >Create Post</a></li>
 
@@ -62,14 +63,12 @@
 
 					<li><a class="nav-text" href="{{{ action('PostsController@showAllPosts')}}}" >All Posts</a></li>
 
-					<li><a class="nav-text" href="{{{ action('PostsController@index')}}}" >Home</a></li>
-
 					<li><a class="nav-text" href="{{{ action('UserController@logOut') }}}" >Logout</a></li>
 
 
 			</ul>
 		 			  
-			 		{{Form::open(['action' => 'PostsController@index', 'method'=>'GET', 'class'=>'form-horizontal'])}}
+			 		{{Form::open(['action' => 'PostsController@showAllPosts', 'method'=>'GET', 'class'=>'form-horizontal'])}}
 
 			 			<div class='input-group'>
 	                    <input type='text'class='form-control search-bar' placeholder="search by keyword" name="search" value="{{Input::get('search')}}">

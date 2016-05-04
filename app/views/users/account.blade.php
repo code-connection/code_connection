@@ -104,7 +104,7 @@
 			 			Step 2. Review Your changes. Are they correct?
 						<br>
 						<br>
-			 			Step 3. Just click on the submit button. You have
+			 			Step 3. Just click on the update button. You have
 			 			now officially edited your information.
 			 			</h4>
 
@@ -136,13 +136,19 @@
 		                @if ($errors->has('image'))
 		                	<p>{{$errors->first('image')}}</p>
 		                @endif
+		                {{ Form::close() }}
 					</div>
 					
 				<div class="account-box"><h4>Basic Info</h4></div>
 				<div class="col-md-2"></div>
 					<div class="col-md-8">
 
-						{{ Form::open(array('action' => array('UserController@editUserAccount', $user->id), 'method' => 'POST', 'class' => 'form-horizontal')) }} 
+
+						{{ Form::model(Auth::user(), array('action' => array('UserController@editUserAccount', Auth::id()),'files' =>true, 'method' => 'PUT')) }}
+
+						<?php var_dump(Auth::user()->id); ?>
+						{{ Form::open(array('action' => array('UserController@editUserAccount', Auth::user()->id), 'method' => 'put', 'class' => 'form-horizontal')) }} 
+
 						 		 
 							{{ Form::label('first name', 'First name') }}
 						{{ Form::text('first_name', null,['class'=> 'form-control']) }}
@@ -151,19 +157,19 @@
 						@endif
 
 						{{ Form::label('last_name', 'Last Name') }}
-						{{ Form::text('last_name', null,['class'=> 'form-control', 'placeholder'=>"put what you like"]) }}
+						{{ Form::text('last_name', null,['class'=> 'form-control']) }}
 						@if ($errors->has('last_name'))
 						<p>{{{$errors->first('last_name')}}}</p>
 						@endif
 
 						{{ Form::label('email', 'Email') }}
-						{{ Form::text('email', null,['class'=> 'form-control', 'placeholder'=>"put what you like"]) }}
+						{{ Form::text('email', null,['class'=> 'form-control']) }}
 						@if ($errors->has('email'))
 						<p>{{{$errors->first('email')}}}</p>
 						@endif
 					
 						{{ Form::label('city', 'City') }}
-						{{ Form::text('city', null,['class'=> 'form-control', 'placeholder'=>"put what you like"]) }}
+						{{ Form::text('city', null,['class'=> 'form-control']) }}
 						@if ($errors->has('city'))
 						<p>{{{$errors->first('city')}}}</p>
 						@endif
@@ -175,14 +181,13 @@
 			                  <select class="form-control state" name="state" id="state"></select>
 			              </div>
 			            </div>
+			            <br>
+			            {{Form::submit('update',array('class' => 'btn btn-primary'))}}
+			         
+						{{Form::close()}}
 						
 						<br>
-						<a href="{{{action('UserController@showChangePassword')}}}">Change Password</a>
 						<br>
-						<br>
-						<button type="submit" class="btn btn-default" name="save" value="save">update</button>
-						{{Form::close()}}
-
 					</div>
 			</div> 
 		</div>

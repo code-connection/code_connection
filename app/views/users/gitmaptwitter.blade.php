@@ -1,24 +1,27 @@
 
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Template</title>
-  <!-- order matters, my own stylesheet must go unederneath -->
-  
-  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 
-  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'> 
-  <!---external personalized stylesheet-->
-  <style type="text/css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Template</title>
+<!-- order matters, my own stylesheet must go unederneath -->
+
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+
+<link src="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+
+<link rel="stylesheet" href="/css/stroll.css">
+
+<link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'> 
+<!---external personalized stylesheet-->
+<style type="text/css">
 
 body{
     background-color: lightblue;
     color : black;
     position: relative;
-
 }
 
 #tweetResults{
@@ -79,7 +82,6 @@ form {
     flex-direction: row;
     width: 350px;
     margin: 0 auto;
-    
 
 }
 
@@ -98,113 +100,326 @@ header{
     width: 100%;
 }
 
+tr {
+width: 100%;
+display: inline-table;
+table-layout: fixed;
+}
+
+@media screen and (max-width: 640px) {
+    table {
+        overflow-x: auto;
+        display: block;
+
+    }
+
+
+}
+
+
+
+tbody{
+  overflow-y: scroll;      
+  height: 200px;            
+  width: 100%;
+  position: absolute;
+}
+
+
+ul {
+  position: relative;
+  width: 800px;
+  height: 510px;
+  margin: 50px auto;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  list-style: none;
+}
+
+ul li {
+  position: relative;
+  height: 200px;
+  padding: 20px;
+  background: #eee;
+  color: #252525;
+  z-index: 2;
+  overflow: auto;
+}
+
+ul li:nth-child(odd) {
+  background: #fff;
+}
+
+h1 {
+  text-align: center;
+  color: rgba(0,0,0,0.8);
+  margin-top: 25px;
+  font: bold 80px Helvetica, Arila, sans-serif;
+  text-shadow: 1px 1px 1px rgba(255,255,255,0.1);
+}
+
+h2 {
+  margin-top: 25px;
+  font: bold 30px Helvetica, Arila, sans-serif;
+}
+
+p {
+  font: 13px/1.5 Georgia, Times, serif;
+  color: #757575;
+
+}
 
    </style>  
 </head>
 <body>
     <div id="wrapper">
 
-        <div id ="container">
+    <meta charset="utf-8">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Template</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+
+    <link src="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+
+    <link rel="stylesheet" href="/css/stroll.css">
+
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'> 
+    <style type="text/css">
+
+        body{
+            background-color: lightblue;
+            color : black;
+            position: relative;
+        }
+
+        #tweetResults{
+            font-size: 25px;
+        }
+
+        body p {
+
+           color :black;
+        }
+
+        #profiles{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 770px;
+            border: 1px green;
+            background-color: yellow;
+            margin: 0 auto;
+        }
+
+
+
+        div#map-canvas {
+
+            width: 100%;
+            height: 600px;
+            margin-left: 0px;
+            margin-right: 0px;
+
+        }
+
+        form {
+            width: 700px;
+            margin: 0 auto;
+            padding: 0px;
+        }
+
+        #container {
+            margin: 0 auto;
+            width: 100%;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            
+            background-color: lightblue;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+
+
+        #language{
+
+            width: 225px;
+        }
+
+        .carousel-inner{
+            display: flex;
+            flex-direction: row;
+            width: 350px;
+            margin: 0 auto;
+
+        }
+
+       
+
+            <div class="table-responsive">
+                    <div class="panel panel-default">
+                      <!-- Default panel contents -->
+                    <div class="panel-heading">GitHub Results</div>
+                      <!-- Table -->
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th id="rank">Rank</th>
+                                    <th id="location">Location</th>
+                                    <th id="language">Language</th>
+                                    <th id="user_login">User_login</th>
+                                    <th id="repos_url">Repos url</th>
+                                </tr>
+                            </thead>
+                            <tbody id="insert_profiles2">
+                            </tbody>
+                        </table>
+                    </div>
+            </div>
+        </div>
+
+
+        header{
+            width: 100%;
+        }
+
+        tr {
+            width: 100%;
+            display: inline-table;
+            table-layout: fixed;
+        }
+
+        table{
+            height:300px;              /*Select the height of the table*/
+            display: -moz-groupbox;    /*Firefox Bad Effect*/
+        }
+
+        tbody{
+            overflow-y: scroll;      
+            height: 200px;             /*Select the height of the body*/
+            width: 100%;
+            position: absolute;
+        }
+
+            ul {
+            position: relative;
+            width: 800px;
+            height: 510px;
+            margin: 50px auto;
+            padding: 0;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            list-style: none;
+        }
+
+        ul li {
+            position: relative;
+            height: 200px;
+            padding: 20px;
+            background: #eee;
+            color: #252525;
+            z-index: 2;
+            overflow: auto;
+        }
+
+        ul li:nth-child(odd) {
+            background: #fff;
+        }
+
+        h1 {
+            text-align: center;
+            color: rgba(0,0,0,0.8);
+            margin-top: 25px;
+            font: bold 80px Helvetica, Arila, sans-serif;
+            text-shadow: 1px 1px 1px rgba(255,255,255,0.1);
+        }
+
+        h2 {
+            margin-top: 25px;
+            font: bold 30px Helvetica, Arila, sans-serif;
+        }
+
+        p {
+            font: 13px/1.5 Georgia, Times, serif;
+            color: #757575;
+        }
+
+        #coordinates{
+
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+
+        }
+
+        #data-lists{
+            color: green;
+        }
+
+        li{
+            border-style: 1px orange;
+        }
+
+        #insert_profiles {
+            position:relative;
+
+        }
+
+    </style>  
+</head>
+<body>
+    <div id="wrapper">
+        <div id ="container">
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJMMD6k9NVgkv5xDAcIaENzanI8psOI44"></script>
 
-           
-                <h2>Code Connection</h2>
-                
+            <h2>Code Connection</h2>
        
             <br>
 
             <div id="coordinates">
                
-                    <label for="address">Enter City: </label>
-                        <input id="address" type="text">
-                    <label for="language">Enter Language: </label>
-                        <input id="language" type="text" placeholder="javascript or ruby or python">
-                    <button id="submit-address" type="submit">Submit</button>
+                <label for="address">Enter City: </label>
+                    <input id="address" type="text">
+                <label for="language">Enter Language: </label>
+                    <input id="language" type="text" placeholder="javascript or ruby or python">
+                <button id="submit-address" type="submit">Submit</button>
                
             </div>
 
-           
 
         </div>  <!--  end container -->
-         <div id="map-canvas"></div>
+
+        <div id="map-canvas"></div>
 
         <br>
         <br>
         <br>
 
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-          <!-- Indicators -->
-          <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
-            <li data-target="#myCarousel" data-slide-to="4"></li>
-            <li data-target="#myCarousel" data-slide-to="5"></li>
-            <li data-target="#myCarousel" data-slide-to="6"></li>
-            <li data-target="#myCarousel" data-slide-to="7"></li>
-            <li data-target="#myCarousel" data-slide-to="8"></li>
-            <li data-target="#myCarousel" data-slide-to="9"></li>
-            <li data-target="#myCarousel" data-slide-to="10"></li>
-            <li data-target="#myCarousel" data-slide-to="11"></li>
-            <li data-target="#myCarousel" data-slide-to="12"></li>
-            <li data-target="#myCarousel" data-slide-to="13"></li>
-            <li data-target="#myCarousel" data-slide-to="14"></li>
-            <li data-target="#myCarousel" data-slide-to="15"></li>
-            <li data-target="#myCarousel" data-slide-to="16"></li>
-            <li data-target="#myCarousel" data-slide-to="17"></li>
-            <li data-target="#myCarousel" data-slide-to="18"></li>
-            <li data-target="#myCarousel" data-slide-to="19"></li>
-            <li data-target="#myCarousel" data-slide-to="20"></li>
-            <li data-target="#myCarousel" data-slide-to="21"></li>
-            <li data-target="#myCarousel" data-slide-to="22"></li>
-            <li data-target="#myCarousel" data-slide-to="23"></li>
-            <li data-target="#myCarousel" data-slide-to="24"></li>
-            <li data-target="#myCarousel" data-slide-to="25"></li>
-            <li data-target="#myCarousel" data-slide-to="26"></li>
-            <li data-target="#myCarousel" data-slide-to="27"></li>
-            <li data-target="#myCarousel" data-slide-to="28"></li>
-            <li data-target="#myCarousel" data-slide-to="29"></li>
-            <li data-target="#myCarousel" data-slide-to="30"></li>
+        <div id="insert_profiles"></div>
 
-          </ol>
 
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner" role="listbox">
 
-                <div class="item active">
-                  <img src="http://placehold.it/350x150?text=Search for a location and a language above the map!">
-                </div>
 
-          </div> <!-- end carousel inner -->
-
-          <!-- Left and right controls -->
-          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-
-        </div> <!-- myCarousel -->
-        <br>
-        <div id="tweetResults">
-       
-
-        </div>
-        <br>
-        <br>
-        <div id="meetupResults">
-        </div>
-
-     <!--html here-->
 
     </div> <!-- end wrapper   --> 
 
+        <div id="insert_twitter"></div>
+
+        <div id="insert_meetups"></div>
+
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="/js/jquery-responsive-text-master/jquery.responsiveText.js"></script>
+
+
+<script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+<script src="/js/stroll.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous">
     </script>
 <script type="text/javascript">
@@ -215,6 +430,9 @@ var language;
 
 
 $(document).ready(function() {
+
+    $('.responsive').responsiveText();
+  
 
     var mapOptions = {
             
@@ -241,25 +459,39 @@ function getGitHubData(language,address){
 
             console.log('This is the total users:'+data.total_count+' with '+language+' in '+address);
 
+            var html = '<ul class="wave">';
+
             data.items.forEach(function (items, index, array) {
 
-                var profileString = ""
-                profileString += "<div class=\"item\">"
-                profileString += "<p>"+"rank by followers: "+(index+1)+"<p>"
-                profileString += "<p>"+"LOCATION: "+address+"</p>"
-                profileString += "<p>"+"LANGUAGE: "+language+"</p>"
-                profileString += "<p>"+"user_login: "+items.login+"<p>"
-                profileString += "<p>"+"repos_url: "+items.repos_url+"</p>"
-                profileString += "<p>"+"followers_url: "+items.followers_url+"</p>"
-                profileString += "</div>"
 
-                $(".carousel-inner").append(profileString);
-             
+                html += "<li>Rank: "+(index+1)+" Address:"+address+" Language:"+language+" Username:"+items.login+" Repos:"+items.repos_url+"</li>"
+
+
+                html += "<li class=\"data-lists\">"+"<img src=\"/img/github.png\">"
+                +"Rank by followers: "+(index+1)+"</br>"
+                +" city: "+address+"</br>"
+                +" Language: "+language+"</br>"
+                +" Username: "+items.login+"</br>"
+                +" Repos: "+"<a href= \""+items.repos_url + "\">"+items.repos_url+"</a></li>"
+
+               
+
 
             }); //end foreach
+            $("#insert_profiles").html(html);
+
+            stroll.bind( '#insert_profiles ul' );           
 
 
-
+            // var profileString = ""
+            //     profileString += "<td class=\"list_results\">"
+            //     profileString += "<p>"+"rank by followers: "+(index+1)+"<p>"
+            //     profileString += "<p>"+"LOCATION: "+address+"</p>"
+            //     profileString += "<p>"+"LANGUAGE: "+language+"</p>"
+            //     profileString += "<p>"+"user_login: "+items.login+"<p>"
+            //     profileString += "<p>"+"repos_url: "+items.repos_url+"</p>"
+            //     profileString += "<p>"+"followers_url: "+items.followers_url+"</p>"
+            //     profileString += "</td>"
             var languageObj = [{//element
 
                 language: "javascript",
@@ -284,6 +516,69 @@ function getGitHubData(language,address){
                 iconUrl: "/img/langicons/ruby.png",
                 strokeColor: '#FF0000',
                 fillColor: '#FF0000'
+
+                 },{
+                language: "ruby on rails",
+                description: address,
+                image: "<img src=\"/img/langicons/ruby.png\" alt=\"rubyonrails\">",
+                iconUrl: "/img/langicons/rubyonrails.jpeg",
+                strokeColor: '#FF0000',
+                fillColor: '#FF0000'
+
+
+                 },{
+                language: "c",
+                description: address,
+                image: "<img src=\"/img/langicons/c.png\" alt=\"c\">",
+                iconUrl: "/img/langicons/c.png",
+                strokeColor: '#5A4DE8',
+                fillColor: '#5A4DE8'
+
+
+                },{
+                language: "c++",
+                description: address,
+                image: "<img src=\"/img/langicons/c++.jpeg\" alt=\"c++\">",
+                iconUrl: "/img/langicons/c++.jpeg",
+                strokeColor: '#5A4DE8',
+                fillColor: '#5A4DE8'
+
+
+                },{
+                language: "c#",
+                description: address,
+                image: "<img src=\"/img/langicons/csharp.jpeg\" alt=\"c#\">",
+                iconUrl: "/img/langicons/csharp.jpeg",
+                strokeColor: '#5A4DE8',
+                fillColor: '#5A4DE8'
+
+
+                },{
+                language: "c sharp",
+                description: address,
+                image: "<img src=\"/img/langicons/csharp.jpeg\" alt=\"c#\">",
+                iconUrl: "/img/langicons/csharp.jpeg",
+                strokeColor: '#5A4DE8',
+                fillColor: '#5A4DE8'
+
+
+
+                },{
+                language: "lisp",
+                description: address,
+                image: "<img src=\"/img/langicons/lisp.jpeg\" alt=\"lisp\">",
+                iconUrl: "/img/langicons/lisp.jpeg",
+                strokeColor: '#4DE8A7',
+                fillColor: '#4DE8A7'
+
+
+                },{
+                language: "lisp",
+                description: address,
+                image: "<img src=\"/img/langicons/lisp.jpeg\" alt=\"lisp\">",
+                iconUrl: "/img/langicons/lisp.jpeg",
+                strokeColor: '#4DE8A7',
+                fillColor: '#4DE8A7'
 
             }];
 
@@ -351,6 +646,15 @@ function getGitHubData(language,address){
                 languageObj.fillColor = '#FFB3B3'
                 break;
 
+
+                case "c sharp":
+                console.log('c# icon here');
+                languageObj.image = "<img src=\"/img/langicons/csharp.jpeg\" alt=\"c#\">";
+                languageObj.iconUrl = "/img/langicons/csharp.jpeg";
+                languageObj.strokeColor = '#FFB3B3',
+                languageObj.fillColor = '#FFB3B3'
+                break;
+
                 case "mysql":
                 console.log('mysql icon here');
                 languageObj.image = "<img src=\"/img/langicons/mysql.png\" alt=\"mysql\">";
@@ -394,7 +698,7 @@ function getGitHubData(language,address){
                         map: map,
                         strokeOpacity: 0.8,
                         strokeWeight: 1,
-                        draggable: true,
+                        // draggable: true,
                         geodesic: true,
                         strokeColor: languageObj.strokeColor,
                         fillColor: languageObj.fillColor,
@@ -403,7 +707,6 @@ function getGitHubData(language,address){
                         radius: Math.sqrt(data.total_count)*500,
 
                     }); 
-                    
 
                     marker.setMap(map);
 
@@ -424,15 +727,26 @@ function getGitHubData(language,address){
                         map: map,
                         icon: languageObj.iconUrl,
                         animation : google.maps.Animation.DROP,
-                        draggable: true
+                        // draggable: true
                    
                     }); 
+
+                    markerLanguage.addListener('click', toggleBounce);
+
+                    function toggleBounce() {
+
+                        if (markerLanguage.getAnimation() !== null) {
+                            markerLanguage.setAnimation(null);
+                        } else {
+                            markerLanguage.setAnimation(google.maps.Animation.BOUNCE);
+                        }
+                    }
 
                     map.panTo(results[0].geometry.location);
 
                     var infowindow = new google.maps.InfoWindow({
-                        content: "The number of self-identified "+language+" programmers in "+address+" is "+
-                        data.total_count,
+                        content: "<span style=\"color:blue\"><b>"+language+" programmers in "+address+" is "+
+                        data.total_count+"</b></span>",
                         position: latlng
                         
                     });
@@ -468,63 +782,61 @@ function getGitHubData(language,address){
                     console.log(address);
                     console.log(language);
 
-                    
+                     var twitterHtml = '<ul class="wave">';
+
                     d.statuses.forEach(function (element, index, array) {
-                    
-                    var twitterResults = ""
-                    twitterResults += "<div>"
-                    twitterResults += "<p>"+"Created : "+element.created_at+"<p>"
-                    twitterResults += "<p>"+"Name : "+element.user.name+"<p>"
-                    twitterResults += "<p>"+"Location : "+element.user.location+"<p>"
-                    twitterResults += "<p>"+"Screen Name : "+element.user.screen_name+"<p>"
-                    twitterResults += "<p>"+"Location: "+element.user.location+"<p>"
-                    twitterResults += "<p>"+"LANGUAGE: "+language+"</p>"
-                    twitterResults += "<p>"+"Tweet : "+element.text+"<p>"
-                    twitterResults += "<p>"+"Description : "+element.user.description+"</p>"
-                    twitterResults += "</div><br><br>"
 
-                    $("#tweetResults").append(twitterResults);
-                 
+                    twitterHtml += "<li class=\"data-lists\">"+"<img src=\"/img/bird.jpg\">"
+                    +"Username: "+element.user.name+"</br>"
+                    +"Screen name: "+element.user.screen_name+"</br>"
+                    +"Location: "+element.user.location+"</br>"
+                    +"Language: "+language+"</br>"
+                    +"Text: "+element.text+"</br>"
+                    +"Created at: "+element.user.created_at+"</br>"
+                    +"Description: "+element.user.description+"</br>"
+                    +"</li>"
 
-                }); //end foreach
-                
+
+            }); //end foreach
+             $("#insert_twitter").html(twitterHtml);
+
+            stroll.bind( '#insert_twitter ul' ); 
+               
             }).fail(function() {
                 alert("There was an error!");
             }).always(function() {
                 alert("And we're finished!");
             }); //end ajax twittter
 
-
-
-
             console.log(address);
             console.log(language);
 
              $.get('/ajax/returnmeetups',{
                     city: address,
-                    text: language
+                    text: language,
+                    lat: lat,
+                    lon: long
                 }).done(function(events){
-
-
+                    console.log('my meetup events below:');
+                    console.log(events);
                     alert("Meetups get call completed successfully!");
                     console.log("Meetup data from server below:");
-                    console.log(events);
-                   
-                   
-                
-                    
+                    var meetupResults = '<ul class="wave">';
+
                     events.forEach(function (element, index, array) {
-                    
-                    var meetupResults = ""
-                    meetupResults += "<div>"
-                    meetupResults += "<p>"+"Event Name"+element.name+"<p>"
-                    meetupResults += "<a>"+"Event Name"+element.event_url+"</a>"
-                    meetupResults += "</div>"
+                   
 
-                    $("#meetupResults").append(meetupResults);
-                 
+                    meetupResults += "<li class=\"data-lists\">"+"<img src=\"/img/meetup.png\">"+'URL:'+"<a href=\"" + element.event_url + "\">"+element.event_url+"</a></br>"
+                    +"Description :"+element.description+"<br>"
+                    +"Name :"+element.name+"<br>"
+                    +"RSVP maybe :"+element.maybe_rsvp_count+"<br>"
+                    +"</li>"
 
-                }); //end foreach
+
+                }); 
+                    $("#insert_meetups").html(meetupResults);
+                    stroll.bind('#insert_meetups ul');
+
                 
             }).fail(function() {
                 alert("There was an error!");
@@ -543,7 +855,7 @@ function getGitHubData(language,address){
 }//end getGitHubData
 
 $("#submit-address").click(function(e){
-    $(".carousel-inner").innerHTML = "";
+    $("#main").innerHTML = "";
     $("#tweetResults").innerHTML = "";
 
     address = $("#address").val();
@@ -553,23 +865,7 @@ $("#submit-address").click(function(e){
    
 });
 
-$("#submit-heatmap").click(function(){
-    var selected_value = []; // initialize empty array 
-    
-    $(".source:checked").each(function(){
 
-        selected_value.push($(this).val());
-
-        console.log(selected_value);
-
-        selected_value.forEach(function (language, index, array) {
-
-        console.log(language+'make my density circle on the map');
-
-        });
-    });
-        
-});
    
     console.log('hi'); 
 

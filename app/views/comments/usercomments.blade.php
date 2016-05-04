@@ -6,7 +6,7 @@
 
     <title>User Comments </title>
     
-     <style>
+    <style>
         .container {
             margin-top: 15px;
             margin-bottom: 15px;
@@ -69,33 +69,28 @@
 
 <div class="container"> 
     <div class="panel panel-default">
-            <div class="panel-heading"><h1 id="sign-up-direction">{{$user->first_name}}'s Comments</h1></div> 
-            <div class="panel-body">
-                <div class="col-md-12 account-txt">
-                    <h3 class="sign-placeholders"></h3>
-                        
-                        @foreach($user->comments as $comment)
+        <div class="panel-heading"><h1 id="sign-up-direction">{{Auth::user()->first_name}}'s Comments</h1></div> 
+        <div class="panel-body">
+            <div class="col-md-12 account-txt">
+                <h3 class="sign-placeholders"></h3>
+                    
+                @foreach(Auth::user()->comments as $comment)
 
-                            {{ Form::model($comment, array('action'=> array('CommentsController@update',$comment->id), 'method'=>'PUT', 'class' => 'form-horizontal')) }}
 
-                                <textarea type="text" class="form-control form1" name="comment"  aria-describedby="basic-addon1">{{{$comment->comment}}}</textarea>
+                      <a href="{{action('CommentsController@edit', $comment->id)}}">{{{$comment->comment}}}
 
-                               
-                                <div id="buttons">
-                                    <button name="update-comment" value="update" type="submit" class="btn btn-default">Edit Comment</button>
+                    </a>
+                    {{Form::close()}}
 
-                            {{Form::close()}}
+                    {{ Form::model($comment, array('action'=> array('CommentsController@destroy',$comment->id), 'method'=>'DELETE', 'class' => 'form-horizontal')) }}
+                            
+                            <button  name="delete-comment" value="delete" type="submit" class="btn btn-default">Delete Comment</button>                    
 
-                            {{ Form::model($comment, array('action'=> array('CommentsController@destroy',$comment->id), 'method'=>'DELETE', 'class' => 'form-horizontal')) }}
-                                    
-                                    <button  name="delete-comment" value="delete" type="submit" class="btn btn-default">Delete Comment</button>
-                                </div>
+                    {{Form::close()}}
 
-                            {{Form::close()}}
-
-                         @endforeach
-                </div>
-            </div>     
+                 @endforeach
+            </div>
+        </div>     
     </div>
 </div>
 

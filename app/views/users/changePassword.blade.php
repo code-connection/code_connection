@@ -120,7 +120,7 @@
         <div class="col-md-2"></div>
           <div class="col-md-8">
 
-            {{ Form::open(array('action' => array('UserController@doChangePassword', $user->id), 'method' => 'PUT', 'class' => 'form-horizontal')) }}
+            {{ Form::open(array('action' => array('UserController@doChangePassword', Auth::user()->id), 'method' => 'PUT', 'class' => 'form-horizontal')) }}
                  
                {{ Form::label('password', 'Password') }}
                 {{ Form::password('password', ['class'=> 'form-control', 'placeholder'=>"Enter password"]) }}

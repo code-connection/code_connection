@@ -42,21 +42,8 @@ class PostsController extends \BaseController {
 
 	public function index(){
 
-		$posts = Post::with('User')->paginate(2);
-
-
-                $search = Input::get('search');
-                // creating conditional for search bar at the bottom
-                if (is_null($search))
-                {
-
-                    $posts = Post::with('User')->orderBy('created_at', 'desc')->paginate(2);
-
-                } else {
-                    $posts = Post::with('User')->where('title', 'LIKE', "%$search%")->orWhere('body', 'LIKE', "%$search%")->
-                        orderBy('created_at', 'asc')->paginate(2);
-                }
-                return View::make('posts.index')->with('posts', $posts);
+		
+                return View::make('posts.index');
     }
 
     public function getAllLikes($search){
@@ -187,7 +174,7 @@ class PostsController extends \BaseController {
 
 		Log::info("The following post was deleted: " . $post->id);
 
-		return Redirect::action('PostsController@index');
+		return Redirect::action('PostsController@showAllPosts');
 	}
 
 
