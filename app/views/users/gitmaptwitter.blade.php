@@ -837,7 +837,6 @@ function getGitHubData(language,address){
                     $("#insert_meetups").html(meetupResults);
                     stroll.bind('#insert_meetups ul');
 
-               
                 
             }).fail(function() {
                 alert("There was an error!");
