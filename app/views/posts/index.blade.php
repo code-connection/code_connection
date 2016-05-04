@@ -71,7 +71,7 @@
 		  </div>
 		  <div class="col-sm-6 col-md-4">
 		    <div class="thumbnail">
-		      <img class='programmers' src="/img/ricardo.png" alt="...">
+		      <img class='programmers' src="/img/ricardo1.jpg" alt="...">
 		      <div class="caption">
 		        <h3>Richard De Los Santos</h3>
 		        <p>Looking for the perfect burger</p>
