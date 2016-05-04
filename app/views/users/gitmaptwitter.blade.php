@@ -276,7 +276,7 @@
                                 <input id="language" type="text" placeholder="javascript or ruby or python" class="form-control">
                             <button class="btn btn-default" id="submit-address" type="submit">Submit</button>
 
-                            <div class="account-box2">Find Your People By Clicking Below</div>
+                            <div class="account-box2">Connect with fellow Coders</div>
 
                             <button class="btn btn-default btn-social"><a href="#insert_profiles" class="btn-color"><i class="fa fa-github-alt"></i> GitHub</a>
 
@@ -299,7 +299,7 @@
 
 <div class="container">
     <div class="panel panel-default">
-        <div class="panel-heading"><h2>Find Your People</h2></div>
+        <div class="panel-heading"><h2>Connect with fellow Coders</h2></div>
             <div class="panel-body">
 
                 <div class="account-box"><h4>GitHub</h4></div>
@@ -372,23 +372,16 @@ function getGitHubData(language,address){
                 +" city: "+address+"</br>"
                 +" Language: "+language+"</br>"
                 +" Username: "+items.login+"</br>"
-                +" Repos: "+"<a href=\"items.repos_url\">"+items.repos_url+"</a></li>"
+                +" Repos: "+"<a href=\""+items.repos_url+"\">"+items.repos_url+"</a></li>"
 
+               
             }); //end foreach
             $("#insert_profiles").html(html);
 
             stroll.bind( '#insert_profiles ul' );           
 
 
-            // var profileString = ""
-            //     profileString += "<td class=\"list_results\">"
-            //     profileString += "<p>"+"rank by followers: "+(index+1)+"<p>"
-            //     profileString += "<p>"+"LOCATION: "+address+"</p>"
-            //     profileString += "<p>"+"LANGUAGE: "+language+"</p>"
-            //     profileString += "<p>"+"user_login: "+items.login+"<p>"
-            //     profileString += "<p>"+"repos_url: "+items.repos_url+"</p>"
-            //     profileString += "<p>"+"followers_url: "+items.followers_url+"</p>"
-            //     profileString += "</td>"
+            
             var languageObj = [{//element
 
                 language: "javascript",
