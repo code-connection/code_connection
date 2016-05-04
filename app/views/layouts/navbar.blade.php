@@ -68,7 +68,7 @@
 
 			</ul>
 		 			  
-			 		{{Form::open(['action' => 'PostsController@index', 'method'=>'GET', 'class'=>'form-horizontal'])}}
+			 		{{Form::open(['action' => 'PostsController@showAllPosts', 'method'=>'GET', 'class'=>'form-horizontal'])}}
 
 			 			<div class='input-group'>
 	                    <input type='text'class='form-control search-bar' placeholder="search by keyword" name="search" value="{{Input::get('search')}}">
