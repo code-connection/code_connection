@@ -17,7 +17,7 @@
 						{{ Form::close() }}
 				</div>
 				<p id='no-member'>Not a member?</p>
-				<p class='sign-up-link'><a href="{{{action('UserController@showUserCreate')}}}">Click to Sign Up!</a></p>
+				<p class='sign-up-link'><a id='sign-up' href="{{{action('UserController@showUserCreate')}}}">Click to Sign Up!</a></p>
 	    	</div>
 	  	</div>
 	</div>
