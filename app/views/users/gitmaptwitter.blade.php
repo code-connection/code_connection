@@ -338,7 +338,11 @@ $(document).ready(function() {
         zoom: 11,
          center: {
             lat:  29.4284595,
-            lng: -98.492433
+            lng: -98.492433,
+            scrollwheel:  false,
+             zoomControl: false
+            
+            
         },
         mapTypeId: google.maps.MapTypeId.HYBRID
     };
