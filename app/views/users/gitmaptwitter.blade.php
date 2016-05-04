@@ -1,180 +1,6 @@
+@extends('layouts.master')
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Template</title>
-<!-- order matters, my own stylesheet must go unederneath -->
-
-<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-
-<link src="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
-
-<link rel="stylesheet" href="/css/stroll.css">
-
-<link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'> 
-<!---external personalized stylesheet-->
-<style type="text/css">
-
-body{
-    background-color: lightblue;
-    color : black;
-    position: relative;
-}
-
-#tweetResults{
-    font-size: 25px;
-}
-
-body p {
-
-   color :black;
-}
-
-#profiles{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 770px;
-    border: 1px green;
-    background-color: yellow;
-    margin: 0 auto;
- }
-
-
-div#map-canvas {
-
-    width: 100%;
-    height: 600px;
-    margin-left: 0px;
-    margin-right: 0px;
-
-}
-
-form {
-    width: 700px;
-    margin: 0 auto;
-    padding: 0px;
-}
-
-#container {
-    margin: 0 auto;
-    width: 100%;
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    
-    background-color: lightblue;
-    background-image: -webkit-linear-gradient(top, lightblue 0%, blue 100%);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-#language{
-
-    width: 225px;
-}
-
-.carousel-inner{
-    display: flex;
-    flex-direction: row;
-    width: 350px;
-    margin: 0 auto;
-
-}
-
-#heat_form{
-    background-color: white;
-}
-
-#flex_heat{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-}
-
-header{
-    width: 100%;
-}
-
-tr {
-width: 100%;
-display: inline-table;
-table-layout: fixed;
-}
-
-@media screen and (max-width: 640px) {
-    table {
-        overflow-x: auto;
-        display: block;
-
-    }
-
-
-}
-
-
-
-tbody{
-  overflow-y: scroll;      
-  height: 200px;            
-  width: 100%;
-  position: absolute;
-}
-
-
-ul {
-  position: relative;
-  width: 800px;
-  height: 510px;
-  margin: 50px auto;
-  padding: 0;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  list-style: none;
-}
-
-ul li {
-  position: relative;
-  height: 200px;
-  padding: 20px;
-  background: #eee;
-  color: #252525;
-  z-index: 2;
-  overflow: auto;
-}
-
-ul li:nth-child(odd) {
-  background: #fff;
-}
-
-h1 {
-  text-align: center;
-  color: rgba(0,0,0,0.8);
-  margin-top: 25px;
-  font: bold 80px Helvetica, Arila, sans-serif;
-  text-shadow: 1px 1px 1px rgba(255,255,255,0.1);
-}
-
-h2 {
-  margin-top: 25px;
-  font: bold 30px Helvetica, Arila, sans-serif;
-}
-
-p {
-  font: 13px/1.5 Georgia, Times, serif;
-  color: #757575;
-
-}
-
-   </style>  
-</head>
-<body>
-    <div id="wrapper">
-
+@section('top-script')
     <meta charset="utf-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -187,15 +13,12 @@ p {
 
     <link rel="stylesheet" href="/css/stroll.css">
 
-
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'> 
+    <link rel="stylesheet" href="/css/code_connection.css">
+   
     <style type="text/css">
 
-        body{
-            background-color: lightblue;
-            color : black;
-            position: relative;
-        }
+        
 
         #tweetResults{
             font-size: 25px;
@@ -214,14 +37,13 @@ p {
             border: 1px green;
             background-color: yellow;
             margin: 0 auto;
-        }
-
+         }
 
 
         div#map-canvas {
 
-            width: 100%;
-            height: 600px;
+            width: 73%;
+            height: 500px;
             margin-left: 0px;
             margin-right: 0px;
 
@@ -262,29 +84,6 @@ p {
 
        
 
-            <div class="table-responsive">
-                    <div class="panel panel-default">
-                      <!-- Default panel contents -->
-                    <div class="panel-heading">GitHub Results</div>
-                      <!-- Table -->
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th id="rank">Rank</th>
-                                    <th id="location">Location</th>
-                                    <th id="language">Language</th>
-                                    <th id="user_login">User_login</th>
-                                    <th id="repos_url">Repos url</th>
-                                </tr>
-                            </thead>
-                            <tbody id="insert_profiles2">
-                            </tbody>
-                        </table>
-                    </div>
-            </div>
-        </div>
-
-
         header{
             width: 100%;
         }
@@ -307,7 +106,7 @@ p {
             position: absolute;
         }
 
-            ul {
+            .wave {
             position: relative;
             width: 800px;
             height: 510px;
@@ -318,7 +117,7 @@ p {
             list-style: none;
         }
 
-        ul li {
+        .wave li {
             position: relative;
             height: 200px;
             padding: 20px;
@@ -328,9 +127,9 @@ p {
             overflow: auto;
         }
 
-        ul li:nth-child(odd) {
+        .wave li:nth-child(odd) {
             background: #fff;
-        }
+       }
 
         h1 {
             text-align: center;
@@ -371,54 +170,163 @@ p {
 
         }
 
+        .container {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .panel-default .panel-heading {
+            background-color: #6C8096;
+            border-color: #506378;
+            color: #F1F1F1;
+        }
+
+        .panel-body {
+            border: 1.5px solid;
+            border-color: #506378;
+        }
+
+        .account-txt {
+            padding-bottom: 30px;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .btn-default {
+            background-color: #F67366;
+            color:white;
+            margin-top: 15px;
+        }
+
+        .btn-default:hover {
+            background-color: #F67366;
+            color:white;
+            -webkit-transition: all 500ms ease;
+            -moz-transition: all 500ms ease;
+            -ms-transition: all 500ms ease;
+            -o-transition: all 500ms ease;
+            transition: all 500ms ease;
+        }
+
+        li.data-lists {
+            border: 1px solid;
+            border-color: #506378;
+        }
+
+        .account-box {
+            background-color: #F1F1F1;
+            color: #777777;
+            padding: 15px;
+
+            margin-bottom: 20px;
+        }
+
+        .account-box2 {
+            background-color: #F1F1F1;
+            color: #777777;
+            padding: 15px;
+
+            margin-bottom: 10px;
+            margin-top: 20px;
+        }
+
+        .btn-color {
+            color: white;
+        }
+
+        .btn-social {
+            margin-left: 80px;
+        }
+
+       @media (max-width: 400px) {
+            li.data-lists {
+            border: 1px solid;
+            border-color: #506378;
+            width: 335px;
+            }
+
+
+        }
+
+
     </style>  
 </head>
-<body>
-    <div id="wrapper">
-        <div id ="container">
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJMMD6k9NVgkv5xDAcIaENzanI8psOI44"></script>
+@stop
 
-            <h2>Code Connection</h2>
-       
-            <br>
+@section('content')
 
-            <div id="coordinates">
-               
-                <label for="address">Enter City: </label>
-                    <input id="address" type="text">
-                <label for="language">Enter Language: </label>
-                    <input id="language" type="text" placeholder="javascript or ruby or python">
-                <button id="submit-address" type="submit">Submit</button>
-               
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading"><h2>Code Connection</h2></div>
+            <div class="panel-body">
+                <div class="row">
+
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJMMD6k9NVgkv5xDAcIaENzanI8psOI44"></script>
+           
+                <br>
+                    <div class="col-md-3" id="coordinates">
+                    <form>
+                        <div class="form-group">
+                           
+                            <label for="address">Enter City:</label>
+                                <input id="address" type="text" class="form-control">
+                            <label for="language">Enter Language: </label>
+                                <input id="language" type="text" placeholder="javascript or ruby or python" class="form-control">
+                            <button class="btn btn-default" id="submit-address" type="submit">Submit</button>
+
+                            <div class="account-box2">Find Your People By Clicking Below</div>
+
+                            <button class="btn btn-default btn-social"><a href="#insert_profiles" class="btn-color"><i class="fa fa-github-alt"></i> GitHub</a>
+
+                            <br>
+
+                            <button class="btn btn-default btn-social"><a href="#insert_twitter" class="btn-color"><i class="fa fa-twitter"></i> Twitter</a>
+
+                            <br>
+
+                            <button class="btn btn-default btn-social"><a href="#insert_meetups" class="btn-color"><i class="fa fa-users"></i> Meetup</a>
+                           
+                        </div>
+                    </form>
+                </div>
+                    <div id="map-canvas" style="margin-left:50px;margin-right:0px;"></div>
+                </div>
             </div>
+    </div>
+</div>  <!--  end container -->
 
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading"><h2>Find Your People</h2></div>
+            <div class="panel-body">
 
-        </div>  <!--  end container -->
+                <div class="account-box"><h4>GitHub</h4></div>
 
-        <div id="map-canvas"></div>
+                <div  id="insert_profiles"></div>
 
-        <br>
-        <br>
-        <br>
+                <div class="account-box"><h4>Twitter</h4></div>
 
-        <div id="insert_profiles"></div>
+                <div id="insert_twitter"></div>
 
+                <div class="account-box"><h4>Meetups</h4></div>
 
+                <div id="insert_meetups"></div>
 
+            </div>
+        </div>
+    </div>
+</div>
 
+@stop
 
-    </div> <!-- end wrapper   --> 
-
-        <div id="insert_twitter"></div>
-
-        <div id="insert_meetups"></div>
-
+@section('bottom-script')
+         
 <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="/js/jquery-responsive-text-master/jquery.responsiveText.js"></script>
 
-
-<script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+<link src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js">
 <script src="/js/stroll.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous">
     </script>
@@ -428,11 +336,7 @@ p {
 var address;
 var language;
 
-
 $(document).ready(function() {
-
-    $('.responsive').responsiveText();
-  
 
     var mapOptions = {
             
@@ -463,19 +367,12 @@ function getGitHubData(language,address){
 
             data.items.forEach(function (items, index, array) {
 
-
-                html += "<li>Rank: "+(index+1)+" Address:"+address+" Language:"+language+" Username:"+items.login+" Repos:"+items.repos_url+"</li>"
-
-
                 html += "<li class=\"data-lists\">"+"<img src=\"/img/github.png\">"
                 +"Rank by followers: "+(index+1)+"</br>"
                 +" city: "+address+"</br>"
                 +" Language: "+language+"</br>"
                 +" Username: "+items.login+"</br>"
-                +" Repos: "+"<a href= \""+items.repos_url + "\">"+items.repos_url+"</a></li>"
-
-               
-
+                +" Repos: "+"<a href=\"items.repos_url\">"+items.repos_url+"</a></li>"
 
             }); //end foreach
             $("#insert_profiles").html(html);
@@ -878,5 +775,4 @@ $("#submit-address").click(function(e){
 
 </script>
 <!---personalized js external file-->
-</body>
-</html>  
+@stop 
