@@ -38,7 +38,7 @@
         	<div class="panel-heading"><h1><i>Post Details</i></h1></div>
             <div class="panel-body">
                 <div class="col-md-12 account-txt">
-                    <h1>{{{ $post->title }}}</h1><br>
+                    <h3>{{{ $post->title }}}</h3><br>
 
                     <p class="show-page-paragraph">Content: {{{$post->body}}} </p>
 
