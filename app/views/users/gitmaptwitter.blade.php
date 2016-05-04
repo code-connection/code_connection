@@ -7,9 +7,6 @@
 
     <title>Template</title>
 
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-
-    <link src="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
 
     <link rel="stylesheet" href="/css/stroll.css">
 
@@ -252,7 +249,6 @@
 
 
     </style>  
-</head>
 @stop
 
 @section('content')
@@ -323,13 +319,12 @@
 
 @section('bottom-script')
          
-<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 
-<link src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js">
+
+
 <script src="/js/stroll.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous">
-    </script>
+
+  
 <script type="text/javascript">
      // (function(){
 "use strict;"
