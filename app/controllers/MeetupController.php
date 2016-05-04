@@ -25,12 +25,12 @@ class MeetupController extends BaseController {
 
 		$api_key = $_ENV['MEETUP_API_KEY'];
 
+
 		$connection = new MeetupKeyAuthConnection($api_key);
 
 		$m = new MeetupEvents($connection);
 
-		 $events = $m->getOpenEvents( array( 'text' => $text, 'lat' => $lat, 'lon' => $lon ));
-
+		$events = $m->getOpenEvents( array( 'text' => $text, 'lat' => $lat, 'lon' => $lon ));
 
 		return Response::json($events);
 		
