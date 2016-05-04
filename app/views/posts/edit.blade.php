@@ -73,13 +73,15 @@
                     <h3 class="sign-placeholders"></h3>
 
                         {{ Form::model($post, array('action' => array('PostsController@update', $post->id) , 'method'=>'PUT')) }}
+
+
                            
                             {{ Form::label('title:') }}
                             {{ Form::textarea('title',null,['placeholder'=> $post->body, 'rows' => '3','class' => 'form-control form1' ]) }}
                             <br>
 
-                            {{ Form::label('content:') }}
-                            {{ Form::textarea('content',null,['placeholder'=> $post->body, 'class' => 'form-control form1' ]) }}
+                            {{ Form::label('body:') }}
+                            {{ Form::textarea('body',null,['placeholder'=> $post->body, 'class' => 'form-control form1' ]) }}
                             <br>
 
                             <button  value="delete" name="submit-post" type="submit" class="btn btn-default">Submit</button>
@@ -90,7 +92,7 @@
                 </div>
             </div>
         </div>
-    </div> 
+    
     @stop
 
     @section('bottom-script')

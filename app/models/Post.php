@@ -20,6 +20,32 @@ class Post extends BaseModel
 		
 	}
 
+
+	public function index(){
+
+		$posts = Post::with('User')->paginate(2);
+
+
+                $search = Input::get('search');
+                // creating conditional for search bar at the bottom
+                if (is_null($search))
+                {
+
+                    $posts = Post::with('User')->orderBy('created_at', 'desc')->paginate(2);
+
+                } else {
+                    $posts = Post::with('User')->where('title', 'LIKE', "%$search%")->orWhere('body', 'LIKE', "%$search%")->
+                        orderBy('created_at', 'asc')->paginate(2);
+                }
+                return View::make('posts.allposts')->with('posts', $posts);
+    }
+
+    public function getAllLikes($search){
+
+        return self::where('title', 'LIKE', "%search%")->orWhere('body', 'LIKE', "%search%")->orderby('created_at', 'ASC')->get();
+    }
+
+
 	public function comments(){
 
 		return $this->hasMany('Comment');
