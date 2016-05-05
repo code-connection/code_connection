@@ -56,7 +56,7 @@
 	     <div class="row">
 		  <div class="col-sm-6 col-md-4">
 		    <div class="thumbnail">
-		      <img class='programmers' src="/img/don.jpg" alt="marine hero">
+		      <img class='programmers' src="/img/don.jpeg" alt="marine hero">
 		      <div class="caption">
 		        <h3>Donald Moore</h3>
 		        <p>A real American Hero</p>
@@ -71,7 +71,7 @@
 		  </div>
 		  <div class="col-sm-6 col-md-4">
 		    <div class="thumbnail">
-		      <img class='programmers' src="/img/ricardo1.jpg" alt="...">
+		      <img class='programmers' src="/img/ricardo1.jpeg" alt="...">
 		      <div class="caption">
 		        <h3>Richard De Los Santos</h3>
 		        <p>Looking for the perfect burger</p>
@@ -86,7 +86,7 @@
 		  </div>
 		  <div class="col-sm-6 col-md-4">
 		    <div class="thumbnail">
-		      <img class='programmers' src="/img/trey.jpg" alt="...">
+		      <img class='programmers' src="/img/trey.jpeg" alt="...">
 		      <div class="caption">
 		        <h3>Trey Sowers</h3>
 		        <p>A man with the plan</p>
