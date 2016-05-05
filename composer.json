@@ -7,7 +7,8 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 		"abraham/twitteroauth": "^0.6.4",
-		"blobaugh/meetup-api-client": "dev-master"
+		"blobaugh/meetup-api-client": "dev-master",
+		"fzaninotto/faker": "^1.6"
 	},
 	"autoload": {
 		"classmap": [
