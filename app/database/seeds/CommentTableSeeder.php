@@ -1,5 +1,8 @@
 <?php
 
+
+use Faker\Factory as Faker;
+
 class CommentTableSeeder extends Seeder {
 
 	public function run()
@@ -23,6 +26,17 @@ class CommentTableSeeder extends Seeder {
 		$comment3->post_id = Post::all()->random()->id;
 		$comment3->user_id = User::first()->id;
 		$comment3->save();
+
+
+		$faker = Faker::create();
+		foreach(range(1, 100) as $index)
+		{
+			Comment::create([
+				'comment' => $faker->text,
+				'post_id' => Post::all()->random()->id,
+				'user_id' => User::all()->random()->id,
+			]);
+		}
 	}
 
 }
