@@ -146,7 +146,7 @@
 
 						{{ Form::model(Auth::user(), array('action' => array('UserController@editUserAccount', Auth::id()),'files' =>true, 'method' => 'PUT')) }}
 
-						<?php var_dump(Auth::user()->id); ?>
+						
 						{{ Form::open(array('action' => array('UserController@editUserAccount', Auth::user()->id), 'method' => 'put', 'class' => 'form-horizontal')) }} 
 
 						 		 

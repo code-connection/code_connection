@@ -341,7 +341,7 @@ $(document).ready(function() {
             lng: -98.492433,
         },
         scrollwheel: false,
-        scaleContent: false,
+       
 
         mapTypeId: google.maps.MapTypeId.HYBRID
     };
