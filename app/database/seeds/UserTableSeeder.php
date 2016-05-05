@@ -1,5 +1,7 @@
 <?php
 
+use Faker\Factory as Faker;
+
 class UserTableSeeder extends Seeder{
 
 
@@ -43,6 +45,21 @@ class UserTableSeeder extends Seeder{
 
 		
 
+
+
+		$faker = Faker::create();
+		foreach(range(1, 100) as $index)
+		{
+			User::create([
+				'first_name' => $faker->firstName,
+				'last_name' => $faker->lastName,
+				'email' => $faker->email,
+				'password' => $faker->password,
+				'city' => $faker->city,
+				'state' => $faker->stateAbbr,
+				'image' => 'http://placehold.it/160x160'
+			]);
+		}
 
 	}
 
