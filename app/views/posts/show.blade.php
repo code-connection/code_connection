@@ -56,7 +56,7 @@
                     @endforeach
 
                     <p>
-                    	<a href="{{{ action('PostsController@index') }}}">Return to Index</a>
+                    	<a href="{{{ action('PostsController@index') }}}">Return to Home</a>
                     </p>
 
                     <br>
