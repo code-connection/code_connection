@@ -22,7 +22,7 @@ class PostsController extends \BaseController {
 
 	public function showAllPosts(){
 
-		$posts = Post::with('User')->paginate(2);
+		$posts = Post::with('User')->paginate(5);
 
 
                 $search = Input::get('search');
@@ -30,11 +30,11 @@ class PostsController extends \BaseController {
                 if (is_null($search))
                 {
 
-                    $posts = Post::with('User')->orderBy('created_at', 'desc')->paginate(2);
+                    $posts = Post::with('User')->orderBy('created_at', 'desc')->paginate(5);
 
                 } else {
                     $posts = Post::with('User')->where('title', 'LIKE', "%$search%")->orWhere('body', 'LIKE', "%$search%")->
-                        orderBy('created_at', 'asc')->paginate(2);
+                        orderBy('created_at', 'asc')->paginate(5);
                 }
                 return View::make('posts.allposts')->with('posts', $posts);
     }
