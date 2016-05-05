@@ -42,8 +42,6 @@ class UserTableSeeder extends Seeder{
 		$user3->save();
 
 
-
-
 	}
 
 }
