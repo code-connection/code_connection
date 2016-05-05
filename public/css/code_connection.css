@@ -183,6 +183,7 @@
 
 body {
 	background-image:url(/img/linen.png);
+	font
 }
 
 @media (max-width: 767px) {
@@ -238,21 +239,12 @@ body {
     background-color: #F1F1F1;
 }
 
-body > .container {
-  padding: 60px 15px 0;
-}
-.container .text-muted {
-  margin: 20px 0;
+body {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight:700 bold;
 }
 
-.footer > .container {
-  padding-right: 15px;
-  padding-left: 15px;
-}
 
-code {
-  font-size: 80%;
-}
 
 
 

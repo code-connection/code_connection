@@ -55,7 +55,7 @@
         #container {
             margin: 0 auto;
             width: 100%;
-            font-family: "Comic Sans MS", cursive, sans-serif;
+          
             
             background-color: lightblue;
 
