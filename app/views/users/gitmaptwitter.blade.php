@@ -55,7 +55,7 @@
         #container {
             margin: 0 auto;
             width: 100%;
-            font-family: "Comic Sans MS", cursive, sans-serif;
+          
             
             background-color: lightblue;
 
@@ -338,8 +338,11 @@ $(document).ready(function() {
         zoom: 11,
          center: {
             lat:  29.4284595,
-            lng: -98.492433
+            lng: -98.492433,
         },
+        scrollwheel: false,
+        scaleContent: false,
+
         mapTypeId: google.maps.MapTypeId.HYBRID
     };
 
