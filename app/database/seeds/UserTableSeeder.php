@@ -6,10 +6,10 @@ class UserTableSeeder extends Seeder{
 	public function run(){
 
 		$user = new User();
-		$user->first_name = $_ENV['USER_FIRST'];
-		$user->last_name = $_ENV['USER_LAST'];
-		$user->email = $_ENV['USER_EMAIL'];
-		$user->password = $_ENV['USER_PASS'];
+		$user->first_name = 'Don';
+		$user->last_name = 'Moore';
+		$user->email = 'dmoore@codeup.com';
+		$user->password = 'yanula20';
 		$user->city = 'San Antonio';
 		$user->state = 'TX';
 		$user->image = '/img/don.jpeg';
