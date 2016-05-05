@@ -12,6 +12,7 @@ class UserTableSeeder extends Seeder{
 		$user->password = $_ENV['USER_PASS'];
 		$user->city = 'San Antonio';
 		$user->state = 'TX';
+		$user->image = '/img/don.jpg';
 		$user->save();
 
 		$user2 = new User();
@@ -21,6 +22,7 @@ class UserTableSeeder extends Seeder{
 		$user2->password = 'DelosSantos0712';
 		$user2->city = 'San Antonio';
 		$user2->state = 'TX';
+		$user2->image = '/img/ricardo1.jpg';
 		$user2->save();
 
 
@@ -32,6 +34,7 @@ class UserTableSeeder extends Seeder{
 		$user3->password = 'Connection531$';
 		$user3->city = 'San Antonio';
 		$user3->state = 'TX';
+		$user3->image = '/img/trey.jpg';
 		$user3->save();
 
 

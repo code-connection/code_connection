@@ -121,7 +121,7 @@
 
 		                @else
 
-		                		<img class='image' src="{{ '/img/ricardo.png' }}" heigth='160' width='160'>
+		                		<img class='image' src="{{ 'http://placehold.it/160x160' }}" heigth='160' width='160'>
 
 		                @endif
 
