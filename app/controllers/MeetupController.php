@@ -21,7 +21,7 @@ class MeetupController extends BaseController {
 
 		$status = 'upcoming';
 
-		$radius = 100;
+		$radius = 60;
 
 		$api_key = $_ENV['MEETUP_API_KEY'];
 
@@ -30,7 +30,7 @@ class MeetupController extends BaseController {
 
 		$m = new MeetupEvents($connection);
 
-		$events = $m->getOpenEvents( array( 'text' => $text, 'lat' => $lat, 'lon' => $lon ));
+		$events = $m->getOpenEvents( array( 'text' => $text, 'lat' => $lat, 'lon' => $lon, 'radius' => $radius ));
 
 		return Response::json($events);
 		
