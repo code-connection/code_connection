@@ -5,12 +5,17 @@
 	border: 0px ;
 	padding: 10px;
 	margin: 0;
-
 }
 
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
-	border: 0px ;
-	margin-bottom: 1px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 9999;
+	width: 100%;
+	height: 50px;
+	background-color: #506378;
 }
 
 .navbar-default .navbar-nav>li>a {
@@ -21,7 +26,7 @@
 		text-decoration: none;
 
 		padding:10, 25;
-		color: #F1F1F1;
+		color: #cccccc;
 		-webkit-transition: all 500ms ease;
 		-moz-transition: all 500ms ease;
 		-ms-transition: all 500ms ease;
@@ -162,7 +167,7 @@
 
 .dropdown-menu>li>a:hover {
 	background-color: #506378;
-    color: #F1F1F1;
+    color: #cccccc;
     -webkit-transition: all 500ms ease;
 	-moz-transition: all 500ms ease;
 	-ms-transition: all 500ms ease;
@@ -183,6 +188,7 @@
 
 body {
 	background-image:url(/img/linen.png);
+	font
 }
 
 @media (max-width: 767px) {
@@ -192,7 +198,58 @@ body {
 }
 
 .modal-content {
-	background-color: 
+    position: relative;
+    background-color: #6C8096;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #506378;
+    border-radius: 6px;
+    outline: 0;
+    -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    color:#F1F1F1;
 }
 
-	
+.sign-up-link {
+	color:#F1F1F1;
+}
+.icon-txt{
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+}
+
+.caption{
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+
+.fa{
+	margin:3px;
+}
+
+#sign-up {
+	color:#F1F1F1;
+}
+
+#sign-in-btn {
+    text-align: center;
+    margin: auto;
+    position: relative;
+    background-color: #F1F1F1;
+}
+
+body {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight:700 bold;
+}
+
+
+
+
+
