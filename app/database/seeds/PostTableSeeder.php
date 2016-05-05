@@ -1,5 +1,7 @@
 <?php
 
+use Faker\Factory as Faker;
+
 class PostTableSeeder extends Seeder {
 
 	/**
@@ -29,6 +31,17 @@ class PostTableSeeder extends Seeder {
 		$post3->body = 'Does anyone know where I can find a Lisp coder. Any experience level would be great.';
 		$post3->user_id = User::first()->id;
 		$post3->save();
+
+		$faker = Faker::create();
+		foreach(range(1, 100) as $index)
+		{
+			Post::create([
+				'title' => $faker->text,
+				'body' => $faker->text,
+				'user_id' => User::all()->random()->id
+			]);
+		}
+
 	}
 
 }
