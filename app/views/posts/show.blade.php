@@ -35,7 +35,7 @@
    
     <div class="container">
         <div class="panel panel-default">
-        	<div class="panel-heading"><h1><i>Post Details</i></h1></div>
+        	<div class="panel-heading"><h1>Post Details</h1></div>
             <div class="panel-body">
                 <div class="col-md-12 account-txt">
                     <h3>{{{ $post->title }}}</h3><br>
