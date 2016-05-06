@@ -713,12 +713,12 @@ function getGitHubData(language,address){
 
                     events.forEach(function (element, index, array) {
                    
-                    // if( (element.venue.lat != null || element.venue.lat != undefined) && (element.venue.lon != null || element.venue.lat != undefined) ){
-                    //     var latt = element.venue.lat;
-                    //     var lonn = element.venue.lon;
-                    //     console.log(latt + ' ' + lonn);
+                    if(element.venue.lat != undefined && element.venue.lat != undefined){
+                        var latt = element.venue.lat;
+                        var lonn = element.venue.lon;
+                        console.log(latt + ' ' + lonn);
 
-                    // }
+                    }
                     
 
                     meetupResults += "<li class=\"data-lists\">"+"<img src=\"/img/meetup.png\">"+'URL:'+"<a href=\"" + element.event_url + "\" target=\"_blank\">"+element.event_url+"</a></br>"
