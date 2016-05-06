@@ -43,6 +43,8 @@ class UserTableSeeder extends Seeder{
 		$user3->image = '/img/trey.jpeg';
 		$user3->save();
 
+		
+
 
 
 		$faker = Faker::create();
