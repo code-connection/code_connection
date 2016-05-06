@@ -51,7 +51,8 @@
                     @foreach($post->comments as $value)
 
 
-                        <textarea id="post-comment" type="text" class="form-control form1"  aria-describedby="basic-addon1">{{{ $value->comment }}}</textarea><br>
+                        <p id="post-comment" type="text" class="form-control form1"  aria-describedby="basic-addon1">{{{ $value->comment }}}
+                            - {{{ $post->user->first_name . " " . $post->user->last_name. "\n".$post->user->city. ",". $post->user->state }}}</p><br>
 
                     @endforeach
 
