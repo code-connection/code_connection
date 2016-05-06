@@ -3,7 +3,7 @@
 	
 
 	@section('top-script')
-		
+
 
 	@stop
 
@@ -28,6 +28,10 @@
 		      
 		    </div>
 
+			 <div class="item ">
+		      <img class='fill' src="/img/presentor.png" alt="computer interaction">
+		      
+		    </div>
 		   
 		  </div>
  	</div>	

@@ -245,9 +245,11 @@ body {
 
 
 .fill{
-    width:auto;
-    height:360px;
+    height:100%;
+    width:100%;
 }
+
+
 
 
 /* keep full widget on smaller screens */
