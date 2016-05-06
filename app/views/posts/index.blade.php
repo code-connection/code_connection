@@ -18,11 +18,11 @@
 	  <!-- Wrapper for slides -->
 	  <div class="carousel-inner" role="listbox">
 	    <div class="item active">
-	      <img src="/img/Acadia.jpg" alt="...">
+	      <img id='connect' src="/img/connecting.jpg" alt="computer interaction">
 	      
 	    </div>
 	    <div class="item">
-	      <img src="/img/Acadia.jpg" alt="...">
+	      <img id='keyboard' src="/img/keyboard.jpg" alt="computer interaction">
 	      
 	    </div>
 	  
