@@ -295,7 +295,7 @@
 
 <div class="container">
     <div class="panel panel-default">
-        <div class="panel-heading"><h2>Connect with fellow Coders</h2></div>
+        <div class="panel-heading"><h2>Connect With Fellow Coders</h2></div>
             <div class="panel-body">
 
                 <div class="account-box"><h4>GitHub</h4></div>
