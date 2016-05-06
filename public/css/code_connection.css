@@ -244,6 +244,26 @@ body {
 
 
 
+.fill{
+    width:auto;
+    height:360px;
+}
+
+
+/* keep full widget on smaller screens */
+@media (max-width: 767px) { 
+	body {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+
+
+
+
+
+
 
 
 

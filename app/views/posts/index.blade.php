@@ -3,32 +3,37 @@
 	
 
 	@section('top-script')
+		
 
 	@stop
 
 	@section('content')
-		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-	  <!-- Indicators -->
-	  <ol class="carousel-indicators">
-	    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-	    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-	    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-	  </ol>
+	
+	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+		  <!-- Indicators -->
+		  <ol class="carousel-indicators">
+		    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+		    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+		    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+		  </ol>
 
-	  <!-- Wrapper for slides -->
-	  <div class="carousel-inner" role="listbox">
-	    <div class="item active">
-	      <img id='connect' src="/img/connecting.jpg" alt="computer interaction">
-	      
-	    </div>
-	    <div class="item">
-	      <img id='keyboard' src="/img/keyboard.jpg" alt="computer interaction">
-	      
-	    </div>
-	  
-	  </div>
- </div>	  
-</div>
+		  <!-- Wrapper for slides -->
+		  <div class="carousel-inner" role="listbox">
+		    <div class="item active">
+		      <img class='fill' src="/img/connecting.jpg" alt="computer interaction">
+		      
+		    </div>
+		    <div class="item ">
+		      <img class='fill' src="/img/keyboard.jpg" alt="computer interaction">
+		      
+		    </div>
+
+		   
+		  </div>
+ 	</div>	
+
+
+
   <!-- Controls -->
   <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -51,7 +56,7 @@
                 </p>
             </div>
 	</div>
-		
+</div>		
 		
 	     <div class="row">
 		  <div class="col-sm-6 col-md-4">
