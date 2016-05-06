@@ -71,7 +71,7 @@
 <div class="container"> 
     <div class="panel panel-default">
         <div class="panel-heading"><h1 id="sign-up-direction">Comment on Post:</h1></div>
-        <div class="col-md-4 sign-up-txt"><h3>{{ Post::find($id)->title }}</h3></div>
+        <div class="col-lg-12 sign-up-txt"><h2>{{ Post::find($id)->title }}</h2></div>
         <div class="panel-body">
             <div class="col-md-12 account-txt"> 
 
