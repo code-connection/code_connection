@@ -586,7 +586,6 @@ function getGitHubData(language,address){
                         map: map,
                         strokeOpacity: 0.8,
                         strokeWeight: 1,
-                        // draggable: true,
                         geodesic: true,
                         strokeColor: languageObj.strokeColor,
                         fillColor: languageObj.fillColor,
@@ -615,7 +614,6 @@ function getGitHubData(language,address){
                         map: map,
                         icon: languageObj.iconUrl,
                         animation : google.maps.Animation.DROP,
-                        // draggable: true
                    
                     }); 
 
@@ -674,6 +672,67 @@ function getGitHubData(language,address){
 
                     d.statuses.forEach(function (element, index, array) {
 
+                     /*************************************/
+                    if (element.user.location != null || element.user.location != ""){
+
+                        var address = element.user.location;
+
+
+                        if (status == google.maps.GeocoderStatus.OK) {
+
+                            var iconUrl = '/img/bird.jpg';
+                            var markerTweety = new google.maps.Marker ({
+                                position: results[0].geometry.location,
+                                map: map,
+                                icon: iconUrl,
+                                animation : google.maps.Animation.DROP,
+                               
+                            });
+
+                            var infowindow = new google.maps.InfoWindow({
+                                // content: "<span style=\"color:green\"><b>"+element.user.name+"</b></span>",
+                                content: "<li class=\"data-lists\">"+"<img src=\"/img/bird.jpg\">"
+                                +"Username: "+element.user.name+"</br>"
+                                +"Screen name: "+element.user.screen_name+"</br>"
+                                +"Location: "+element.user.location+"</br>"
+                                +"Language: "+language+"</br>"
+                                +"Text: "+element.text+"</br>"
+                                +"Created at: "+element.user.created_at+"</br>"
+                                +"Description: "+element.user.description+"</br>"
+                                +"</li>"
+                            });
+
+                             markerTweety.addListener('mouseover', function(){
+                            infowindow.open(map, marker);
+                            });
+
+                            markerTweety.addListener('mouseout', function(){
+                            infowindow.close(map, marker);
+                            });
+
+
+                            markerTweety.addListener('click', toggleBounce);
+
+                            function toggleBounce() {
+
+                                if (markerTweety.getAnimation() !== null) {
+                                    markerTweety.setAnimation(null);
+                                } else {
+                                    markerTweety.setAnimation(google.maps.Animation.BOUNCE);
+                                }
+                            }
+
+
+                        } else {
+
+                   
+                            alert("Geocoding was not successful - STATUS: " + status);
+                        }
+                    }
+                   
+                     /*************************************/
+
+
                     twitterHtml += "<li class=\"data-lists\">"+"<img src=\"/img/bird.jpg\">"
                     +"Username: "+element.user.name+"</br>"
                     +"Screen name: "+element.user.screen_name+"</br>"
@@ -712,23 +771,70 @@ function getGitHubData(language,address){
                     var meetupResults = '<ul class="wave">';
 
                     events.forEach(function (element, index, array) {
-                   
-                    if(element.venue.lat != undefined && element.venue.lat != undefined){
-                        var latt = element.venue.lat;
-                        var lonn = element.venue.lon;
-                        console.log(latt + ' ' + lonn);
 
-                    }
+
+                     /*************************************/
+                    if (!element.venue || !element.venue.lat || !element.venue.lon){
+                          
+                       console.log('no coordinates!')
                     
+
+                    }else{
+                        var lat = element.venue.lat;
+                        var lng = element.venue.lon;
+
+                         latlng = {
+
+                             lat: lat,
+                            lng: lng
+                        }
+                    }
+
+                  
+                    var iconUrl = '/img/meetup.png';
+                    var markerMeetUp = new google.maps.Marker ({
+                        position: latlng,
+                        map: map,
+                        icon: iconUrl,
+                        animation : google.maps.Animation.DROP,
+                       
+                    });
+                    
+                    var infowindow = new google.maps.InfoWindow({
+                        content: element.name,
+                        position: latlng,
+
+                    });
+
+                    markerMeetUp.addListener('mouseover', function(){
+                        infowindow.open(map, marker);
+                     });
+
+                    markerMeetUp.addListener('mouseout', function(){
+                        infowindow.open(map, marker);
+                     });
+                   
+
+                    markerMeetUp.addListener('click', toggleBounce);
+
+                    function toggleBounce() {
+
+                        if (markerMeetUp.getAnimation() !== null) {
+                            markerMeetUp.setAnimation(null);
+                        } else {
+                            markerMeetUp.setAnimation(google.maps.Animation.BOUNCE);
+                        }
+                    }
+                   
+                   
+                     /*************************************/
 
                     meetupResults += "<li class=\"data-lists\">"+"<img src=\"/img/meetup.png\">"+'URL:'+"<a href=\"" + element.event_url + "\" target=\"_blank\">"+element.event_url+"</a></br>"
                     +"Description :"+element.description+"<br>"
-                    +"Venue name :"+element.venue.name+"<br>"
                     +"Name :"+element.name+"<br>"
-                    +"RSVP maybe :"+element.maybe_rsvp_count+"<br>"
+                    +"RSVP_yes_count :"+element.yes_rsvp_count+"<br>"
+                    +"RSVP_limit :"+element.rsvp_limit+"<br>"
                     +"</li>"
-
-
 
 
                 }); 
