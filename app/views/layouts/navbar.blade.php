@@ -40,6 +40,8 @@
 					<li><a class="nav-text" href="#" data-toggle="modal" data-target=".bs-example-modal-sm">Log In/Sign Up</a></li>
 				@else
 
+					<li><img src="/img/globe.gif"></li>
+
 					<li><a class="welcome-user">Welcome,{{Auth::user()->first_name}}!</a></li>
 
 					<li class="dropdown dropdown-account">
