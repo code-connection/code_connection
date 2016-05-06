@@ -62,6 +62,7 @@
 			var simplemde = new SimpleMDE({ element: $("#body").get(0) });
 		}
 
+
 		if ($("#comment").length != 0) {
 		 	var simplemde = new SimpleMDE({ element: $("#comment").get(0) });
 		}
