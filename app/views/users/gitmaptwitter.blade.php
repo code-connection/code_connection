@@ -370,7 +370,7 @@ function getGitHubData(language,address){
                 +" city: "+address+"</br>"
                 +" Language: "+language+"</br>"
                 +" Username: "+items.login+"</br>"
-                +" Repos: "+"<a href=\""+items.repos_url+"\">"+items.repos_url+"</a></li>"
+                +" html_url: "+"<a href=\""+items.html_url+"\" target=\"_blank\">"+items.html_url+"</a></li>"
 
                
             }); //end foreach
@@ -713,12 +713,22 @@ function getGitHubData(language,address){
 
                     events.forEach(function (element, index, array) {
                    
+                    // if( (element.venue.lat != null || element.venue.lat != undefined) && (element.venue.lon != null || element.venue.lat != undefined) ){
+                    //     var latt = element.venue.lat;
+                    //     var lonn = element.venue.lon;
+                    //     console.log(latt + ' ' + lonn);
 
-                    meetupResults += "<li class=\"data-lists\">"+"<img src=\"/img/meetup.png\">"+'URL:'+"<a href=\"" + element.event_url + "\">"+element.event_url+"</a></br>"
+                    // }
+                    
+
+                    meetupResults += "<li class=\"data-lists\">"+"<img src=\"/img/meetup.png\">"+'URL:'+"<a href=\"" + element.event_url + "\" target=\"_blank\">"+element.event_url+"</a></br>"
                     +"Description :"+element.description+"<br>"
+                    +"Venue name :"+element.venue.name+"<br>"
                     +"Name :"+element.name+"<br>"
                     +"RSVP maybe :"+element.maybe_rsvp_count+"<br>"
                     +"</li>"
+
+
 
 
                 }); 
