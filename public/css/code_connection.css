@@ -96,7 +96,8 @@
     text-align: center;
     margin: auto;
     position: relative;
-   
+    background-color: #F1F1F1;
+    color: black;
 }
 
 .modal.fade.bs-example-modal-sm, .modal-content{

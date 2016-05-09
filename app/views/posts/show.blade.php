@@ -62,8 +62,8 @@
 
                     <div class='container'>
                         
-                        <p class="col-md-8 comment-dash">{{{ $post->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i:s A')}}}<br>{{{ $value->comment }}}
-                            <br>Commented by: {{{ $post->user->first_name . " " . $post->user->last_name. "\n".$post->user->city. ",". $post->user->state }}}<br>  </p></p><br>
+                        <p class="col-md-8 comment-dash">{{{ $value->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i:s A')}}}<br>{{{ $value->comment }}}
+                            <br>Commented by: {{{ $value->user->first_name . " " . $value->user->last_name . "\n" .$value->user->city . ",". $value->user->state }}}<br>  </p></p><br>
                  
                     </div>
                     @endforeach
