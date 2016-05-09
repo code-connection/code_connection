@@ -109,7 +109,7 @@
 }
 
 .fa:hover {
-	color: #96b7a3;
+	color: #cecccd;
 	-webkit-transition: all 500ms ease;
 	-moz-transition: all 500ms ease;
 	-ms-transition: all 500ms ease;
@@ -127,7 +127,7 @@
 }
 
 .thumbnail {
-	 background-color: #6c8096;
+	 background-color: #2d3d4f;
     border: 1px solid transparent;
     border-radius: 10px;
 
