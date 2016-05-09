@@ -8,45 +8,38 @@
 	@stop
 
 	@section('content')
-	
-	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-		  <!-- Indicators -->
-		  <ol class="carousel-indicators">
-		    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-		    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-		    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-		  </ol>
 
-		  <!-- Wrapper for slides -->
-		  <div class="carousel-inner" role="listbox">
-		    <div class="item active">
-		      <img class='fill' src="/img/connecting.jpg" alt="computer interaction">
-		      
-		    </div>
-		    <div class="item ">
-		      <img class='fill' src="/img/keyboard.jpg" alt="computer interaction">
-		      
-		    </div>
-
-			 <div class="item ">
-		      <img class='fill' src="/img/presentor.png" alt="computer interaction">
-		      
-		    </div>
-		   
-		  </div>
- 	</div>	
-
-
-
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+	<div class="blue-container">
+		<div class="row">
+			<div class="panel panel-default col-md-3" style="margin-left: 50px;">
+	  			<div class="panel-body panel-body-blue">
+	    			<i class="fa fa-code fa-5x" aria-hidden="true"></i>
+	    			<div class="line-break"></div>
+	    			<h2>CODE</h2>
+	  			</div>
+			</div>
+			<div class="col-md-1">
+				<i class="fa fa-long-arrow-right fa-5x" aria-hidden="true"></i>
+			</div>
+			<div class="panel panel-default col-md-3">
+	  			<div class="panel-body panel-body-blue">
+	    			<i class="fa fa-map-marker fa-5x" aria-hidden="true"></i>
+	    			<div class="line-break"></div>
+	    			<h2>MAP</h2>
+	  			</div>
+			</div>
+			<div class="col-md-1">
+				<i class="fa fa-long-arrow-right fa-5x" aria-hidden="true"></i>
+			</div>
+			<div class="panel panel-default col-md-3">
+	  			<div class="panel-body panel-body-blue">
+	    			<i class="fa fa-user-plus fa-5x" aria-hidden="true"></i>
+	    			<div class="line-break"></div>
+	    			<h2>CONNECT</h2>
+	  			</div>
+			</div>
+		</div>
+	</div>
 
 
 	<div class='container mission-statement'>

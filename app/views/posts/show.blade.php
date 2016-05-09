@@ -48,12 +48,24 @@
 
                     <p class="show-page-paragraph">Created on: {{{ $post->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i:s A')}}} </p>
 
+                    <div class="container">
+                        <p>
+                            <div class="btn btn-default"><a href="{{{ action('CommentsController@showCreate',$post->id)}}}"><i class="fa fa-comments" aria-hidden="true"></i> Click to comment on this post</a></div>
+                        </p>
+                        <br>
+                            <div class="col-md-8 comment-break"><h3>Comments</h3></div>
+                    </div>
+
                     @foreach($post->comments as $value)
+                    
 
 
-                        <p id="post-comment" type="text" class="form-control form1"  aria-describedby="basic-addon1">{{{ $value->comment }}}
-                            - {{{ $post->user->first_name . " " . $post->user->last_name. "\n".$post->user->city. ",". $post->user->state }}}</p><br>
-
+                    <div class='container'>
+                        
+                        <p class="col-md-8 comment-dash">{{{ $post->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i:s A')}}}<br>{{{ $value->comment }}}
+                            <br>Commented by: {{{ $post->user->first_name . " " . $post->user->last_name. "\n".$post->user->city. ",". $post->user->state }}}<br>  </p></p><br>
+                 
+                    </div>
                     @endforeach
 
                     <p>
@@ -63,9 +75,7 @@
                     <br>
                     <br>
 
-                    <p>
-                        <a href="{{{ action('CommentsController@showCreate',$post->id)}}}" >Click to comment on this post</a>
-                    </p>
+                    
                 </div>
             </div>
         </div>

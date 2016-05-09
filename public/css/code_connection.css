@@ -5,6 +5,7 @@
 	border: 0px ;
 	padding: 10px;
 	margin: 0;
+	border-radius: 0px;
 }
 
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
@@ -260,6 +261,88 @@ body {
 	}
 }
 
+.comment-dash{
+	padding:25px;
+	border:1px solid;
+	border-color: #C8C8C8;
+	border-radius: 10px;
+}
+
+.comment-break {
+	background-color: #C8C8C8;
+	color: #566473;
+	padding-bottom: 5px;
+	border-radius: 5px;
+}
+
+.btn-default  {
+            background-color: #F67366;
+            color:white;
+            margin-top: 15px;
+        }
+
+        .btn-default:hover  {
+            background-color: #F67366;
+            color:white;
+            -webkit-transition: all 500ms ease;
+            -moz-transition: all 500ms ease;
+            -ms-transition: all 500ms ease;
+            -o-transition: all 500ms ease;
+            transition: all 500ms ease;
+        }
+
+.btn-default a {
+            background-color: #F67366;
+            color:white;
+            margin-top: 15px;
+        }
+
+        .btn-default:hover a {
+            background-color: #F67366;
+            color:white;
+            -webkit-transition: all 500ms ease;
+            -moz-transition: all 500ms ease;
+            -ms-transition: all 500ms ease;
+            -o-transition: all 500ms ease;
+            transition: all 500ms ease;
+        }
+
+.fa-comments {
+	color: white;
+}
+
+.blue-container {
+	background-color: #2d3d4f;
+	width: 100%;
+	padding: 50px;
+	color: white;
+}
+
+.panel-body-blue {
+	background-color: #2d3d4f;
+	color: white;
+	border: 0.5px solid;
+	border-color: white;
+	text-align: center;
+}
+
+.panel-default {
+	padding-left:0px; 
+	padding-right:0px;
+	margin-left: 0px;
+}
+
+.fa-long-arrow-right {
+	margin-top: 60px;
+}
+
+.line-break {
+	height: 1px;
+	width: 100px;
+	background-color: white;
+	margin-left: 85px;
+	margin-top: 15px;
+}
 
 
 
