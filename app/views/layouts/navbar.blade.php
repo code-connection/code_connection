@@ -40,7 +40,7 @@
 					<li><a class="nav-text" href="#" data-toggle="modal" data-target=".bs-example-modal-sm">Log In/Sign Up</a></li>
 				@else
 
-					<li><img src="/img/globe.gif"></li>
+					<li><img src="/img/brand_icon.png" style="width: 35px; margin-top: 5px; margin-right: 5px;"></li>
 
 					<li><a class="welcome-user">Welcome,{{Auth::user()->first_name}}!</a></li>
 
