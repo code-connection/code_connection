@@ -269,7 +269,7 @@
                             <label for="address">Enter City:</label>
                                 <input id="address" type="text" class="form-control">
                             <label for="language">Enter Language: </label>
-                                <input id="language" type="text" placeholder="javascript or ruby or python" class="form-control">
+                                <input id="language" type="text" placeholder="javascript, php, python etc." class="form-control">
                             <button class="btn btn-default" id="submit-address" type="submit">Submit</button>
 
                             <div class="account-box2">Connect with fellow Coders</div>
@@ -376,11 +376,9 @@ function getGitHubData(language,address){
             }); //end foreach
             $("#insert_profiles").html(html);
 
-            stroll.bind( '#insert_profiles ul' );           
-
-
+            stroll.bind( '#insert_profiles ul' );          
             
-            var languageObj = [{//element
+            var languageObj = [{
 
                 language: "javascript",
                 description: address,
@@ -389,11 +387,11 @@ function getGitHubData(language,address){
                 strokeColor: '#FFEA05',
                 fillColor: '#FFEA05',
                
-                },{//element..address,element.description,
+                },{
                 language: "python",
                 description: address,
                 image: "<img src=\"/img/langicons/python.jpeg\" alt=\"python\">",
-                iconUrl: "/img/langicons/python.png",
+                iconUrl: "/img/langicons/python.jpeg",
                 strokeColor: '#368EED',
                 fillColor:  '#368EED'
                 
@@ -408,13 +406,13 @@ function getGitHubData(language,address){
                  },{
                 language: "ruby on rails",
                 description: address,
-                image: "<img src=\"/img/langicons/ruby.png\" alt=\"rubyonrails\">",
+                image: "<img src=\"/img/langicons/rubyonrails.jpeg\" alt=\"rubyonrails\">",
                 iconUrl: "/img/langicons/rubyonrails.jpeg",
                 strokeColor: '#FF0000',
                 fillColor: '#FF0000'
 
 
-                 },{
+                },{
                 language: "c",
                 description: address,
                 image: "<img src=\"/img/langicons/c.png\" alt=\"c\">",
@@ -440,15 +438,72 @@ function getGitHubData(language,address){
                 strokeColor: '#5A4DE8',
                 fillColor: '#5A4DE8'
 
+                },{
+                language: "cobol",
+                description: address,
+                image: "<img src=\"/img/langicons/cobol.png\" alt=\"cobol\">",
+                iconUrl: "/img/langicons/cobol.png",
+                strokeColor: '#5A4DE8',
+                fillColor: '#5A4DE8'
+
 
                 },{
+                language: "pascal",
+                description: address,
+                image: "<img src=\"/img/langicons/pascal.jpeg\" alt=\"pascal\">",
+                iconUrl: "/img/langicons/pascal.jpeg",
+                strokeColor: '#1186F2',
+                fillColor: '#1186F2'
+
+                },{
+                language: "haskell",
+                description: address,
+                image: "<img src=\"/img/langicons/haskell.png\" alt=\"haskell\">",
+                iconUrl: "/img/langicons/haskell.png",
+                strokeColor: '#ff7600',
+                fillColor: '#ff7600'
+
+                },{
+                language: "java",
+                description: address,
+                image: "<img src=\"/img/langicons/java.jpeg\" alt=\"java\">",
+                iconUrl: "/img/langicons/java.jpeg",
+                strokeColor: '#1973C2',
+                fillColor: '#1973C2'
+                },{
+
+                language: "clojure",
+                description: address,
+                image: "<img src=\"/img/langicons/clojure.png\" alt=\"clojure\">",
+                iconUrl: "/img/langicons/.png",
+                strokeColor: '#50A326',
+                fillColor: '#50A326'
+
+                },{
+                language: "perl",
+                description: address,
+                image: "<img src=\"/img/langicons/perl.jpeg\" alt=\"perl\">",
+                iconUrl: "/img/langicons/perl.jpeg",
+                strokeColor: '#0097C7',
+                fillColor: '#0097C7'
+
+                },{
+
                 language: "c sharp",
                 description: address,
-                image: "<img src=\"/img/langicons/csharp.jpeg\" alt=\"c#\">",
+                image: "<img src=\"/img/langicons/csharp.jpeg\" alt=\"c sharp\">",
                 iconUrl: "/img/langicons/csharp.jpeg",
                 strokeColor: '#5A4DE8',
                 fillColor: '#5A4DE8'
 
+                },{
+
+                language: "php",
+                description: address,
+                image: "<img src=\"/img/langicons/php.jpeg\" alt=\"php\">",
+                iconUrl: "/img/langicons/php.jpeg",
+                strokeColor: '#6082BB',
+                fillColor: '#6082BB'
 
 
                 },{
@@ -461,10 +516,48 @@ function getGitHubData(language,address){
 
 
                 },{
-                language: "lisp",
+                language: "jquery",
                 description: address,
-                image: "<img src=\"/img/langicons/lisp.jpeg\" alt=\"lisp\">",
-                iconUrl: "/img/langicons/lisp.jpeg",
+                image: "<img src=\"/img/langicons/jquery.png\" alt=\"jquery\">",
+                iconUrl: "/img/langicons/jquery.png",
+                strokeColor: '#0868AB',
+                fillColor: '#0868AB'
+
+
+                },{
+                language: "scala",
+                description: address,
+                image: "<img src=\"/img/langicons/scala.jpeg\" alt=\"scala\">",
+                iconUrl: "/img/langicons/scala.jpeg",
+                strokeColor: '#E62003',
+                fillColor: '#E62003'
+
+
+
+                },{
+                language: "html5",
+                description: address,
+                image: "<img src=\"/img/langicons/html5.jpg\" alt=\"html5\">",
+                iconUrl: "/img/langicons/html5.jpg",
+                strokeColor: '#F16529',
+                fillColor: '#F16529'
+
+
+
+                },{
+                language: "css3",
+                description: address,
+                image: "<img src=\"/img/langicons/css3.png\" alt=\"css3\">",
+                iconUrl: "/img/langicons/css3.png",
+                strokeColor: '#0868AB',
+                fillColor: '#0868AB'
+
+
+                },{
+                language: "mysql",
+                description: address,
+                image: "<img src=\"/img/langicons/mysql.png\" alt=\"mysql\">",
+                iconUrl: "/img/langicons/mysql.png",
                 strokeColor: '#4DE8A7',
                 fillColor: '#4DE8A7'
 
@@ -480,6 +573,35 @@ function getGitHubData(language,address){
                 languageObj.fillColor = '#FFEA05'
 
                 break;
+
+                case "scala":
+                console.log('scala icon here');
+                languageObj.image = "<img src=\"/img/langicons/scala.jpeg\" alt=\"scala\">";
+                languageObj.iconUrl = "/img/langicons/scala.jpeg";
+                languageObj.strokeColor = '#E62003',
+                languageObj.fillColor = '#E62003'
+
+                break;
+
+                case "html5":
+                console.log('html5 icon here');
+                languageObj.image = "<img src=\"/img/langicons/html5.jpg\" alt=\"html5\">";
+                languageObj.iconUrl = "/img/langicons/html5.jpg";
+                languageObj.strokeColor = '#F16529',
+                languageObj.fillColor = '#F16529'
+
+                break;
+
+
+                case "css3":
+                console.log('css3 icon here');
+                languageObj.image = "<img src=\"/img/langicons/css3.png\" alt=\"css3\">";
+                languageObj.iconUrl = "/img/langicons/css3.png";
+                languageObj.strokeColor = '#0C57A8',
+                languageObj.fillColor = '#0C57A8'
+
+                break;
+
 
                 case "python":
                 console.log('python icon here');
@@ -525,7 +647,6 @@ function getGitHubData(language,address){
                 break;
 
 
-
                 case "c#":
                 console.log('c# icon here');
                 languageObj.image = "<img src=\"/img/langicons/csharp.jpeg\" alt=\"c#\">";
@@ -556,8 +677,66 @@ function getGitHubData(language,address){
                 console.log('lisp icon here');
                 languageObj.image = "<img src=\"/img/langicons/lisp.jpeg\" alt=\"lisp\">";
                 languageObj.iconUrl = "/img/langicons/lisp.jpeg";
+                languageObj.strokeColor = '#0097C7',
+                languageObj.fillColor = '#0097C7'
+                break;
+
+                //*****
+
+                case "perl":
+                console.log('perl icon here');
+                languageObj.image = "<img src=\"/img/langicons/perl.jpeg\" alt=\"perl\">";
+                languageObj.iconUrl = "/img/langicons/perl.jpeg";
                 languageObj.strokeColor = '#0D4035',
                 languageObj.fillColor = '#0D4035'
+                break;
+
+                case "pascal":
+                console.log('pascal icon here');
+                languageObj.image = "<img src=\"/img/langicons/pascal.jpeg\" alt=\"pascal\">";
+                languageObj.iconUrl = "/img/langicons/lisp.jpeg";
+                languageObj.strokeColor = '#1186F2',
+                languageObj.fillColor = '#1186F2'
+                break;
+
+                case "clojure":
+                console.log('clojure icon here');
+                languageObj.image = "<img src=\"/img/langicons/clojure.png\" alt=\"clojure\">";
+                languageObj.iconUrl = "/img/langicons/clojure.png";
+                languageObj.strokeColor = '#50A326',
+                languageObj.fillColor = '#50A326'
+                break;
+
+                case "jquery":
+                console.log('jquery icon here');
+                languageObj.image = "<img src=\"/img/langicons/jquery.png\" alt=\"jquery\">";
+                languageObj.iconUrl = "/img/langicons/jquery.png";
+                languageObj.strokeColor = '#0868AB',
+                languageObj.fillColor = '#0868AB'
+                break;
+
+                case "php":
+                console.log('php icon here');
+                languageObj.image = "<img src=\"/img/langicons/php.jpeg\" alt=\"php\">";
+                languageObj.iconUrl = "/img/langicons/php.jpeg";
+                languageObj.strokeColor = '#6082BB',
+                languageObj.fillColor = '#6082BB'
+                break;
+
+                case "haskell":
+                console.log('haskell icon here');
+                languageObj.image = "<img src=\"/img/langicons/haskell.png\" alt=\"haskell\">";
+                languageObj.iconUrl = "/img/langicons/haskell.png";
+                languageObj.strokeColor = '#ff7600',
+                languageObj.fillColor = '#ff7600'
+                break;
+
+                case "java":
+                console.log('java icon here');
+                languageObj.image = "<img src=\"/img/langicons/java.jpeg\" alt=\"java\">";
+                languageObj.iconUrl = "/img/langicons/java.jpeg";
+                languageObj.strokeColor = '#1973C2',
+                languageObj.fillColor = '#1973C2'
                 break;
 
             }
@@ -641,7 +820,7 @@ function getGitHubData(language,address){
                         infowindow.open(map, marker);
                     });
 
-                       markerLanguage.addListener('mouseout', function(){
+                    markerLanguage.addListener('mouseout', function(){
                         infowindow.close(map, marker);
                     });
 
@@ -672,65 +851,7 @@ function getGitHubData(language,address){
 
                     d.statuses.forEach(function (element, index, array) {
 
-                     /*************************************/
-                    if (element.user.location != null || element.user.location != ""){
-
-                        var address = element.user.location;
-
-
-                        if (status == google.maps.GeocoderStatus.OK) {
-
-                            var iconUrl = '/img/bird.jpg';
-                            var markerTweety = new google.maps.Marker ({
-                                position: results[0].geometry.location,
-                                map: map,
-                                icon: iconUrl,
-                                animation : google.maps.Animation.DROP,
-                               
-                            });
-
-                            var infowindow = new google.maps.InfoWindow({
-                                // content: "<span style=\"color:green\"><b>"+element.user.name+"</b></span>",
-                                content: "<li class=\"data-lists\">"+"<img src=\"/img/bird.jpg\">"
-                                +"Username: "+element.user.name+"</br>"
-                                +"Screen name: "+element.user.screen_name+"</br>"
-                                +"Location: "+element.user.location+"</br>"
-                                +"Language: "+language+"</br>"
-                                +"Text: "+element.text+"</br>"
-                                +"Created at: "+element.user.created_at+"</br>"
-                                +"Description: "+element.user.description+"</br>"
-                                +"</li>"
-                            });
-
-                             markerTweety.addListener('mouseover', function(){
-                            infowindow.open(map, marker);
-                            });
-
-                            markerTweety.addListener('mouseout', function(){
-                            infowindow.close(map, marker);
-                            });
-
-
-                            markerTweety.addListener('click', toggleBounce);
-
-                            function toggleBounce() {
-
-                                if (markerTweety.getAnimation() !== null) {
-                                    markerTweety.setAnimation(null);
-                                } else {
-                                    markerTweety.setAnimation(google.maps.Animation.BOUNCE);
-                                }
-                            }
-
-
-                        } else {
-
                    
-                            alert("Geocoding was not successful - STATUS: " + status);
-                        }
-                    }
-                   
-                     /*************************************/
 
 
                     twitterHtml += "<li class=\"data-lists\">"+"<img src=\"/img/bird.jpg\">"
@@ -771,63 +892,6 @@ function getGitHubData(language,address){
                     var meetupResults = '<ul class="wave">';
 
                     events.forEach(function (element, index, array) {
-
-
-                     /*************************************/
-                    if (!element.venue || !element.venue.lat || !element.venue.lon){
-                          
-                       console.log('no coordinates!')
-                    
-
-                    }else{
-                        var lat = element.venue.lat;
-                        var lng = element.venue.lon;
-
-                         latlng = {
-
-                             lat: lat,
-                            lng: lng
-                        }
-                    }
-
-                  
-                    var iconUrl = '/img/meetup.png';
-                    var markerMeetUp = new google.maps.Marker ({
-                        position: latlng,
-                        map: map,
-                        icon: iconUrl,
-                        animation : google.maps.Animation.DROP,
-                       
-                    });
-                    
-                    var infowindow = new google.maps.InfoWindow({
-                        content: element.name,
-                        position: latlng,
-
-                    });
-
-                    markerMeetUp.addListener('mouseover', function(){
-                        infowindow.open(map, marker);
-                     });
-
-                    markerMeetUp.addListener('mouseout', function(){
-                        infowindow.open(map, marker);
-                     });
-                   
-
-                    markerMeetUp.addListener('click', toggleBounce);
-
-                    function toggleBounce() {
-
-                        if (markerMeetUp.getAnimation() !== null) {
-                            markerMeetUp.setAnimation(null);
-                        } else {
-                            markerMeetUp.setAnimation(google.maps.Animation.BOUNCE);
-                        }
-                    }
-                   
-                   
-                     /*************************************/
 
                     meetupResults += "<li class=\"data-lists\">"+"<img src=\"/img/meetup.png\">"+'URL:'+"<a href=\"" + element.event_url + "\" target=\"_blank\">"+element.event_url+"</a></br>"
                     +"Description :"+element.description+"<br>"
