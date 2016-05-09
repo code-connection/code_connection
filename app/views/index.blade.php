@@ -70,12 +70,10 @@
 	<div class='container mission-statement'>
 	   <div class="row">
             <div class="col-sm-8">
-                <h2>What We Do</h2>
-                <p>Bringing developers together</p>
-                <p>to understand their current and potential environments.</p>
-                <p>
-                    
-                </p>
+                <h3>Our Mission:</h3>
+                <br>
+                <h4>With one button-click, we bring local developers together</h4>
+                <h4>wherever they are in the world!</h4>
             </div>
 	</div>
 

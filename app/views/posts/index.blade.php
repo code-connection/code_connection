@@ -41,19 +41,16 @@
 		</div>
 	</div>
 
-
 	<div class='container mission-statement'>
-	   <div class="row gray-box">
+	   	<div class="row gray-box">
             <div class="col-sm-8 ">
-                <h2>What We Do</h2>
-                <p>Bringing developers together</p>
-                <p>to understand their current and potential environments.</p>
-                <p>
-                    
-                </p>
+                <div class="col-md-12">
+	                <h2>Our Mission:</h2>
+	                <h3>With one button-click, we will bring local developers together wherever they are in the world!</h3>
+            	</div>
             </div>
-	</div>
-</div>		
+		</div>
+	</div>		
 		
 	     <div class="row">
 		  <div class="col-sm-6 col-md-4">
