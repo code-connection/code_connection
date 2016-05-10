@@ -353,7 +353,7 @@ function getGitHubData(language,address){
     $.get("https://api.github.com/search/users?q=language:"+"\""+language+"\""+"location:"+"\""+address+"\""+"sort:followers").done(function(data) {
 
             console.log(address);
-            alert("AJAX call completed successfully!");
+            // alert("AJAX call completed successfully!");
 
             console.log("Data returned from server:");
 
@@ -826,7 +826,7 @@ function getGitHubData(language,address){
 
                 }else {
 
-                    alert("Geocoding was not successful - STATUS: " + status);
+                    // alert("Geocoding was not successful - STATUS: " + status);
 
                 }
                     
@@ -841,7 +841,7 @@ function getGitHubData(language,address){
                 }).done(function(d){
 
 
-                    alert("twitter get call completed successfully!");
+                    // alert("twitter get call completed successfully!");
                     console.log("Data returned from server:");
                     console.log(d);
                     console.log(address);
@@ -871,9 +871,9 @@ function getGitHubData(language,address){
             stroll.bind( '#insert_twitter ul' ); 
                
             }).fail(function() {
-                alert("There was an error!");
+                // alert("There was an error!");
             }).always(function() {
-                alert("And we're finished!");
+                // alert("And we're finished!");
             }); //end ajax twittter
 
             console.log(address);
@@ -887,7 +887,7 @@ function getGitHubData(language,address){
                 }).done(function(events){
                     console.log('my meetup events below:');
                     console.log(events);
-                    alert("Meetups get call completed successfully!");
+                    // alert("Meetups get call completed successfully!");
                     console.log("Meetup data from server below:");
                     var meetupResults = '<ul class="wave">';
 
@@ -937,7 +937,7 @@ $("#submit-address").click(function(e){
    
     console.log('hi'); 
 
-    alert( 'The DOM has finished loading!');
+    // alert( 'The DOM has finished loading!');
                        
 }); //end document scope
 // })();   //end IFFE
