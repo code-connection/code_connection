@@ -8,6 +8,8 @@
 
 	<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
 
+	<link rel="icon" href="/img/brand_icon.png" type="image/x-icon">
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
   	
