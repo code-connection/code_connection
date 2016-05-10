@@ -96,23 +96,17 @@
           <div class = "form-group">
 
             <h4 class="account-info"> 
-            Made a mistake putting in your information?
-            No Worries! We've got you covered.
+            To edit your account:
             <br>
             <br>
-                Step 1. On your right, you will see your original information. To 
-            make a change, just type in the fields you wish to correct.
+            Step 1. Type in the fields that you wish to change.
             <br>
             <br>
-            Step 2. Review Your changes. Are they correct?
+            Step 2. Ensure that your updated passwords match.
             <br>
             <br>
-            Step 3. Just click on the submit button. You have
-            now officially edited your information.
+            Step 3. Complete your changes by clicking on the update button below. 
             </h4>
-
-           
-
           
           </div>
           
