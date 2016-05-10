@@ -928,8 +928,8 @@ $("#submit-address").click(function(e){
     $("#main").innerHTML = "";
     $("#tweetResults").innerHTML = "";
 
-    address = $("#address").val();
-    language = $("#language").val();
+    address = $("#address").val().toLowerCase();
+    language = $("#language").val().toLowerCase();
     e.preventDefault();
     getGitHubData(language,address);
    
