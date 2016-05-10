@@ -909,17 +909,17 @@ function getGitHubData(language,address){
 
                 
             }).fail(function() {
-                alert("There was an error!");
+                // alert("There was an error!");
             }).always(function() {
-                alert("And we're finished!");
+                // alert("And we're finished!");
             }); //end ajax meetup
 
         }); //end geocoder
 
     }).fail(function() {
-                alert("There was an error!");
+                // alert("There was an error!");
             }).always(function() {
-                alert("And we're finished!");
+                // alert("And we're finished!");
             });//end ajax github
 
 }//end getGitHubData
