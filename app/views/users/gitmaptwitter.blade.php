@@ -353,7 +353,9 @@ function getGitHubData(language,address){
     $.get("https://api.github.com/search/users?q=language:"+"\""+language+"\""+"location:"+"\""+address+"\""+"sort:followers").done(function(data) {
 
             console.log(address);
+
             // alert("AJAX call completed successfully!");
+
 
             console.log("Data returned from server:");
 
