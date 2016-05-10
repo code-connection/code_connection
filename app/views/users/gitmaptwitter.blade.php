@@ -353,7 +353,6 @@ function getGitHubData(language,address){
     $.get("https://api.github.com/search/users?q=language:"+"\""+language+"\""+"location:"+"\""+address+"\""+"sort:followers").done(function(data) {
 
             console.log(address);
-            alert("AJAX call completed successfully!");
 
             console.log("Data returned from server:");
 
@@ -826,7 +825,7 @@ function getGitHubData(language,address){
 
                 }else {
 
-                    alert("Geocoding was not successful - STATUS: " + status);
+                    // alert("Geocoding was not successful - STATUS: " + status);
 
                 }
                     
@@ -937,7 +936,7 @@ $("#submit-address").click(function(e){
    
     console.log('hi'); 
 
-    alert( 'The DOM has finished loading!');
+    // alert( 'The DOM has finished loading!');
                        
 }); //end document scope
 // })();   //end IFFE
