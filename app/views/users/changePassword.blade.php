@@ -9,8 +9,8 @@
     <style>
 
     .container {
-      margin-top: 20px;
-      margin-bottom: 50px;
+          margin-top: 25px;
+        margin-bottom: 15px;
     }
 
       .panel-default .panel-heading {
