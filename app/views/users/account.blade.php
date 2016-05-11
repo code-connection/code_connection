@@ -9,7 +9,7 @@
 
 		.container {
 			margin-top: 20px;
-			margin-bottom: 50px;
+			margin-bottom: 15px;
 		}
 
     	.panel-default .panel-heading {
@@ -177,6 +177,8 @@
 			                  <select class="form-control state" name="state" id="state"></select>
 			              </div>
 			            </div>
+
+			           
 			            <br>
 			            {{Form::submit('update',array('class' => 'btn btn-primary'))}}
 			         
@@ -194,12 +196,15 @@
 
  	@section('bottom-script')
  	<script src="/js/countries.js"></script>
+ 
 	<script src="/js/chosen.jquery.min.js"></script>
 	<script language="javascript">
 
 populateStates("state");
 $(".state").chosen(); 
 
-	</script
+
+
+	</script>
 	 	
     @stop
