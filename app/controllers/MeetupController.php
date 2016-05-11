@@ -11,7 +11,7 @@ class MeetupController extends BaseController {
 
 		$input = Input::all();
 
-		$city = Input::get('city');
+		// $city = Input::get('city');
 
 		$lat = Input::get('lat');
 

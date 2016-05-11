@@ -906,7 +906,6 @@ function getGitHubData(language,address){
             console.log(language);
 
              $.get('/ajax/returnmeetups',{
-                    city: address,
                     text: language,
                     lat: lat,
                     lon: long
@@ -950,14 +949,28 @@ function getGitHubData(language,address){
 
 }//end getGitHubData
 
+
+function escapeHtml(unsafe) {
+    return unsafe
+         .replace(/&/g, "&amp;")
+         .replace(/</g, "")
+         .replace(/>/g, "")
+         .replace(/"/g, "")
+         .replace(/'/g, "");
+          
+ }
+
 $("#submit-address").click(function(e){
     $("#main").innerHTML = "";
     $("#tweetResults").innerHTML = "";
 
     address = $("#address").val().toLowerCase();
     language = $("#language").val().toLowerCase();
+
+    getGitHubData(escapeHtml(language),escapeHtml(address));
     e.preventDefault();
-    getGitHubData(language,address);
+
+   
    
 });
 
