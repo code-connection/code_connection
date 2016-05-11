@@ -274,15 +274,15 @@
 
                             <div class="account-box2">Connect with fellow Coders</div>
 
-                            <button class="btn btn-default btn-social"><a href="#insert_profiles" class="btn-color"><i class="fa fa-github-alt"></i> GitHub</a>
+                            <a href="#insert_profiles" class="btn-color btn btn-default btn-social"><i class="fa fa-github-alt"></i> GitHub</a>
 
                             <br>
 
-                            <button class="btn btn-default btn-social"><a href="#insert_twitter" class="btn-color"><i class="fa fa-twitter"></i> Twitter</a>
+                            <a href="#insert_twitter" class="btn-color btn btn-default btn-social"><i class="fa fa-twitter"></i> Twitter</a>
 
                             <br>
 
-                            <button class="btn btn-default btn-social"><a href="#insert_meetups" class="btn-color"><i class="fa fa-users"></i> Meetup</a>
+                            <a href="#insert_meetups" class="btn-color btn btn-default btn-social"><i class="fa fa-users"></i> Meetup</a>
                            
                         </div>
                     </form>
