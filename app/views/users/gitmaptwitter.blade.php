@@ -355,13 +355,20 @@ function getGitHubData(language,address){
             console.log(address);
 
             // alert("AJAX call completed successfully!");
-
-
             console.log("Data returned from server:");
 
             console.log(data);
 
             console.log('This is the total users:'+data.total_count+' with '+language+' in '+address);
+
+            myLanguageArray = ["javascript","python","ruby","ruby on rails","c","c++","c#","cobol","pascal","haskell","java","clojure","perl","csharp","php","lisp","jquery","scala","html5","css3","mysql"];
+
+            if(data.total_count == 0 ||  myLanguageArray.indexOf(language) == -1){
+
+                language = "no results";
+
+            }
+           
 
             var html = '<ul class="wave">';
 
@@ -381,6 +388,15 @@ function getGitHubData(language,address){
             stroll.bind( '#insert_profiles ul' );          
             
             var languageObj = [{
+
+                language: "no results",
+                description: address,
+                image: "<img src=\"/img/langicons/js.png\" alt=\"no results\">",
+                iconUrl: "/img/langicons/noresults.jpeg",
+                strokeColor: '#000000',
+                fillColor: '#000000',
+               
+                },{
 
                 language: "javascript",
                 description: address,
@@ -566,6 +582,16 @@ function getGitHubData(language,address){
             }];
 
             switch(language){
+
+
+                case "no results":
+                console.log('no icon here');
+                languageObj.image = "<img src=\"/img/langicons/noresults.jpeg\" alt=\"no results\">";
+                languageObj.iconUrl = "/img/langicons/noresults.jpeg";
+                languageObj.strokeColor = '#000000',
+                languageObj.fillColor = '#000000'
+
+                break;
 
                 case "javascript":
                 console.log('js icon here');
@@ -832,7 +858,7 @@ function getGitHubData(language,address){
 
                 }
                     
-               
+                
                 var geocode = lat + ',' + long + ',60mi';
                 var count = 100;
 
@@ -852,8 +878,6 @@ function getGitHubData(language,address){
                      var twitterHtml = '<ul class="wave">';
 
                     d.statuses.forEach(function (element, index, array) {
-
-                   
 
 
                     twitterHtml += "<li class=\"data-lists\">"+"<img src=\"/img/bird.jpg\">"
@@ -904,6 +928,8 @@ function getGitHubData(language,address){
 
 
                 }); 
+
+                
                     $("#insert_meetups").html(meetupResults);
                     stroll.bind('#insert_meetups ul');
 
