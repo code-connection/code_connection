@@ -57,8 +57,8 @@
 		    <div class="thumbnail">
 		      <img class='programmers' src="/img/don.jpeg" alt="marine hero">
 		      <div class="caption">
-		        <h3>Donald Moore</h3>
-		        <p>A real American Hero</p>
+		        <h3>Donny Moore</h3>
+		        <p>A Real American Hero</p>
 		        <div id='footer-icons1' class="icon-txt">
 				<a href="https://twitter.com/seetheworld1989" target="_blank"><i  class="fa fa-twitter fa-2x twitter-icon" ></i></a>
 				<a href=""><i class="fa fa-facebook-official fa-2x facebook-icon"></i></a>
