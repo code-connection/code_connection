@@ -72,8 +72,8 @@
 		    <div class="thumbnail">
 		      <img class='programmers' src="/img/ricardo1.jpeg" alt="...">
 		      <div class="caption">
-		        <h3>Richard De Los Santos</h3>
-		        <p>Looking for the perfect burger</p>
+		        <h3>Richie De Los Santos</h3>
+		        <p>Hunting Malware</p>
 		        <div id='footer-icons1' class="icon-txt">
 				<a href="https://twitter.com/lowliferichard" target="_blank"><i  class="fa fa-twitter fa-2x twitter-icon"></i></a>
 				<a href=""><i class="fa fa-facebook-official fa-2x facebook-icon"></i></a>
