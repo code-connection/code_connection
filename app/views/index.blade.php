@@ -80,7 +80,7 @@
 	     <div class="row">
             <div class="col-sm-4 programmers">
                 <img class="img-circle img-responsive img-center" src="/img/Acadia.jpg" alt="">
-                <h2>Donald Moore</h2>
+                <h2>Donny Moore</h2>
                 <p></p>
             </div>
             <div class="col-sm-4 programmers">
