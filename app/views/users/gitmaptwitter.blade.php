@@ -944,7 +944,7 @@ function getGitHubData(language,address){
             }); //end ajax meetup
 
 
-            $.get("https://api.instagram.com/v1/locations/search?lat=lat&lng=long&access_token=ab944e60131d47fdbb5da516237aa64f").done(function(data) {
+            $.get("https://api.instagram.com/v1/locations/search?lat="lat"&lng="long"&access_token=ab944e60131d47fdbb5da516237aa64f").done(function(data) {
                     console.log('my instagram data below:');
                     console.log(data);
                     // alert("Instagram get call completed successfully!");
@@ -965,9 +965,9 @@ function getGitHubData(language,address){
 
                 
             }).fail(function() {
-                // alert("There was an error!");
+                console.log("Instagram error!");
             }).always(function() {
-                // alert("And we're finished!");
+                console.log"And we're INSTAGRAM finished!");
             }); //end ajax instagram
 
         }); //end geocoder
