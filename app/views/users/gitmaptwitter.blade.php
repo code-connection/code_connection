@@ -967,7 +967,7 @@ function getGitHubData(language,address){
             }).fail(function() {
                 console.log("Instagram error!");
             }).always(function() {
-                console.log"And we're INSTAGRAM finished!");
+                console.log("And we're INSTAGRAM finished!");
             }); //end ajax instagram
 
         }); //end geocoder
