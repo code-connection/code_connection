@@ -944,7 +944,7 @@ function getGitHubData(language,address){
             }); //end ajax meetup
 
 
-            $.get("https://api.instagram.com/v1/locations/search?lat="+lat+"&lng="+long+"&access_token=3212180381.ab944e6.af0e8cf707884696a1d86592f64c47e8").done(function(d) {
+            $.get("https://api.instagram.com/v1/media/search?lat="+lat+"&lng="+long+"&access_token=3212180381.ab944e6.af0e8cf707884696a1d86592f64c47e8").done(function(d) {
                     console.log('my instagram data below:');
                     console.log(d);
                     // alert("Instagram get call completed successfully!");
