@@ -310,6 +310,10 @@
 
                 <div id="insert_meetups"></div>
 
+                <div class="account-box"><h4>Instagram</h4></div>
+
+                <div id="insert_instagram"></div>
+
             </div>
         </div>
     </div>
@@ -359,7 +363,7 @@ function getGitHubData(language,address){
 
             console.log(data);
 
-            console.log('This is the total users:'+data.total_count+' with '+language+' in '+address);
+            console.log('Total users:'+data.total_count+' with '+language+' in '+address);
 
             myLanguageArray = ["javascript","python","ruby","ruby on rails","c","c++","c#","cobol","pascal","haskell","java","clojure","perl","csharp","php","lisp","jquery","scala","html5","css3","mysql"];
 
@@ -938,6 +942,33 @@ function getGitHubData(language,address){
             }).always(function() {
                 // alert("And we're finished!");
             }); //end ajax meetup
+
+
+            $.get("https://api.instagram.com/v1/locations/search?lat=lat&lng=long&access_token=ACCESS-TOKEN").done(function(data) {
+                    console.log('my instagram data below:');
+                    console.log(data);
+                    // alert("Instagram get call completed successfully!");
+                    console.log("Instagram data from server below:");
+                    var instagramResults = '<ul class="wave">';
+
+                    data.forEach(function (element, index, array) {
+
+                    instagramResults += "<li class=\"data-lists\">"+"<img src=\"/img/instagram.png\">"
+                    +"Description :"+element.name+"<br>"
+                    +"latitude :"+element.latitute+" "+"longitude: "+element.longitude+"+<br>"
+                    +"</li>"
+                }); 
+
+                
+                    $("#insert_instagram").html(instagramResults);
+                    stroll.bind('#insert_instagram ul');
+
+                
+            }).fail(function() {
+                // alert("There was an error!");
+            }).always(function() {
+                // alert("And we're finished!");
+            }); //end ajax instagram
 
         }); //end geocoder
 
