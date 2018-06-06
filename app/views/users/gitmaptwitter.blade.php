@@ -996,7 +996,7 @@ function getGitHubData(language,address){
                          }); //end foreach
 
 
-                        $("#insert_instagram_media").html(instagramMediaResults ;
+                        $("#insert_instagram_media").html(instagramMediaResults);
                         stroll.bind('#insert_instagram _media ul');
 
                         
