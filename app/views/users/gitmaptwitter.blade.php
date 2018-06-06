@@ -951,7 +951,7 @@ function getGitHubData(language,address){
 
 
             $.get("https://api.instagram.com/v1/locations/search?lat="+lat+"&lng="+long+"&access_token=3212180381.ab944e6.af0e8cf707884696a1d86592f64c47e8").done(function(d) {
-                    getInstagramMedia(d);
+                   
                     console.log('my instagram data below:');
                     console.log(d);
                     // alert("Instagram get call completed successfully!");
@@ -973,17 +973,7 @@ function getGitHubData(language,address){
                     stroll.bind('#insert_instagram ul');
 
 
-                
-            }).fail(function() {
-                console.log("Instagram error!");
-            }).always(function() {
-                console.log("And we're INSTAGRAM finished!");
-            }); //end ajax instagram
-
-
-
-            function getInstagramMedia(d){
-              var instagramMediaResults = '<ul class="wave">';
+                var instagramMediaResults = '<ul class="wave">';
                 d.data.forEach(function (element, index, array) {
                     //console.log(element.id);
                 if(element.id != 0) {
@@ -1013,7 +1003,15 @@ function getGitHubData(language,address){
 
                 });
 
-            }//end getInstagramMedia
+                
+            }).fail(function() {
+                console.log("Instagram error!");
+            }).always(function() {
+                console.log("And we're INSTAGRAM finished!");
+            }); //end ajax instagram
+
+
+
 
 
         }); //end geocoder
