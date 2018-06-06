@@ -987,12 +987,12 @@ function getGitHubData(language,address){
                 d.data.forEach(function (element, index, array) {
                     //console.log(element.id);
                 if(element.id != 0) {
-                    $.get("https://api.instagram.com/v1/locations/"+element.id+"/media/recent?access_token=3212180381.ab944e6.af0e8cf707884696a1d86592f64c47e8").done(function(data) {
+                    $.get("https://api.instagram.com/v1/locations/"+element.id+"/media/recent?access_token=3212180381.ab944e6.af0e8cf707884696a1d86592f64c47e8").done(function(media) {
 
-                         data.forEach(function (element, index, array) { 
-                            console.log(data.type)
+                         media.data.forEach(function (element, index, array) { 
+                            console.log(array[type])
                             instagramMediaResults += "<li class=\"data-lists\">"+"<img src=\"/img/instagram.png\">"
-                            +"Description: "+array[3]+"<br>"
+                            +"Description: "+array[type]+"<br>"
                             +"</li>"+"<br>"
                          }); //end foreach
 
