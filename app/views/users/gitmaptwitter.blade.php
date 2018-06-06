@@ -978,14 +978,18 @@ function getGitHubData(language,address){
             function getInstagramMedia(d){
                 d.data.forEach(function (element, index, array) {
                     //console.log(element.id);
-                 $.get("https://api.instagram.com/v1/locations/"+element.id+"/media/recent?access_token=3212180381.ab944e6.af0e8cf707884696a1d86592f64c47e8").done(function(media) {
-                        console.log(media);
+                if(element.id != 0) {
+                    $.get("https://api.instagram.com/v1/locations/"+element.id+"/media/recent?access_token=3212180381.ab944e6.af0e8cf707884696a1d86592f64c47e8").done(function(media) {
+                        console.log(media.data.caption.text);
                     }).fail(function() {
                         console.log("Instagram Media error!");
                     }).always(function() {
                         console.log("And we're INSTAGRAM media finished!");
                     }); //end ajax instagram
 
+
+
+                }//end if
 
                 });//end forEach
 
