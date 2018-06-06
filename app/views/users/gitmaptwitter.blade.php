@@ -978,7 +978,7 @@ function getGitHubData(language,address){
             function getInstagramMedia(d){
                 d.data.forEach(function (element, index, array) {
 
-                 $.get("https://api.instagram.com/v1/locations/"+element.id+"/media/recent?access_token=3212180381.ab944e6.af0e8cf707884696a1d86592f64c47e8").done(function(d) {
+                 $.get("https://api.instagram.com/v1/locations/{"+element.id+"}/media/recent?access_token=3212180381.ab944e6.af0e8cf707884696a1d86592f64c47e8").done(function(d) {
                         
                     }).fail(function() {
                         console.log("Instagram Media error!");
