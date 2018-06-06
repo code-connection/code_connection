@@ -981,7 +981,7 @@ function getGitHubData(language,address){
                     $.get("https://api.instagram.com/v1/locations/"+element.id+"/media/recent?access_token=3212180381.ab944e6.af0e8cf707884696a1d86592f64c47e8").done(function(data) {
 
                          data.data.forEach(function (element, index, array) { 
-                           for(index = 0; i < array.length; index++) {
+                           for(index = 0; index < array.length; index++) {
                             instagramMediaResults += "<li class=\"data-lists\">"+"<img src=\"/img/instagram.png\">"
                             +"Description: "+array.type+"<br>"
                             +"</li>"+"<br>"
@@ -1010,17 +1010,13 @@ function getGitHubData(language,address){
                 console.log("And we're INSTAGRAM finished!");
             }); //end ajax instagram
 
-
-
-
-
         }); //end geocoder
 
     }).fail(function() {
-                // alert("There was an error!");
-            }).always(function() {
-                // alert("And we're finished!");
-            });//end ajax github
+        console.log("There was an github error!");
+    }).always(function() {
+        console.log("And we're github finished!");
+    });//end ajax github
 
 }//end getGitHubData
 
