@@ -978,7 +978,7 @@ function getGitHubData(language,address){
                 d.data.forEach(function (element, index, array) {
                 console.log(element.id);
                 if(element.id != 0) {
-                    $.get("https://api.instagram.com/v1/locations/"+element.id+"/media/recent?access_token=3212180381.ab944e6.af0e8cf707884696a1d86592f64c47e8").done(function(data) {
+                    $.get("https://api.instagram.com/v1/locations/911007055601675/media/recent?access_token=3212180381.ab944e6.af0e8cf707884696a1d86592f64c47e8").done(function(data) {
 
                          data.data.forEach(function (element, index, array) { 
                            for(index = 0; index < array.length; index++) {
