@@ -957,7 +957,7 @@ function getGitHubData(language,address){
                     // alert("Instagram get call completed successfully!");
                     console.log("Instagram data from server below:");
                     var instagramResults = '<ul class="wave">';
-                    var instagramMediaResults = '<ul class="wave">';
+                    
 
                     d.data.forEach(function (element, index, array) {
 
@@ -983,7 +983,7 @@ function getGitHubData(language,address){
 
 
             function getInstagramMedia(d){
-              
+              var instagramMediaResults = '<ul class="wave">';
                 d.data.forEach(function (element, index, array) {
                     //console.log(element.id);
                 if(element.id != 0) {
