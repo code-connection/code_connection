@@ -991,7 +991,7 @@ function getGitHubData(language,address){
 
                          media.data.forEach(function (element, index, array) { 
                             instagramMediaResults += "<li class=\"data-lists\">"+"<img src=\"/img/instagram.png\">"
-                            +"Description: "+data[caption].text+"<br>"
+                            +"Description: "+caption.text+"<br>"
                             +"</li>"+"<br>"
                          }); //end foreach
 
