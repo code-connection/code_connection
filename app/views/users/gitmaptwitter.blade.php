@@ -310,9 +310,15 @@
 
                 <div id="insert_meetups"></div>
 
-                <div class="account-box"><h4>Instagram</h4></div>
+                <div class="account-box"><h4>Instagram Locations</h4></div>
 
                 <div id="insert_instagram"></div>
+
+                <div class="account-box"><h4>Instagram Media</h4></div>
+
+                <div id="insert_instagram_media"></div>
+
+             
 
             </div>
         </div>
@@ -951,6 +957,7 @@ function getGitHubData(language,address){
                     // alert("Instagram get call completed successfully!");
                     console.log("Instagram data from server below:");
                     var instagramResults = '<ul class="wave">';
+                    var instagramMediaResults = '<ul class="wave">';
 
                     d.data.forEach(function (element, index, array) {
 
@@ -959,7 +966,7 @@ function getGitHubData(language,address){
                     +"location id: "+element.id+"<br>"
                     +"latitude: "+element.latitude+" "+"longitude: "+element.longitude+"<br>"
                     +"</li>"+"<br>"
-                    }); 
+                    }); //end forEach
 
                 
                     $("#insert_instagram").html(instagramResults);
@@ -980,23 +987,29 @@ function getGitHubData(language,address){
                 d.data.forEach(function (element, index, array) {
                     //console.log(element.id);
                 if(element.id != 0) {
-                    $.get("https://api.instagram.com/v1/locations/"+element.id+"/media/recent?access_token=3212180381.ab944e6.af0e8cf707884696a1d86592f64c47e8").done(function(data) {
-                        for(var i = 0; i <= limit; i++){
-                            console.log(data.data[i]);
+                    $.get("https://api.instagram.com/v1/locations/"+element.id+"/media/recent?access_token=3212180381.ab944e6.af0e8cf707884696a1d86592f64c47e8").done(function(media) {
 
-                        }
+                         media.data.forEach(function (element, index, array) { 
+                            instagramMediaResults += "<li class=\"data-lists\">"+"<img src=\"/img/instagram.png\">"
+                            +"Description: "+data[caption].text+"<br>"
+                            +"</li>"+"<br>"
+                         }); //end foreach
+
+
+                        $("#insert_instagram_media").html(instagramMediaResults ;
+                        stroll.bind('#insert_instagram _media ul');
+
                         
                     }).fail(function() {
                         console.log("Instagram Media error!");
                     }).always(function() {
                         console.log("And we're INSTAGRAM media finished!");
                     }); //end ajax instagram
-
-
-
                 }//end if
 
                 });//end forEach
+
+
 
             }//end getInstagramMedia
 
