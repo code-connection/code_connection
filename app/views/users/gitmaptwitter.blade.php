@@ -1000,7 +1000,7 @@ function getGitHubData(language,address){
                          }); //end foreach
 
 
-                      $("#insert_instagram_media").html(<li>"Don"</li>);
+                      $("#insert_instagram_media").html(instagramMediaResults);
                         stroll.bind('#insert_instagram _media ul');
 
                         
