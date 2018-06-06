@@ -987,7 +987,7 @@ function getGitHubData(language,address){
                     }); //end ajax instagram
 
 
-                }//end forEach
+                });//end forEach
 
             }//end getInstagramMedia
 
