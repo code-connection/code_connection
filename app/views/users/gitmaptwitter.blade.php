@@ -973,7 +973,7 @@ function getGitHubData(language,address){
                     stroll.bind('#insert_instagram ul');
 
                 //https://api.instagram.com/v1/locations/{location-id}/media/recent?access_token=ACCESS-TOKEN
-{
+
                 var instagramMediaResults = '<ul class="wave">';
                 d.data.forEach(function (element, index, array) {
                 console.log(element.id);
