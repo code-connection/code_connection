@@ -954,23 +954,36 @@ function getGitHubData(language,address){
                     d.data.forEach(function (element, index, array) {
 
                     instagramResults += "<li class=\"data-lists\">"+"<img src=\"/img/instagram.png\">"
-                    +"Description :"+element.name+"<br>"
-                    +"location id :"+element.id+"<br>"
-                    +"latitude :"+element.latitude+" "+"longitude: "+element.longitude+"<br>"
-                    +"</li>"
-                }); 
+                    +"Description: "+element.name+"<br>"
+                    +"location id: "+element.id+"<br>"
+                    +"latitude: "+element.latitude+" "+"longitude: "+element.longitude+"<br>"
+                    +"</li>"+"<br>"
+                    }); 
 
                 
                     $("#insert_instagram").html(instagramResults);
                     stroll.bind('#insert_instagram ul');
 
+                   //https://api.instagram.com/v1/locations/{location-id}/media/recent?access_token=ACCESS-TOKEN
+                    d.data.forEach(function (element, index, array) {
 
+                    $.get("https://api.instagram.com/v1/locations/"+element.id+"/media/recent?access_token=3212180381.ab944e6.af0e8cf707884696a1d86592f64c47e8").done(function(d) {
+                        console.log("Below is location - media");
+                        console.log(d);
+
+                    }).fail(function() {
+                        console.log("Instagram media error!");
+                    }).always(function() {
+                        console.log("And we're INSTAGRAM media finished!");
+                    }); //end ajax instagram media with locations
+
+     
                 
             }).fail(function() {
                 console.log("Instagram error!");
             }).always(function() {
                 console.log("And we're INSTAGRAM finished!");
-            }); //end ajax instagram
+            }); //end ajax instagram locations no media
 
         }); //end geocoder
 
