@@ -972,25 +972,22 @@ function getGitHubData(language,address){
                     $("#insert_instagram").html(instagramResults);
                     stroll.bind('#insert_instagram ul');
 
-
+                //https://api.instagram.com/v1/locations/{location-id}/media/recent?access_token=ACCESS-TOKEN
+{
                 var instagramMediaResults = '<ul class="wave">';
                 d.data.forEach(function (element, index, array) {
-                    console.log(element.id);
+                console.log(element.id);
                 if(element.id != 0) {
                     $.get("https://api.instagram.com/v1/locations/"+element.id+"/media/recent?access_token=3212180381.ab944e6.af0e8cf707884696a1d86592f64c47e8").done(function(data) {
 
-                       
-                        console.log(data.data.length);
+                         data.data.forEach(function (element, index, array) { 
+                           for(index = 0; i < array.length; index++) {
+                            instagramMediaResults += "<li class=\"data-lists\">"+"<img src=\"/img/instagram.png\">"
+                            +"Description: "+array.type+"<br>"
+                            +"</li>"+"<br>"
+                           }
 
-                         // media.data.forEach(function (element, index, array) { 
-                           
-                         //    instagramMediaResults += "<li class=\"data-lists\">"+"<img src=\"/img/instagram.png\">"
-                         //    +"Description: "+element.type+"<br>"
-                         //    +"Description: "+element[type]+"<br>"
-                         //    +"Description: "+array.type+"<br>"
-                         //    +"Description: "+index[caption].text+"<br>"
-                         //    +"</li>"+"<br>"
-                         // }); //end foreach
+                         }); //end foreach
 
 
                       $("#insert_instagram_media").html(instagramMediaResults);
