@@ -993,11 +993,14 @@ function getGitHubData(language,address){
                            
                             instagramMediaResults += "<li class=\"data-lists\">"+"<img src=\"/img/instagram.png\">"
                             +"Description: "+element.type+"<br>"
+                            +"Description: "+element[type]+"<br>"
+                            +"Description: "+array.type+"<br>"
+                            +"Description: "+array.caption.text+"<br>"
                             +"</li>"+"<br>"
                          }); //end foreach
 
 
-                        $("#insert_instagram_media").html(instagramMediaResults);
+                      $("#insert_instagram_media").html(instagramMediaResults);
                         stroll.bind('#insert_instagram _media ul');
 
                         
