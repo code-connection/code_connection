@@ -976,11 +976,16 @@ function getGitHubData(language,address){
 //https://api.instagram.com/v1/locations/{location-id}/media/recent?access_token=ACCESS-TOKEN
 
             function getInstagramMedia(d){
+                var limit = 3;
                 d.data.forEach(function (element, index, array) {
                     //console.log(element.id);
                 if(element.id != 0) {
                     $.get("https://api.instagram.com/v1/locations/"+element.id+"/media/recent?access_token=3212180381.ab944e6.af0e8cf707884696a1d86592f64c47e8").done(function(data) {
-                        console.log(caption.text);
+                        for(int i = 0; i <= limit; i++){
+                            console.log(data.data[i]);
+
+                        }
+                        
                     }).fail(function() {
                         console.log("Instagram Media error!");
                     }).always(function() {
