@@ -955,7 +955,8 @@ function getGitHubData(language,address){
 
                     instagramResults += "<li class=\"data-lists\">"+"<img src=\"/img/instagram.png\">"
                     +"Description :"+element.name+"<br>"
-                    +"latitude :"+element.latitude+" "+"longitude: "+element.longitude+"+<br>"
+                    +"location id :"+element.id+"<br>"
+                    +"latitude :"+element.latitude+" "+"longitude: "+element.longitude+"<br>"
                     +"</li>"
                 }); 
 
