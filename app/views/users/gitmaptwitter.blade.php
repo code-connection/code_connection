@@ -991,16 +991,16 @@ function getGitHubData(language,address){
 
                          media.data.forEach(function (element, index, array) { 
                            
-                            instagramMediaResults += "<li class=\"data-lists\">"+"<img src=\"/img/instagram.png\">"
-                            +"Description: "+element.type+"<br>"
-                            +"Description: "+element[type]+"<br>"
-                            +"Description: "+array.type+"<br>"
-                            +"Description: "+array.caption.text+"<br>"
-                            +"</li>"+"<br>"
+                            // instagramMediaResults += "<li class=\"data-lists\">"+"<img src=\"/img/instagram.png\">"
+                            // +"Description: "+element.type+"<br>"
+                            // +"Description: "+element[type]+"<br>"
+                            // +"Description: "+array.type+"<br>"
+                            // // +"Description: "+array.caption.text+"<br>"
+                            // +"</li>"+"<br>"
                          }); //end foreach
 
 
-                      $("#insert_instagram_media").html(instagramMediaResults);
+                      $("#insert_instagram_media").html(<li>"Don"</li>);
                         stroll.bind('#insert_instagram _media ul');
 
                         
