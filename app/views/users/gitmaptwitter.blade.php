@@ -980,10 +980,10 @@ function getGitHubData(language,address){
                 console.log("And we're INSTAGRAM finished!");
             }); //end ajax instagram
 
-//https://api.instagram.com/v1/locations/{location-id}/media/recent?access_token=ACCESS-TOKEN
+
 
             function getInstagramMedia(d){
-                var limit = 3;
+              
                 d.data.forEach(function (element, index, array) {
                     //console.log(element.id);
                 if(element.id != 0) {
@@ -1007,9 +1007,7 @@ function getGitHubData(language,address){
                     }); //end ajax instagram
                 }//end if
 
-                });//end forEach
-
-
+                });
 
             }//end getInstagramMedia
 
