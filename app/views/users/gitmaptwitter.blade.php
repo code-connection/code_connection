@@ -980,7 +980,7 @@ function getGitHubData(language,address){
                     $.get("https://api.instagram.com/v1/locations/"+element.id+"/media/recent?access_token=3212180381.ab944e6.af0e8cf707884696a1d86592f64c47e8").done(function(data) {
 
                        
-                        console.log(data);
+                        console.log(data.length);
 
                          // media.data.forEach(function (element, index, array) { 
                            
