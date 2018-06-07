@@ -53,8 +53,9 @@ code {
 
 	  <footer class="footer">
       <div class="container">
+        <span style="color:white; font-size: 10pt"><a href="https://termsfeed.com/privacy-policy/67cc44e76618a4a5f1a9d6bd6c78a37a"><a/>Privacy Policy</span>
       </div>
-  	 </footer>
+  	</footer>
 
 	
 </body>
