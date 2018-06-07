@@ -972,21 +972,19 @@ function getGitHubData(language,address){
                     $("#insert_instagram").html(instagramResults);
                     stroll.bind('#insert_instagram ul');
 
-                //https://api.instagram.com/v1/locations/{location-id}/media/recent?access_token=ACCESS-TOKEN
 
                 var instagramMediaResults = '<ul class="wave">';
                 d.data.forEach(function (element, index, array) {
-                console.log(element.id);
+                    console.log(element.id);
                 if(element.id != 0) {
-                    $.get("https://api.instagram.com/v1/locations/911007055601675/media/recent?access_token=3212180381.ab944e6.af0e8cf707884696a1d86592f64c47e8").done(function(data) {
+                    $.get("https://api.instagram.com/v1/locations/"+element.id+"/media/recent?access_token=3212180381.ab944e6.af0e8cf707884696a1d86592f64c47e8").done(function(media) {
 
-                         data.data.forEach(function (element, index, array) { 
-                           for(index = 0; index < array.length; index++) {
+                         media.data.forEach(function (element, index, array) { 
+                           
                             instagramMediaResults += "<li class=\"data-lists\">"+"<img src=\"/img/instagram.png\">"
-                            +"Description: "+array.type+"<br>"
+                            +"Caption: "+array[0].caption.text+"<br>"
+                            
                             +"</li>"+"<br>"
-                           }
-
                          }); //end foreach
 
 
@@ -1010,13 +1008,17 @@ function getGitHubData(language,address){
                 console.log("And we're INSTAGRAM finished!");
             }); //end ajax instagram
 
+
+
+
+
         }); //end geocoder
 
     }).fail(function() {
-        console.log("There was an github error!");
-    }).always(function() {
-        console.log("And we're github finished!");
-    });//end ajax github
+                // alert("There was an error!");
+            }).always(function() {
+                // alert("And we're finished!");
+            });//end ajax github
 
 }//end getGitHubData
 
