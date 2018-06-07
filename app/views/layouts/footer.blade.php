@@ -30,7 +30,9 @@ body {
 
 body > .container {
   padding: 60px 15px 0;
+
 }
+
 .container .text-muted {
   margin: 20px 0;
 }
@@ -38,6 +40,18 @@ body > .container {
 .footer > .container {
   padding-right: 15px;
   padding-left: 15px;
+
+}
+
+
+/* unvisited link */
+.footer > a:link {
+    color: white;
+}
+
+/* visited link */
+.footer > a:visited {
+    color: red;
 }
 
 code {
@@ -53,7 +67,7 @@ code {
 
 	  <footer class="footer">
       <div class="container">
-      
+        <h4 align="center"><a style="color:white; font-size: 20pt" href="https://termsfeed.com/privacy-policy/67cc44e76618a4a5f1a9d6bd6c78a37a">Privacy Policy</a></h4>
       </div>
   	</footer>
 
