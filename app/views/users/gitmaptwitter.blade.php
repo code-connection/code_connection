@@ -308,17 +308,7 @@
 
                 <div class="account-box"><h4>Meetups</h4></div>
 
-                <div id="insert_meetups"></div>
-
-                <div class="account-box"><h4>Instagram Locations</h4></div>
-
-                <div id="insert_instagram"></div>
-
-                <div class="account-box"><h4>Instagram Media</h4></div>
-
-                <div id="insert_instagram_media"></div>
-
-             
+                <div id="insert_meetups"></div>           
 
             </div>
         </div>
@@ -948,69 +938,6 @@ function getGitHubData(language,address){
             }).always(function() {
                 // alert("And we're finished!");
             }); //end ajax meetup
-
-
-            $.get("https://api.instagram.com/v1/locations/search?lat="+lat+"&lng="+long+"&access_token=3212180381.ab944e6.af0e8cf707884696a1d86592f64c47e8").done(function(d) {
-                   
-                    console.log('my instagram data below:');
-                    console.log(d);
-                    // alert("Instagram get call completed successfully!");
-                    console.log("Instagram data from server below:");
-                    var instagramResults = '<ul class="wave">';
-                    
-
-                    d.data.forEach(function (element, index, array) {
-
-                    instagramResults += "<li class=\"data-lists\">"+"<img src=\"/img/instagram.png\">"
-                    +"Description: "+element.name+"<br>"
-                    +"location id: "+element.id+"<br>"
-                    +"latitude: "+element.latitude+" "+"longitude: "+element.longitude+"<br>"
-                    +"</li>"+"<br>"
-                    }); //end forEach
-
-                
-                    $("#insert_instagram").html(instagramResults);
-                    stroll.bind('#insert_instagram ul');
-
-
-                var instagramMediaResults = '<ul class="wave">';
-                d.data.forEach(function (element, index, array) {
-                    console.log(element.id);
-                if(element.id != 0) {
-                    $.get("https://api.instagram.com/v1/locations/"+element.id+"/media/recent?access_token=3212180381.ab944e6.af0e8cf707884696a1d86592f64c47e8").done(function(media) {
-
-                         media.data.forEach(function (element, index, array) { 
-                           
-                            instagramMediaResults += "<li class=\"data-lists\">"+"<img src=\"/img/instagram.png\">"
-                            +"Caption: "+array[0].caption.text+"<br>"
-                            
-                            +"</li>"+"<br>"
-                         }); //end foreach
-
-
-                      $("#insert_instagram_media").html(instagramMediaResults);
-                        stroll.bind('#insert_instagram _media ul');
-
-                        
-                    }).fail(function() {
-                        console.log("Instagram Media error!");
-                    }).always(function() {
-                        console.log("And we're INSTAGRAM media finished!");
-                    }); //end ajax instagram
-                }//end if
-
-                });
-
-                
-            }).fail(function() {
-                console.log("Instagram error!");
-            }).always(function() {
-                console.log("And we're INSTAGRAM finished!");
-            }); //end ajax instagram
-
-
-
-
 
         }); //end geocoder
 
