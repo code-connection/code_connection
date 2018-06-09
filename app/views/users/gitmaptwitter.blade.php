@@ -848,6 +848,10 @@ function getGitHubData(language,address){
                         infowindow.open(map, marker);
                     });
 
+                    markerLanguage.addListener('mouseover', function(){
+                        infowindow.close(map, marker);
+                    });
+
                 }else {
 
                     console.log("Geocoding was not successful - STATUS: " + status);
