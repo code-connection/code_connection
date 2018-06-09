@@ -824,7 +824,7 @@ function getGitHubData(language,address){
                    
                     }); 
 
-                    markerLanguage.addListener('mousein', toggleBounce);
+                    markerLanguage.addListener('click', toggleBounce);
 
                     function toggleBounce() {
 
@@ -844,7 +844,7 @@ function getGitHubData(language,address){
                         
                     });
 
-                    markerLanguage.addListener('mouseover', function(){
+                    markerLanguage.addListener('mouseout', function(){
                         infowindow.open(map, marker);
                     });
 
