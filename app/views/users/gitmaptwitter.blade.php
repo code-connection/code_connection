@@ -838,7 +838,7 @@ function getGitHubData(language,address){
                     map.panTo(results[0].geometry.location);
 
                     var infowindow = new google.maps.InfoWindow({
-                        content: "<span style=\"color:blue\"><b>"+language+" programmers in "+address+" is "+
+                        content: "<span style=\"color:blue\"><b>"+"GitHub "+language+" programmers in "+address+" is "+
                         data.total_count+"</b></span>",
                         position: latlng
                         
@@ -848,13 +848,9 @@ function getGitHubData(language,address){
                         infowindow.open(map, marker);
                     });
 
-                    // markerLanguage.addListener('mouseout', function(){
-                    //     infowindow.close(map, marker);
-                    // });
-
                 }else {
 
-                    // alert("Geocoding was not successful - STATUS: " + status);
+                    console.log("Geocoding was not successful - STATUS: " + status);
 
                 }
                     
