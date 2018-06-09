@@ -824,7 +824,7 @@ function getGitHubData(language,address){
                    
                     }); 
 
-                    markerLanguage.addListener('click', toggleBounce);
+                    markerLanguage.addListener('mousein', toggleBounce);
 
                     function toggleBounce() {
 
