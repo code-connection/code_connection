@@ -844,13 +844,13 @@ function getGitHubData(language,address){
                         
                     });
 
-                    markerLanguage.addListener('click', function(){
+                    markerLanguage.addListener('mouseover', function(){
                         infowindow.open(map, marker);
                     });
 
-                    markerLanguage.addListener('click', function(){
-                        infowindow.close(map, marker);
-                    });
+                    // markerLanguage.addListener('mouseout', function(){
+                    //     infowindow.close(map, marker);
+                    // });
 
                 }else {
 
