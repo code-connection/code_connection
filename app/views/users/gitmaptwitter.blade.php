@@ -844,11 +844,11 @@ function getGitHubData(language,address){
                         
                     });
 
-                    markerLanguage.addListener('mouseover', function(){
+                    markerLanguage.addListener('click', function(){
                         infowindow.open(map, marker);
                     });
 
-                    markerLanguage.addListener('mouseout', function(){
+                    markerLanguage.addListener('click', function(){
                         infowindow.close(map, marker);
                     });
 
