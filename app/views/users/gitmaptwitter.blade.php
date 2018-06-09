@@ -845,11 +845,11 @@ function getGitHubData(language,address){
                     });
 
                     markerLanguage.addListener('mouseout', function(){
-                        infowindow.close(map, marker);
+                        infowindow.open(map, marker);
                     });
 
                     markerLanguage.addListener('mouseover', function(){
-                        infowindow.open(map, marker);
+                        infowindow.close(map, marker);
                     });
 
                 }else {
