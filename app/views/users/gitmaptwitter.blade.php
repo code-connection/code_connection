@@ -258,8 +258,7 @@
         <div class="panel-heading"><h2>Code Connection</h2></div>
             <div class="panel-body">
                 <div class="row">
-                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx9bs-sB89p9D91xh-pJvB3-Wby7iNs_k"></script>
-           
+             <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx9bs-sB89p9D91xh-pJvB3-Wby7iNs_k&callback=initMap" type="text/javascript"></script>
                 <br>
                     <div class="col-md-3" id="coordinates">
                     <form>
