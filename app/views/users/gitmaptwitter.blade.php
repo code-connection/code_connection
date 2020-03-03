@@ -270,6 +270,8 @@
                             <label for="language">Enter Language: </label>
                                 <input id="language" type="text" placeholder="javascript, php, python etc." class="form-control">
                             <button class="btn btn-default" id="submit-address" type="submit">Submit</button>
+                            <br>
+                            <button class="btn btn-default" onClick="window.location.reload();">Clear</button>
 
                             <div class="account-box2">Connect with fellow Coders</div>
 
@@ -282,6 +284,8 @@
                             <br>
 
                             <a href="#insert_meetups" class="btn-color btn btn-default btn-social"><i class="fa fa-users"></i> Meetup</a>
+
+
                            
                         </div>
                     </form>
