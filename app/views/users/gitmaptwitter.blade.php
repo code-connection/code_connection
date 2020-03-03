@@ -335,6 +335,16 @@
 var address;
 var language;
 
+function initMap() {} // now it IS a function and it is in global
+
+$(() => {
+  initMap = function() {
+    // your code like...
+    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+    // and other stuff...
+  }
+})
+
 $(document).ready(function() {
 
     var mapOptions = {
@@ -350,7 +360,7 @@ $(document).ready(function() {
         mapTypeId: google.maps.MapTypeId.HYBRID
     };
 
-    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+    //var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
 function getGitHubData(language,address){
         
