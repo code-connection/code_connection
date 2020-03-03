@@ -42,7 +42,7 @@
 
 					<li><img src="/img/brand_icon.png" style="width: 35px; margin-top: 5px; margin-right: 5px;"></li>
 
-					<li><a class="welcome-user">Welcome,{{Auth::user()->first_name}}!</a></li>
+					<li><a class="welcome-user">Welcome, {{Auth::user()->first_name}}!</a></li>
 
 					<li class="dropdown dropdown-account">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage Account <span class="caret"></span></a>
