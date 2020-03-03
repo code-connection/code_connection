@@ -258,12 +258,11 @@
         <div class="panel-heading"><h2>Code Connection</h2></div>
             <div class="panel-body">
                 <div class="row">
-                    +"\""+address+"\""+
                     
-             <script async defer src="https://maps.googleapis.com/maps/api/js?key=+"\""+key+"\""+&callback=initMap" type="text/javascript"></script>
+             <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx9bs-sB89p9D91xh-pJvB3-Wby7iNs_k&callback=initMap" type="text/javascript"></script>
                 <br>
                     <div class="col-md-3" id="coordinates">
-                    <form>
+                    <form> 
                         <div class="form-group">
                            
                             <label for="address">Enter City:</label>
@@ -330,7 +329,6 @@
 "use strict;"
 var address;
 var language;
-var key;
 
 $(document).ready(function() {
 
@@ -967,7 +965,6 @@ $("#submit-address").click(function(e){
 
     address = $("#address").val().toLowerCase();
     language = $("#language").val().toLowerCase();
-    $key = env('GOOGLE_MAPS_API_KEY');
 
     getGitHubData(escapeHtml(language),escapeHtml(address));
     e.preventDefault();
