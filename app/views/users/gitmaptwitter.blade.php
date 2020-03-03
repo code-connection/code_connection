@@ -259,12 +259,7 @@
             <div class="panel-body">
                 <div class="row">
                     
-            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx9bs-sB89p9D91xh-pJvB3-Wby7iNs_k&callback=initMap" 
-            type="text/javascript"></script>
-                <br>
-                    <div class="col-md-3" id="coordinates">
-                    <form>
-
+             <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx9bs-sB89p9D91xh-pJvB3-Wby7iNs_k&callback=initMap" type="text/javascript"></script>
                 <br>
                     <div class="col-md-3" id="coordinates">
                     <form>
@@ -335,16 +330,6 @@
 var address;
 var language;
 
-function initMap() {} // now it IS a function and it is in global
-
-$(() => {
-  initMap = function() {
-    // your code like...
-    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-    // and other stuff...
-  }
-})
-
 $(document).ready(function() {
 
     var mapOptions = {
@@ -360,7 +345,7 @@ $(document).ready(function() {
         mapTypeId: google.maps.MapTypeId.HYBRID
     };
 
-    //var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
 function getGitHubData(language,address){
         
