@@ -259,9 +259,8 @@
             <div class="panel-body">
                 <div class="row">
 
-
-                    
              <script async defer src="https://maps.googleapis.com/maps/api/js?key={{config('custom.GOOGLE_MAPS_API_KEY')}}&callback=initMap" type="text/javascript"></script>
+             <?php echo config('custom.GOOGLE_MAPS_API_KEY'); ?>
                 <br>
                     <div class="col-md-3" id="coordinates">
                     <form>
