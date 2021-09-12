@@ -326,15 +326,28 @@
 
 
 <script src="/js/stroll.min.js"></script>
+
 <script>
-function initMap() {
-var mapProp= {
-  center:new google.maps.LatLng(51.508742,-0.120850),
-  zoom:5,
-};
-var map = new google.maps.Map(document.getElementById("map-canvas"),mapProp);
-}
+    function initMap() {
+
+        var mapOptions = {
+                
+            zoom: 11,
+             center: {
+                lat:  29.4284595,
+                lng: -98.492433,
+            },
+            scrollwheel: false,
+           
+
+            mapTypeId: google.maps.MapTypeId.HYBRID
+        };
+
+
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+    }
 </script>
+
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx9bs-sB89p9D91xh-pJvB3-Wby7iNs_k&callback=initMap" type="text/javascript"></script>
   
 <script type="text/javascript">
