@@ -259,7 +259,7 @@
             <div class="panel-body">
                 <div class="row">
                     
-             <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx9bs-sB89p9D91xh-pJvB3-Wby7iNs_k&callback=initMap" type="text/javascript"></script>
+
                 <br>
                     <div class="col-md-3" id="coordinates">
                     <form>
@@ -326,7 +326,7 @@
 
 
 <script src="/js/stroll.min.js"></script>
-
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx9bs-sB89p9D91xh-pJvB3-Wby7iNs_k&callback=initMap" type="text/javascript" async ></script>
   
 <script type="text/javascript">
      // (function(){
