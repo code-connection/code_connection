@@ -259,7 +259,7 @@
             <div class="panel-body">
                 <div class="row">
                     
-
+             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx9bs-sB89p9D91xh-pJvB3-Wby7iNs_k&callback=initMap" type="text/javascript" async></script>
                 <br>
                     <div class="col-md-3" id="coordinates">
                     <form>
@@ -291,7 +291,6 @@
                     </form>
                 </div>
                     <div id="map-canvas" style="margin-left:50px;margin-right:0px;"></div>
-                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx9bs-sB89p9D91xh-pJvB3-Wby7iNs_k&callback=initMap" async></script>
                 </div>
             </div>
     </div>
@@ -337,14 +336,20 @@ var language;
 
 $(document).ready(function() {
 
-let map;
+    var mapOptions = {
+            
+        zoom: 11,
+         center: {
+            lat:  29.4284595,
+            lng: -98.492433,
+        },
+        scrollwheel: false,
+       
 
-function initMap() {
-  map = new google.maps.Map(document.getElementById("map-canvas"), {
-    center: { lat: -34.397, lng: 150.644 },
-    zoom: 8,
-  });
-}
+        mapTypeId: google.maps.MapTypeId.HYBRID
+    };
+
+    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
 function getGitHubData(language,address){
         
