@@ -258,9 +258,8 @@
         <div class="panel-heading"><h2>Code Connection</h2></div>
             <div class="panel-body">
                 <div class="row">
-                <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
-                  
-                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx9bs-sB89p9D91xh-pJvB3-Wby7iNs_k&callback=initMap" async></script>
+                    
+             <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx9bs-sB89p9D91xh-pJvB3-Wby7iNs_k&callback=initMap" type="text/javascript"></script>
                 <br>
                     <div class="col-md-3" id="coordinates">
                     <form>
@@ -337,20 +336,23 @@ var language;
 
 $(document).ready(function() {
 
-    var mapOptions = {
-            
-        zoom: 11,
-         center: {
-            lat:  29.4284595,
-            lng: -98.492433,
-        },
-        scrollwheel: false,
-       
+    let map;
 
-        mapTypeId: google.maps.MapTypeId.HYBRID
-    };
+    function initMap() {
+        map = new google.maps.Map(document.getElementById("map-canvas"), {
+            zoom: 11,
+             center: {
+                lat:  29.4284595,
+                lng: -98.492433,
+            },
+            scrollwheel: false,
+           
 
-    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+            mapTypeId: google.maps.MapTypeId.HYBRID
+      });
+    }
+
+   
 
 function getGitHubData(language,address){
         
