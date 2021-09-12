@@ -336,20 +336,23 @@ var language;
 
 $(document).ready(function() {
 
-    var mapOptions = {
-            
-        zoom: 11,
-         center: {
-            lat:  29.4284595,
-            lng: -98.492433,
-        },
-        scrollwheel: false,
-       
+ function initMap() {
+  var myLatLng = {
+    lat: 43.6222102,
+    lng: -79.6694881
+  };
 
-        mapTypeId: google.maps.MapTypeId.HYBRID
-    };
+  var map = new google.maps.Map(document.getElementById('map-canvas'), {
+    zoom: 15,
+    center: myLatLng
+  });
 
-    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+  });
+}
+google.maps.event.addDomListener(window, 'load', initMap);
 
 function getGitHubData(language,address){
         
