@@ -258,8 +258,7 @@
         <div class="panel-heading"><h2>Code Connection</h2></div>
             <div class="panel-body">
                 <div class="row">
-                    
-             <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx9bs-sB89p9D91xh-pJvB3-Wby7iNs_k&callback=initMap" type="text/javascript"></script>
+
                 <br>
                     <div class="col-md-3" id="coordinates">
                     <form>
@@ -327,7 +326,19 @@
 
 <script src="/js/stroll.min.js"></script>
 
-  
+<script>
+
+    function initMap() {
+    var mapProp= {
+      center:new google.maps.LatLng(51.508742,-0.120850),
+      zoom:5,
+    };
+    var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    }
+</script>                    
+<script type="text/javascript" async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx9bs-sB89p9D91xh-pJvB3-Wby7iNs_k&callback=initMap" ></script>
+
+
 <script type="text/javascript">
      // (function(){
 "use strict;"
@@ -346,7 +357,7 @@ $(document).ready(function() {
         scrollwheel: false,
        
 
-        mapTypeId: google.maps.MapTypeId.HYBRID
+        //mapTypeId: google.maps.MapTypeId.HYBRID
     };
 
     var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
