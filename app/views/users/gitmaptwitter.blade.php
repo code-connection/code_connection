@@ -258,23 +258,8 @@
         <div class="panel-heading"><h2>Code Connection</h2></div>
             <div class="panel-body">
                 <div class="row">
-            <script>
-            var mapOptions = {
                     
-                zoom: 11,
-                 center: {
-                    lat:  29.4284595,
-                    lng: -98.492433,
-                },
-                scrollwheel: false,
-               
 
-                mapTypeId: google.maps.MapTypeId.HYBRID
-            };
-
-            var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-            </script>
-             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx9bs-sB89p9D91xh-pJvB3-Wby7iNs_k&callback=initMap" type="text/javascript" async></script>
                 <br>
                     <div class="col-md-3" id="coordinates">
                     <form>
@@ -341,7 +326,16 @@
 
 
 <script src="/js/stroll.min.js"></script>
-
+<script>
+function initMap() {
+var mapProp= {
+  center:new google.maps.LatLng(51.508742,-0.120850),
+  zoom:5,
+};
+var map = new google.maps.Map(document.getElementById("map-canvas"),mapProp);
+}
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx9bs-sB89p9D91xh-pJvB3-Wby7iNs_k&callback=initMap" type="text/javascript"></script>
   
 <script type="text/javascript">
      // (function(){
@@ -351,7 +345,20 @@ var language;
 
 $(document).ready(function() {
 
+    // var mapOptions = {
+            
+    //     zoom: 11,
+    //      center: {
+    //         lat:  29.4284595,
+    //         lng: -98.492433,
+    //     },
+    //     scrollwheel: false,
+       
 
+    //     mapTypeId: google.maps.MapTypeId.HYBRID
+    // };
+
+    // var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
 function getGitHubData(language,address){
         
